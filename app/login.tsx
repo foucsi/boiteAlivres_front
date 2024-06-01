@@ -14,7 +14,7 @@ export default function Login() {
                 <View style={styles.inner}>
                     <TextInput value={email} onChangeText={setEmail} placeholderTextColor="#E0E0E0" autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
                     <TextInput value={password} onChangeText={setPassword} placeholderTextColor="#E0E0E0" autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
-                    <Text style={styles.errorText}></Text>
+                    <Text style={styles.errorText}>{error}</Text>
 
                     <View style={styles.containerBtn}>
                         <Button color="#294C60" title="Se connecter" onPress={handleLogin} />
