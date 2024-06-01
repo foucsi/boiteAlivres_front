@@ -3,10 +3,17 @@ import {URL_LOGIN} from "@/constants/Url";
 interface User {
     email: string;
     password: string;
-
 }
 
-export const login = async(user:User)=>{
+interface LoginResponse {
+    success: boolean;
+    user?: any;
+    token?: string;
+    message?: string;
+    error?: any;
+}
+
+export const login = async(user:User):Promise<LoginResponse>=>{
     try{
         const response = await fetch(URL_LOGIN, {
             method: 'POST',

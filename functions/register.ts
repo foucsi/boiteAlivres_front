@@ -6,7 +6,15 @@ interface UserData{
     email: string;
 }
 
-export const register = async (user : UserData) => {
+interface RegisterResponse {
+    success: boolean;
+    user?: any;
+    token?: string;
+    message?: string;
+    error?: any;
+}
+
+export const register = async (user : UserData):Promise<RegisterResponse> => {
     try{
         const response = await fetch(URL_REGISTER, {
             method: 'POST',
@@ -17,7 +25,7 @@ export const register = async (user : UserData) => {
         })
         const data = await response.json()
         if(data.result){
-            return {success: true, message: data.error || data.message}
+            return {success: true, message: data.error || data.message, token: data.token, user: data.user}
         }else{
             return {success: false, message: data.error || data.message}
         }
