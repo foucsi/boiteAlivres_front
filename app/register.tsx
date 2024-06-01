@@ -1,26 +1,29 @@
-import {View, Text, StyleSheet, TextInput, Button} from 'react-native'
+import {View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView,Platform, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
+import {useRegister} from "@/hooks/useRegister";
+import { Camera } from 'lucide-react-native'
 
 export default function Register() {
+    const {username, password, email, setUsername, setPassword, setEmail, handleRegister, error} = useRegister()
     return (
-        <View style={styles.container}>
-            <View>
-                <Text>S'enregistrer</Text>
-            </View>
-
-            <View style={styles.containerInput}>
-                <TextInput  autoCapitalize={"none"} placeholder="Utilisateur" style={styles.input}/>
-                <TextInput  autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
-                <TextInput autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Password" style={styles.input} />
-                <Button title="S'enregistrer" onPress={() => {}} />
-            </View>
-
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={styles.inner}>
+                    <TextInput value={username} onChangeText={setUsername} autoCapitalize={"none"} placeholder="Utilisateur" style={styles.input}/>
+                    <TextInput value={email} onChangeText={setEmail}  autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
+                    <TextInput value={password} onChangeText={setPassword} autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
+                    <Text style={styles.errorText}>{error}</Text>
+                    <Button title="S'enregistrer" onPress={handleRegister} />
+                </View>
+                </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
                 <Text >Vous avez déja un compte ?</Text>
                 <Link href="/login" style={styles.containerEnregistrer}>Se connecter</Link>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 
@@ -28,33 +31,28 @@ export default function Register() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
     },
     containerEnregistrer:{
         fontWeight: 'bold'
     },
-    containerInput:{
-        paddingTop:50,
-        padding: 10,
-        width:"80%",
-        height:"50%",
-        alignItems: 'flex-start',
+    inner:{
+        padding: 24,
+        flex: 1,
+        justifyContent: 'space-evenly',
     },
     input:{
-        marginBottom: 10,
-        width: '100%',
-        height: 40,
-        borderColor: 'black',
-        borderStyle: 'solid',
-        borderWidth: 1,
-        padding:4,
+        height: 30,
+        borderColor: '#000000',
+        borderBottomWidth: 1,
     },
     containerBottom:{
-        padding:10,
+        padding:30,
         alignItems:"flex-start",
         width:"80%"
+    },
+    errorText:{
+        color: 'red',
+        fontSize: 12,
     }
 })
 
