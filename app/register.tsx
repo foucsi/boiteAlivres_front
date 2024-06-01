@@ -2,10 +2,10 @@ import {View, Text, StyleSheet} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
 
-export default function Login() {
+export default function Register() {
     return (
         <View style={styles.container}>
-            <Text>Login</Text>
+            <Text>Register</Text>
         </View>
     )
 }
@@ -17,3 +17,4 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     }
 })
+
