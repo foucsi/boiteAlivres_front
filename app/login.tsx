@@ -1,9 +1,11 @@
 import {View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
+import {useLogin} from "@/hooks/useLogin";
 
 
 export default function Login() {
+    const {email,setEmail,password,setPassword,handleLogin, error} = useLogin()
     return (
         <KeyboardAvoidingView
             style={styles.container}

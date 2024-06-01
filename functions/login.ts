@@ -9,7 +9,7 @@ interface LoginResponse {
     success: boolean;
     user?: any;
     token?: string;
-    message?: string;
+    message?: any;
     error?: any;
 }
 
