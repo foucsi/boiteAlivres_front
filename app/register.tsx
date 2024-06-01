@@ -11,16 +11,16 @@ export default function Register() {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.inner}>
-                    <TextInput value={username} onChangeText={setUsername} autoCapitalize={"none"} placeholder="Utilisateur" style={styles.input}/>
-                    <TextInput value={email} onChangeText={setEmail}  autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
-                    <TextInput value={password} onChangeText={setPassword} autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
+                    <TextInput placeholderTextColor="#E0E0E0" value={username} onChangeText={setUsername} autoCapitalize={"none"} placeholder="Utilisateur" style={styles.input}/>
+                    <TextInput placeholderTextColor="#E0E0E0" value={email} onChangeText={setEmail}  autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
+                    <TextInput placeholderTextColor="#E0E0E0" value={password} onChangeText={setPassword} autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
                     <Text style={styles.errorText}>{error}</Text>
-                    <Button title="S'enregistrer" onPress={handleRegister} />
+                    <Button color="#E0E0E0" title="S'enregistrer" onPress={handleRegister} />
                 </View>
                 </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
-                <Text >Vous avez déja un compte ?</Text>
-                <Link href="/login" style={styles.containerEnregistrer}>Se connecter</Link>
+                <Text style={styles.textWhite} >Vous avez déja un compte ?</Text>
+                <Link href="/login" style={styles.textWhite}>Se connecter</Link>
             </View>
         </KeyboardAvoidingView>
     )
@@ -30,6 +30,7 @@ export default function Register() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor:"#294C60"
     },
     containerEnregistrer:{
         fontWeight: 'bold'
@@ -40,9 +41,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     input:{
-        height: 30,
-        borderColor: '#000000',
+        height: 40,
+        borderColor: '#E0E0E0',
         borderBottomWidth: 1,
+        color: 'white'
     },
     containerBottom:{
         padding:30,
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
     errorText:{
         color: 'red',
         fontSize: 12,
+    },
+    textWhite:{
+        color:"#E0E0E0"
     }
 })
 

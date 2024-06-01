@@ -1,9 +1,15 @@
 import {View, Text, StyleSheet} from 'react-native'
 import React, {useEffect} from 'react'
-import {Link} from "expo-router";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {router} from "expo-router"
 
 export default function Welcome() {
+
+    useEffect(() => {
+        setTimeout(()=>{
+            router.navigate("/login")
+        }, 2000)
+    }, []);
     return (
         <View style={styles.container}>
             <MaterialCommunityIcons name="bookshelf" size={64} color="white" />

@@ -10,15 +10,15 @@ export default function Login() {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.inner}>
-                    <TextInput autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
-                    <TextInput autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
-                    <Text style={styles.errorText}>error</Text>
-                    <Button title="S'enregistrer" onPress={()=>console.log("")} />
+                    <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
+                    <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
+                    <Text style={styles.errorText}></Text>
+                    <Button color="#E0E0E0" title="Se connecter" onPress={()=>console.log("")} />
                 </View>
             </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
-                <Text >Vous n'avez pas encore de compte ? ?</Text>
-                <Link href="/register" style={styles.containerEnregistrer}>S'enregistrer</Link>
+                <Text style={styles.textWhite}>Vous n'avez pas encore de compte ?</Text>
+                <Link  href="/register" style={styles.textWhite}>S'enregistrer</Link>
             </View>
         </KeyboardAvoidingView>
     )
@@ -27,6 +27,7 @@ export default function Login() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor:"#294C60"
     },
     containerEnregistrer:{
         fontWeight: 'bold'
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     },
     input:{
         height: 30,
-        borderColor: '#000000',
+        borderColor: '#E0E0E0',
         borderBottomWidth: 1,
     },
     containerBottom:{
@@ -49,5 +50,8 @@ const styles = StyleSheet.create({
     errorText:{
         color: 'red',
         fontSize: 12,
+    },
+    textWhite:{
+        color:"#E0E0E0"
     }
 })
