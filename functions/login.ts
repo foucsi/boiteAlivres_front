@@ -26,7 +26,7 @@ export const login = async(user:User):Promise<LoginResponse>=>{
         if(data.result){
             return {success:true, user:data.user, token:data.token}
         }else{
-            return {success:false, message:data.message}
+            return {success:false, message:data.error}
         }
     }catch(err){
         console.log(err)

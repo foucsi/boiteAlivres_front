@@ -14,7 +14,7 @@ export const useLogin = ()=>{
             setEmail('')
             setPassword('')
         }else {
-            console.log("Login error: ", result.message)
+            console.log("Login error: ", result)
             setError(result.message)
         }
     }
