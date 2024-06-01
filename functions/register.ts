@@ -25,9 +25,9 @@ export const register = async (user : UserData):Promise<RegisterResponse> => {
         })
         const data = await response.json()
         if(data.result){
-            return {success: true, message: data.error || data.message, token: data.token, user: data.user}
+            return {success: true,  token: data.token, user: data.user}
         }else{
-            return {success: false, message: data.error || data.message}
+            return {success: false, message: data.message}
         }
     }catch(err){
         console.log(err)

@@ -9,10 +9,12 @@ export const useLogin = ()=>{
     const handleLogin = async()=>{
         const result = await login({email,password})
         if(result.success) {
+            console.log("Login success: ", result)
             setError('')
             setEmail('')
             setPassword('')
         }else {
+            console.log("Login error: ", result.message)
             setError(result.message)
         }
     }
