@@ -1,4 +1,4 @@
-import {URL_LOGIN} from "@/constants/Url";
+import {URL_REGISTER} from "@/constants/Url";
 
 interface UserData{
     username: string;
@@ -7,7 +7,7 @@ interface UserData{
 }
 
 export const register = async (user : UserData) => {
-    const response = await fetch(URL_LOGIN, {
+    const response = await fetch(URL_REGISTER, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
