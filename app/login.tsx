@@ -12,12 +12,12 @@ export default function Login() {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.inner}>
-                    <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
-                    <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
+                    <TextInput value={email} onChangeText={setEmail} placeholderTextColor="#E0E0E0" autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
+                    <TextInput value={password} onChangeText={setPassword} placeholderTextColor="#E0E0E0" autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
                     <Text style={styles.errorText}></Text>
 
                     <View style={styles.containerBtn}>
-                        <Button color="#294C60" title="Se connecter" onPress={()=>console.log("")} />
+                        <Button color="#294C60" title="Se connecter" onPress={handleLogin} />
                     </View>
 
                 </View>
