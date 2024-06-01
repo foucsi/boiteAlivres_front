@@ -13,7 +13,11 @@ export default function Login() {
                     <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
                     <TextInput placeholderTextColor="#E0E0E0" autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
                     <Text style={styles.errorText}></Text>
-                    <Button color="#E0E0E0" title="Se connecter" onPress={()=>console.log("")} />
+
+                    <View style={styles.containerBtn}>
+                        <Button color="#294C60" title="Se connecter" onPress={()=>console.log("")} />
+                    </View>
+
                 </View>
             </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
@@ -48,10 +52,19 @@ const styles = StyleSheet.create({
         width:"80%"
     },
     errorText:{
-        color: 'red',
+        color: '#E0E0E0',
         fontSize: 12,
     },
     textWhite:{
         color:"#E0E0E0"
+    },
+    containerBtn:{
+        width:"100%",
+        backgroundColor:"#E0E0E0",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#E0E0E0",
+        borderRadius: 5,
+        padding: 5,
     }
 })
