@@ -1,58 +1,53 @@
-import {View, Text, StyleSheet, TextInput, Button} from 'react-native'
+import {View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
 
 
 export default function Login() {
     return (
-        <View style={styles.container}>
-            <View>
-                <Text>Connection</Text>
-            </View>
-
-            <View style={styles.containerInput}>
-                <TextInput  autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
-                <TextInput  autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true} placeholder="Password" style={styles.input} />
-                <Button title="Se connecter" onPress={() => {}} />
-            </View>
-
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={styles.inner}>
+                    <TextInput autoCapitalize={"none"} placeholder="Email" style={styles.input}/>
+                    <TextInput autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true}  placeholder="Mot de passe" style={styles.input} />
+                    <Text style={styles.errorText}>error</Text>
+                    <Button title="S'enregistrer" onPress={()=>console.log("")} />
+                </View>
+            </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
-                <Text >Vous n'avez pas encore de compte ?</Text>
+                <Text >Vous n'avez pas encore de compte ? ?</Text>
                 <Link href="/register" style={styles.containerEnregistrer}>S'enregistrer</Link>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
     },
     containerEnregistrer:{
         fontWeight: 'bold'
     },
-    containerInput:{
-        paddingTop:50,
-        padding: 10,
-        width:"80%",
-        height:"50%",
-        alignItems: 'flex-start',
+    inner:{
+        padding: 24,
+        flex: 1,
+        justifyContent: 'space-evenly',
     },
     input:{
-        marginBottom: 10,
-        width: '100%',
-        height: 40,
-        borderColor: 'black',
-        borderStyle: 'solid',
-        borderWidth: 1,
-        padding:4,
+        height: 30,
+        borderColor: '#000000',
+        borderBottomWidth: 1,
     },
     containerBottom:{
-        padding:10,
+        padding:30,
         alignItems:"flex-start",
         width:"80%"
+    },
+    errorText:{
+        color: 'red',
+        fontSize: 12,
     }
 })
