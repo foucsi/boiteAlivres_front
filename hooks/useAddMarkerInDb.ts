@@ -10,6 +10,7 @@ export const useAddMarkerInDb = () => {
     const addMarker = async()=>{
         const result = await addMarkerInDb(user.uniqueId, 48.8566, 2.3522, "test")
          if(result.success){
+             console.log("Add marker successfully: ", result.data)
               setMarkerDb(result.data)
          }else{
                 console.log("error add marker: ", result)
