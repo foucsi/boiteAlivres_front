@@ -7,23 +7,44 @@ import {PersistGate} from "redux-persist/integration/react";
 import {Provider} from "react-redux";
 import {configureStore, combineReducers} from "@reduxjs/toolkit";
 
+import user from "../redux/users";
+
+const reducers = combineReducers({user});
+
+const persistConfig = {
+    key: "boiteAlivres",
+    storage: AsyncStorage,
+};
+
+const store = configureStore({
+    reducer: persistReducer(persistConfig, reducers),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({serializableCheck: false}),
+});
+
+const persistor = persistStore(store);
+
 export default function RootLayout() {
   return (
-    <Stack
-        screenOptions={{
-            headerStyle: {
-                backgroundColor: '#294C60',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-                fontWeight: 'bold',
-            },
-        }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="login"/>
-        <Stack.Screen name="register" />
-        <Stack.Screen name="welcome" />
-        <Stack.Screen name="mapScreen" />
-    </Stack>
+      <Provider store={store}>
+          <PersistGate persistor={persistor}>
+            <Stack
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: '#294C60',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                }}>
+                <Stack.Screen name="index" />
+                <Stack.Screen name="login"/>
+                <Stack.Screen name="register" />
+                <Stack.Screen name="welcome" />
+                <Stack.Screen name="mapScreen" />
+            </Stack>
+          </PersistGate>
+      </Provider>
   );
 }
