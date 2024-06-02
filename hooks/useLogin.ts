@@ -14,6 +14,7 @@ export const useLogin = ()=>{
             setError('')
             setEmail('')
             setPassword('')
+            router.navigate("/mapScreen")
         }else {
             console.log("Login error: ", result)
             setError(result.message)

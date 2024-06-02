@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {register} from "@/functions/register";
+import {router} from "expo-router"
 
 export const useRegister = ()=>{
     const [username, setUsername] = useState('')
@@ -13,6 +14,7 @@ export const useRegister = ()=>{
             setEmail('')
             setPassword('')
             setUsername('')
+            router.navigate("/mapScreen")
         }else {
             setError(result.message)
         }
