@@ -4,5 +4,5 @@ import {logout} from "@/redux/users";
 export const handleLogout = async (dispatch:any, router:any)=>{
     dispatch(logout())
     await AsyncStorage.removeItem('token')
-    router.navigate("/login")
+    router.navigate("/")
 }
