@@ -24,6 +24,7 @@
     "@react-navigation/bottom-tabs": "6",
     "@react-navigation/native": "6",
     "@react-navigation/native-stack": "6",
+    "@reduxjs/toolkit": "^2.2.5",
     "cloudinary": "^2.2.0",
     "expo": "~51.0.9",
     "expo-camera": "~15.0.10",
