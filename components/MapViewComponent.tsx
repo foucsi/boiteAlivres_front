@@ -3,15 +3,18 @@ import React from 'react'
 import MapView from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
 import MarkerUser from "@/components/MarkerUser";
+import {useAddMarkerInDb} from "@/hooks/useAddMarkerInDb";
 
 export default function MapViewComponent() {
     const {location} = useGetLocationUser();
+    const {addMarker, markerDb} = useAddMarkerInDb();
     return (
-        <MapView style={styles.map}>
+        <MapView onLongPress={addMarker} style={styles.map}>
             {location && (
                 // @ts-ignore
                 <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
             )}
+
         </MapView>
     )
 }
