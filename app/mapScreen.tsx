@@ -3,27 +3,14 @@ import React, {useEffect, useState} from 'react'
 import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
 import * as Location from "expo-location"
 import {useSelector} from "react-redux";
+import {useGetLocationUser} from "@/hooks/useGetLocationUser";
 
 export default function MapScreen() {
-    const [location, setLocation] = useState(null);
+    const {location} = useGetLocationUser();
     // @ts-ignore
     const user = useSelector((state) => state.user.value);
 
-    //get location user
-    useEffect(() => {
-        (async () => {
-            const {status} = await Location.requestForegroundPermissionsAsync();
-            if (status === "granted") {
-                await Location.watchPositionAsync(
-                    {distanceInterval: 10},
-                    (locationData) => {
-                        // @ts-ignore
-                        setLocation(locationData);
-                    }
-                );
-            }
-        })();
-    }, []);
+
 
 
     return (
