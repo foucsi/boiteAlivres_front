@@ -1,5 +1,12 @@
 import { Stack } from "expo-router";
 
+//----------------- REDUX -----------------//
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {persistStore, persistReducer} from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react";
+import {Provider} from "react-redux";
+import {configureStore, combineReducers} from "@reduxjs/toolkit";
+
 export default function RootLayout() {
   return (
     <Stack
