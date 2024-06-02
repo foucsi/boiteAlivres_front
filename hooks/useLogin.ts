@@ -15,15 +15,16 @@ export const useLogin = ()=>{
     const handleLogin = async()=>{
         const result = await login({email,password})
         if(result.success) {
+            const {username,email,uniqueId,token,created_at,premium} = result.user
             // @ts-ignore
             await AsyncStorage.setItem('token',result.token)
             dispatch(loginReducer({
-                username: result.user.username,
-                email: result.user.email,
-                uniqueId: result.user.uniqueId,
-                token: result.user.token,
-                created_at: result.user.created_at,
-                premium: result.user.premium
+                username,
+                email,
+                uniqueId,
+                token,
+                created_at,
+                premium
             }))
             setError('')
             setEmail('')
