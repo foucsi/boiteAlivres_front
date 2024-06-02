@@ -10,7 +10,7 @@ export default function MapViewComponent() {
     const user = useSelector((state) => state.user.value);
     return (
         // @ts-ignore
-        <MapViewComponent provider={PROVIDER_GOOGLE} style={styles.map}>
+        <MapView style={styles.map}>
             {location && (
                 <Marker
                     coordinate={{
@@ -19,12 +19,12 @@ export default function MapViewComponent() {
                         // @ts-ignore
                         longitude: location.coords.longitude,
                     }}
-                    description={`👋 Hi ${user.username} ! `}
+                    description={`👋 Bonjour ${user.username} ! `}
                 >
                     <Image source={{uri : user.photo}} style={styles.imgMarkerUser}/>
                 </Marker>
             )}
-        </MapViewComponent>
+        </MapView>
     )
 }
 

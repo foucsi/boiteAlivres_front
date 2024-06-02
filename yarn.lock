@@ -7101,10 +7101,10 @@ react-native-helmet-async@2.0.4:
     react-fast-compare "^3.2.2"
     shallowequal "^1.1.0"
 
-react-native-maps@1.14.0:
-  version "1.14.0"
-  resolved "https://registry.npmjs.org/react-native-maps/-/react-native-maps-1.14.0.tgz"
-  integrity sha512-ai7h4UdRLGPFCguz1fI8n4sKLEh35nZXHAH4nSWyAeHGrN8K9GjICu9Xd4Q5Ok4h+WwrM6Xz5pGbF3Qm1tO6iQ==
+react-native-maps@^1.15.6:
+  version "1.15.6"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.15.6.tgz#237c67345f7b1ce934b4ae6cbb00387bdb8a5497"
+  integrity sha512-RRyjMvpMoV3249kJ9PA1JjZE/8FmYYHrHuloI/Vzkg/DjxFtJAbFnCnhg5AyS/LI5/n2riulbVl4qpiKpuO22Q==
   dependencies:
     "@types/geojson" "^7946.0.13"
 
