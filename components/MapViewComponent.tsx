@@ -1,28 +1,16 @@
-import {Image, StyleSheet} from 'react-native'
+import { StyleSheet} from 'react-native'
 import React from 'react'
-import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
-import {useSelector} from "react-redux";
+import MapView from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
+import MarkerUser from "@/components/MarkerUser";
 
 export default function MapViewComponent() {
     const {location} = useGetLocationUser();
-    // @ts-ignore
-    const user = useSelector((state) => state.user.value);
     return (
-        // @ts-ignore
         <MapView style={styles.map}>
             {location && (
-                <Marker
-                    coordinate={{
-                        // @ts-ignore
-                        latitude: location.coords.latitude,
-                        // @ts-ignore
-                        longitude: location.coords.longitude,
-                    }}
-                    description={`👋 Bonjour ${user.username} ! `}
-                >
-                    <Image source={{uri : user.photo}} style={styles.imgMarkerUser}/>
-                </Marker>
+                // @ts-ignore
+                <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
             )}
         </MapView>
     )
