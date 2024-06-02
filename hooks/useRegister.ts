@@ -3,6 +3,7 @@ import {register} from "@/functions/register";
 import {router} from "expo-router"
 import {useDispatch} from "react-redux";
 import {loginReducer} from "@/redux/users";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const useRegister = ()=>{
     const [username, setUsername] = useState('')
@@ -15,6 +16,8 @@ export const useRegister = ()=>{
     const handleRegister = async()=> {
         const result = await register({username, password, email})
         if (result.success) {
+            // @ts-ignore
+            await AsyncStorage.setItem('token', result.token)
             const {username, email, uniqueId, token, created_at, premium} = result.user
             dispatch(loginReducer({
                 username,
