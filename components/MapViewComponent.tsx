@@ -13,14 +13,13 @@ export default function MapViewComponent() {
     const {addMarker} = useAddMarkerInDb();
     const {bookSpaces} = useGetAllBookPlaces();
 
-    const [modalIsVisible, setModalIsVisible] = useState(false)
+    const [modalIsVisible, setModalIsVisible] = useState(true)
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
             <MarkerBookPlaces key={bookSpace._id} lat={bookSpace.latitude} long={bookSpace.longitude} description={bookSpace.description} img={bookSpace.icon}/>
         )
     })
-
     return (
         <MapView onLongPress={addMarker} style={styles.map}>
             {location && (
