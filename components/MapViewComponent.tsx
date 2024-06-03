@@ -21,11 +21,9 @@ export default function MapViewComponent() {
     return (
         <MapView onLongPress={addMarker} style={styles.map}>
             {location && (
-                // @ts-ignore
                 <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
             )}
             {allBooksSpaces}
-            <Marker coordinate={{latitude: 48.8566, longitude: 2.3522}}/>
         </MapView>
     )
 }
