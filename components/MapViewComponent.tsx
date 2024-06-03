@@ -14,13 +14,14 @@ export default function MapViewComponent() {
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
-            <MarkerBookPlaces key={bookSpace._id} lat={bookSpace.latitude} long={bookSpace.longitude} description={bookSpace.description}/>
+            <MarkerBookPlaces key={bookSpace._id} lat={bookSpace.latitude} long={bookSpace.longitude} description={bookSpace.description} img={bookSpace.icon}/>
         )
     })
 
     return (
         <MapView onLongPress={addMarker} style={styles.map}>
             {location && (
+                // @ts-ignore
                 <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
             )}
             {allBooksSpaces}
