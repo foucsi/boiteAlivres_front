@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 export default function ModalAddMarker({modalVisible, setModalVisible}) {
     const user = useSelector((state: any) => state.user.value)
     return (
-
         <Modal
             animationType="slide"
             transparent={true}
@@ -28,7 +27,6 @@ export default function ModalAddMarker({modalVisible, setModalVisible}) {
                 </View>
             </View>
         </Modal>
-
     );
 }
 
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 22,
+        backgroundColor: 'rgba(0,0,0,0.5)'
     },
     modalView: {
         margin: 20,

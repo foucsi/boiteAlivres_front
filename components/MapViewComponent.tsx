@@ -26,7 +26,7 @@ export default function MapViewComponent() {
                     <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
                 )}
                 {allBooksSpaces}
-                <View style={styles.centeredView}>
+                <View>
                     {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
                 </View>
 
@@ -44,10 +44,4 @@ const styles = StyleSheet.create({
         width:60,
         borderRadius: 40,
     },
-    centeredView: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
-    }
 })
