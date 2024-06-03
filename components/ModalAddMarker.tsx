@@ -1,30 +1,31 @@
-import {View, Text, StyleSheet, Modal, Pressable, Alert} from 'react-native'
+import {View, Text, StyleSheet, Modal, Pressable, Alert, TouchableOpacity} from 'react-native'
 import React from 'react'
+import {useSelector} from "react-redux";
+import { AntDesign } from '@expo/vector-icons';
 
 // @ts-ignore
 export default function ModalAddMarker({modalVisible, setModalVisible}) {
+    const user = useSelector((state: any) => state.user.value)
     return (
         <View style={styles.centeredView}>
             <Modal
                 animationType="slide"
                 transparent={true}
                 visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
-                    setModalVisible(!modalVisible);
-                }}>
-                <View style={styles.centeredView}>
+                // onRequestClose={() => {
+                //     Alert.alert('Modal has been closed.');
+                //     setModalVisible(!modalVisible);
+                // }}>
+            >
                     <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Hello World!</Text>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}>
-                            <Text style={styles.textStyle}>Hide Modal</Text>
-                        </Pressable>
+                        <TouchableOpacity>
+                            <Text>test</Text>
+                        </TouchableOpacity>
+                        <Text>Merci Beaucoup {user.username} !
+                            Votre contribution a été soumise avec succès et est en attente de modération. Merci de nous aider à enrichir notre communauté de partage de livres !
+                            Un modérateur validera votre ajout sous 24 heures</Text>
                     </View>
-                </View>
             </Modal>
-
         </View>
     )
 }
@@ -51,25 +52,5 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 4,
         elevation: 5,
-    },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-    },
-    buttonOpen: {
-        backgroundColor: '#F194FF',
-    },
-    buttonClose: {
-        backgroundColor: '#2196F3',
-    },
-    textStyle: {
-        color: 'black',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: 'center',
     },
 });

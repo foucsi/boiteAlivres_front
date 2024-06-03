@@ -10,10 +10,9 @@ import ModalAddMarker from "@/components/ModalAddMarker";
 
 export default function MapViewComponent() {
     const {location} = useGetLocationUser();
-    const {addMarker} = useAddMarkerInDb();
+    const {addMarker, modalIsVisible, setModalIsVisible} = useAddMarkerInDb();
     const {bookSpaces} = useGetAllBookPlaces();
 
-    const [modalIsVisible, setModalIsVisible] = useState(true)
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
