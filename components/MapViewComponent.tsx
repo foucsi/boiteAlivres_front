@@ -1,16 +1,19 @@
 import { StyleSheet} from 'react-native'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
 import MarkerUser from "@/components/MarkerUser";
 import {useAddMarkerInDb} from "@/hooks/useAddMarkerInDb";
 import MarkerBookPlaces from "@/components/MarkerBookPlaces";
 import {useGetAllBookPlaces} from "@/hooks/useGetAllBookPlaces";
+import ModalAddMarker from "@/components/ModalAddMarker";
 
 export default function MapViewComponent() {
     const {location} = useGetLocationUser();
     const {addMarker} = useAddMarkerInDb();
     const {bookSpaces} = useGetAllBookPlaces();
+
+    const [modalIsVisible, setModalIsVisible] = useState(false)
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
@@ -25,6 +28,7 @@ export default function MapViewComponent() {
                 <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
             )}
             {allBooksSpaces}
+            {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
         </MapView>
     )
 }
