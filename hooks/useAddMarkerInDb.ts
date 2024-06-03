@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addBookSpace} from "@/redux/bookSpaces"
 
 export const useAddMarkerInDb = () => {
-    const [markerDb, setMarkerDb] = useState([]);
+    // const [markerDb, setMarkerDb] = useState([]);
     const dispatch = useDispatch();
     // @ts-ignore
     const user = useSelector((state) => state.user.value);
@@ -12,15 +12,16 @@ export const useAddMarkerInDb = () => {
         const {latitude, longitude} = e.nativeEvent.coordinate
         e.persist()
         const result = await addMarkerInDb(user.uniqueId, latitude, longitude, "Boite A Livres")
-        console.log("NativeEvent: ", e.nativeEvent.coordinate)
+        // console.log("NativeEvent: ", e.nativeEvent.coordinate)
          if(result.success){
+             // console.log("markerDb: ", markerDb)
              // console.log("Add marker successfully: ", result.data)
-              setMarkerDb(result.data)
+             //  setMarkerDb(result.data)
               dispatch(addBookSpace(result.data))
          }else{
                 console.log("error add marker: ", result)
          }
     }
 
-    return {addMarker, markerDb};
+    return {addMarker};
 }
