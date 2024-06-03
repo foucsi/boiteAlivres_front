@@ -7,8 +7,11 @@ export const useAddMarkerInDb = () => {
 
     // @ts-ignore
     const user = useSelector((state) => state.user.value);
-    const addMarker = async()=>{
-        const result = await addMarkerInDb(user.uniqueId, 48.8566, 2.3522, "test")
+    const addMarker = async(e:any)=>{
+        const {latitude, longitude} = e.nativeEvent.coordinate
+        e.persist()
+        const result = await addMarkerInDb(user.uniqueId, latitude, longitude, "test")
+        console.log("NativeEvent: ", e.nativeEvent.coordinate)
          if(result.success){
              console.log("Add marker successfully: ", result.data)
               setMarkerDb(result.data)
