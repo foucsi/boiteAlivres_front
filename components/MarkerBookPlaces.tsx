@@ -1,4 +1,3 @@
-import { StyleSheet, Text} from 'react-native'
 import React from 'react'
 import {Marker} from "react-native-maps";
 
@@ -9,10 +8,3 @@ export default function MarkerBookPlaces({lat,long, description}) {
     )
 }
 
-const styles = StyleSheet.create({
-    imgMarkerUser:{
-        height:60,
-        width:60,
-        borderRadius: 40,
-    }
-})
