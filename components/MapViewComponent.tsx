@@ -1,4 +1,4 @@
-import { StyleSheet} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
@@ -20,25 +20,34 @@ export default function MapViewComponent() {
         )
     })
     return (
-        <MapView onLongPress={addMarker} style={styles.map}>
-            {location && (
-                // @ts-ignore
-                <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
-            )}
-            {allBooksSpaces}
-            {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
-        </MapView>
+            <MapView onLongPress={addMarker} style={styles.map}>
+                {location && (
+                    // @ts-ignore
+                    <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
+                )}
+                {allBooksSpaces}
+                <View style={styles.centeredView}>
+                    {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
+                </View>
+
+            </MapView>
     )
 }
 
 const styles = StyleSheet.create({
     map:{
-        width: '100%',
         height: '100%',
+        width: '100%',
     },
     imgMarkerUser:{
         height:60,
         width:60,
         borderRadius: 40,
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22,
     }
 })
