@@ -23,7 +23,8 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                               long={bookSpace.longitude}
                               description={bookSpace.description}
                               img={bookSpace.icon}
-                              setModalVisible={setModalVisible}/>
+                              setModalVisible={setModalVisible}
+                              />
         )
     })
     return (
