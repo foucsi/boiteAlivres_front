@@ -15,6 +15,8 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const {addMarker, modalIsVisible, setModalIsVisible} = useAddMarkerInDb();
     const {bookSpaces} = useGetAllBookPlaces();
 
+    const [selectedMarker, setSelectedMarker] = useState({lat: null});
+
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
@@ -24,6 +26,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                               description={bookSpace.description}
                               img={bookSpace.icon}
                               setModalVisible={setModalVisible}
+                              setSelectedMarker={setSelectedMarker}
                               />
         )
     })
@@ -38,9 +41,8 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                     {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
                 </View>
                 <View>
-                    <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+                    <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker}/>
                 </View>
-
             </MapView>
     )
 }
