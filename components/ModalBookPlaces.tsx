@@ -1,6 +1,7 @@
 import {View, Text, Modal, Pressable, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
+
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     return (
@@ -15,7 +16,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     </View>
                 </View>
                 <View style={styles.secondView}>
-
+                    <Text>{selectedMarker.date}</Text>
                 </View>
             </View>
         </Modal>
@@ -39,8 +40,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: '70%',
-        backgroundColor: "0,0,0,0.5"
+        height: '5%',
+        backgroundColor: "white"
     },
     photo:{
         width: "100%",
