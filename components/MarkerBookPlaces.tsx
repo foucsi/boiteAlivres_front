@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 // @ts-ignore
 export default function MarkerBookPlaces({lat,long, description,img, setModalVisible}) {
     return (
-        <Marker description={description} coordinate={{latitude:lat, longitude:long}} onPress={()=> console.log("Description: ", description)}>
+        <Marker description={description} coordinate={{latitude:lat, longitude:long}} >
             <FontAwesome name={img} size={24} color="black" onPress={()=>setModalVisible(true)}/>
         </Marker>
     )
