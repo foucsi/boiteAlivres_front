@@ -8,7 +8,8 @@ import MarkerBookPlaces from "@/components/MarkerBookPlaces";
 import {useGetAllBookPlaces} from "@/hooks/useGetAllBookPlaces";
 import ModalAddMarker from "@/components/ModalAddMarker";
 
-export default function MapViewComponent() {
+// @ts-ignore
+export default function MapViewComponent({setModalVisible}) {
     const {location} = useGetLocationUser();
     const {addMarker, modalIsVisible, setModalIsVisible} = useAddMarkerInDb();
     const {bookSpaces} = useGetAllBookPlaces();
@@ -16,7 +17,7 @@ export default function MapViewComponent() {
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
-            <MarkerBookPlaces key={bookSpace._id} lat={bookSpace.latitude} long={bookSpace.longitude} description={bookSpace.description} img={bookSpace.icon}/>
+            <MarkerBookPlaces key={bookSpace._id} lat={bookSpace.latitude} long={bookSpace.longitude} description={bookSpace.description} img={bookSpace.icon} setModalVisible={setModalVisible}/>
         )
     })
     return (
