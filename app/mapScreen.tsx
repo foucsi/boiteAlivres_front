@@ -7,10 +7,7 @@ export default function MapScreen() {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <View style={styles.container}>
-            <MapViewComponent setModalVisible={setModalVisible}/>
-            <View>
-                <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible}/>
-            </View>
+            <MapViewComponent setModalVisible={setModalVisible} modalVisible={modalVisible}/>
         </View>
     )
 }
