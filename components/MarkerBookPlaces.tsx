@@ -4,12 +4,12 @@ import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 // @ts-ignore
-export default function MarkerBookPlaces({lat,long, description,img, setModalVisible, setSelectedMarker}) {
+export default function MarkerBookPlaces({lat,long, description,img, setModalVisible, setSelectedMarker, photo}) {
     return (
         <Marker description={description} coordinate={{latitude:lat, longitude:long}} >
             <FontAwesome name={img} size={24} color="black" onPress={()=>{
                 setModalVisible(true)
-                setSelectedMarker({lat:lat})
+                setSelectedMarker({lat:lat, long:long, photo:photo})
             }}/>
         </Marker>
     )
