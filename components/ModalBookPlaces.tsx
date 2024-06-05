@@ -1,5 +1,6 @@
 import {View, Text, Modal, Pressable, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React from 'react'
+import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import moment from "moment";
 import { MaterialIcons } from '@expo/vector-icons';
@@ -15,6 +16,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     <View style={styles.containerClosed}>
                         <TouchableOpacity onPress={()=>setModalVisible(false)}>
                             <AntDesign name="closecircle" size={28} color="#F7F9F9" />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.containerUpdatePhoto}>
+                        <TouchableOpacity>
+                            <FontAwesome name="photo" size={28} color="#F7F9F9" />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -77,6 +83,12 @@ const styles = StyleSheet.create({
         right: 0,
         width: 30,
         left:10,
+    },
+    containerUpdatePhoto:{
+        position: 'absolute',
+        bottom:10,
+        right: 10,
+        width: 30,
     },
     thirdView:{
         alignItems: 'center',
