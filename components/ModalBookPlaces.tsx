@@ -27,6 +27,9 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     </TouchableOpacity>
                     <Text>direction</Text>
                 </View>
+                <View style={styles.lastView}>
+                    <Text>{selectedMarker.description}</Text>
+                </View>
             </View>
         </Modal>
     )
@@ -72,6 +75,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: '100%',
         height: '10%',
+        backgroundColor: '#F7F9F9',
+        opacity: 0.9,
+        borderBottomWidth: 1,
+        borderColor: '#294C60',
+    },
+    lastView:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '55%',
         backgroundColor: '#F7F9F9',
         opacity: 0.9,
     }
