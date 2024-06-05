@@ -27,6 +27,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                               description={bookSpace.description}
                               img={bookSpace.icon}
                               photo={bookSpace.photo}
+                              photoUser={bookSpace.addedBy.photo}
                               date={bookSpace.date_added}
                               username={bookSpace.addedBy.username}
                               setModalVisible={setModalVisible}
