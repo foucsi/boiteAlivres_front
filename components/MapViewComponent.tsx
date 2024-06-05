@@ -22,7 +22,6 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
             <MarkerBookPlaces key={bookSpace._id}
-                              {...bookSpace}
                               lat={bookSpace.latitude}
                               long={bookSpace.longitude}
                               description={bookSpace.description}
