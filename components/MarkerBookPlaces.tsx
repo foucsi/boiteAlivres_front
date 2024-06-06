@@ -9,7 +9,7 @@ export default function MarkerBookPlaces({lat,long, description,img, setModalVis
     return (
         <Marker description={description} coordinate={{latitude:lat, longitude:long}} >
             <View style={styles.containerIcon}>
-                <FontAwesome name={img} size={24} color="black" onPress={()=>{
+                <FontAwesome name={img} size={24} color="#294C60" onPress={()=>{
                     setModalVisible(true)
                     setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId})
                 }}/>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 50,
         borderStyle: 'solid',
-        borderColor: 'black',
+        borderColor: '#294C60',
         borderWidth: 1,
     }
 })
