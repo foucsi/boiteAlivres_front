@@ -1,4 +1,15 @@
-import {View, Text, Modal, Pressable, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView} from 'react-native'
+import {
+    View,
+    Text,
+    Modal,
+    Pressable,
+    StyleSheet,
+    TouchableOpacity,
+    Image,
+    SafeAreaView,
+    ScrollView,
+    StatusBar
+} from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -45,11 +56,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             </TouchableOpacity>
                             <Text>direction</Text>
                         </View>
-                        <ScrollView>
-                            <View style={styles.lastView}>
-                                <Text>{selectedMarker.description}</Text>
-                            </View>
-                        </ScrollView>
+                            <ScrollView>
+                                <View style={styles.lastView}>
+                                    <Text>{selectedMarker.description}</Text>
+                                </View>
+                            </ScrollView>
                     </View>
                 </Modal>
     )
@@ -111,7 +122,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: 900,
+        height: 1000,
         backgroundColor: '#F7F9F9',
         opacity: 0.9,
     }
