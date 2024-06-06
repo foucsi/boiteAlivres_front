@@ -20,7 +20,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
     const user = useSelector((state: any) => state.user.value)
     return (
-
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
                     <View style={styles.centeredView}>
                         <View style={styles.firstView}>
@@ -56,7 +55,9 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 <View style={styles.lastView}>
                                     <Text>{selectedMarker.description}</Text>
                                 </View>
-                                <View style={styles.containerComments}></View>
+                                <View style={styles.containerComments}>
+                                    <Text>ici ajouter component commentaire</Text>
+                                </View>
                             </ScrollView>
                     </View>
                 </Modal>
