@@ -16,7 +16,6 @@ import { AntDesign } from '@expo/vector-icons';
 import moment from "moment";
 import { MaterialIcons } from '@expo/vector-icons';
 import {useSelector} from "react-redux";
-import {Scroll} from "lucide-react-native";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
