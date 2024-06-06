@@ -2,13 +2,10 @@ import {
     View,
     Text,
     Modal,
-    Pressable,
     StyleSheet,
     TouchableOpacity,
     Image,
-    SafeAreaView,
     ScrollView,
-    StatusBar
 } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
