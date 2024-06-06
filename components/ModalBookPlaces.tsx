@@ -60,6 +60,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 <View style={styles.lastView}>
                                     <Text>{selectedMarker.description}</Text>
                                 </View>
+                                <View style={styles.containerComments}></View>
                             </ScrollView>
                     </View>
                 </Modal>
@@ -69,7 +70,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.5)',
     },
     firstView: {
         position: 'relative',
@@ -119,11 +119,20 @@ const styles = StyleSheet.create({
         borderColor: '#294C60',
     },
     lastView:{
+        paddingTop:20,
+        alignItems: 'center',
+        width: '100%',
+        height: 260,
+        backgroundColor: '#F7F9F9',
+    },
+    containerComments:{
         alignItems: 'center',
         justifyContent: 'center',
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
         width: '100%',
         height: 1000,
-        backgroundColor: '#F7F9F9',
-        opacity: 0.9,
+        backgroundColor: '#CDEDF6',
+        marginTop: -100,
     }
 });
