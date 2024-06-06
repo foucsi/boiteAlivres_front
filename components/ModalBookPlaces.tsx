@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 30,
         width: '100%',
         height: 1000,
-        backgroundColor: '#CDEDF6',
+        backgroundColor: '#294C60',
         marginTop: -100,
     }
 });
