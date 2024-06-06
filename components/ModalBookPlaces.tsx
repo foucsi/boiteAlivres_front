@@ -4,10 +4,13 @@ import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import moment from "moment";
 import { MaterialIcons } from '@expo/vector-icons';
+import {useSelector} from "react-redux";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
+
+    const user = useSelector((state: any) => state.user.value)
     return (
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
             <View style={styles.centeredView}>
@@ -18,11 +21,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             <AntDesign name="closecircle" size={28} color="#F7F9F9" />
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.containerUpdatePhoto}>
+                    {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
                         <TouchableOpacity>
                             <FontAwesome name="photo" size={28} color="#F7F9F9" />
                         </TouchableOpacity>
-                    </View>
+                    </View>}
                 </View>
                 <View style={styles.secondView}>
                     <View>
