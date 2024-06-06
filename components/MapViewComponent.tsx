@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native'
+import {ScrollView, StyleSheet, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
@@ -46,6 +46,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                 <View>
                     {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
                 </View>
+
                 <View>
                     <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker}/>
                 </View>
