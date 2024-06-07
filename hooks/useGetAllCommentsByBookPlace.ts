@@ -4,6 +4,7 @@ import {getAllCommentsByBookPlace} from "@/functions/getAllCommentsByBookPlace";
 // @ts-ignore
 export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
     const [comments, setComments] = useState([])
+    const [error, setError] = useState(null)
 
     useEffect(()=>{
         const fetchAllComments = async()=>{
@@ -12,6 +13,7 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
                 setComments(result.comments)
             }else{
                 console.log(result.error)
+                setError(result.error)
             }
         }
         fetchAllComments()
