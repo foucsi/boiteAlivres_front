@@ -20,7 +20,10 @@ import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
 
-    const {comments} = useGetAllCommentsByBookPlace(selectedMarker.id)
+    const {comments, error} = useGetAllCommentsByBookPlace(selectedMarker.id)
+    if(error){
+        return <Text>{error}</Text>
+    }
 
     const user = useSelector((state: any) => state.user.value)
     return (

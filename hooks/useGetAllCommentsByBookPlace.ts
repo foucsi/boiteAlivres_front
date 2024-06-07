@@ -19,5 +19,5 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
         fetchAllComments()
     }, [bookPlaceId])
 
-    return {comments}
+    return {comments, error}
 }
