@@ -5,6 +5,7 @@ import {getAllCommentsByBookPlace} from "@/functions/getAllCommentsByBookPlace";
 export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
     const [comments, setComments] = useState([])
     const [error, setError] = useState(null)
+    const[loading, setLoading] = useState(true)
 
     useEffect(()=>{
         const fetchAllComments = async()=>{
@@ -19,5 +20,5 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
         fetchAllComments()
     }, [bookPlaceId])
 
-    return {comments, error}
+    return {comments, error, loading}
 }
