@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 import React from 'react'
 import moment from "moment";
 
@@ -11,6 +11,7 @@ export default function ContainerComments({comment, user}) {
             <Text>{comment}</Text>
             <Text>{date}</Text>
             <Text>{user.username}</Text>
+            <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
         </View>
     )
 }
