@@ -1,11 +1,16 @@
 import {View, Text, StyleSheet} from 'react-native'
 import React from 'react'
+import moment from "moment";
+
 
 // @ts-ignore
-export default function ContainerComments({comment}) {
+export default function ContainerComments({comment, user}) {
+    const date = moment(comment.date).format('DD/MM/YYYY')
     return (
         <View style={styles.container}>
             <Text>{comment}</Text>
+            <Text>{date}</Text>
+            <Text>{user.username}</Text>
         </View>
     )
 }
