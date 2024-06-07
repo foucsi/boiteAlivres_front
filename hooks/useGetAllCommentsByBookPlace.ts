@@ -10,7 +10,6 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
             const result = await getAllCommentsByBookPlace(bookPlaceId)
             if(result.success){
                 setComments(result.comments)
-                console.log(result.comments)
             }else{
                 console.log(result.error)
             }
