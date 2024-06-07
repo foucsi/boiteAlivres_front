@@ -1,10 +1,24 @@
-import {View, Text} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import React from 'react'
 
-export default function ContainerComments() {
+// @ts-ignore
+export default function ContainerComments({comment}) {
     return (
-        <View>
-            <Text>ContainerComments</Text>
+        <View style={styles.container}>
+            <Text>{comment}</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        margin: 10,
+        padding: 10,
+        backgroundColor: "#294C60",
+        borderRadius: 10
+    }
+})

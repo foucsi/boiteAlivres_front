@@ -10,7 +10,6 @@ export default function MarkerBookPlaces({lat,long, description,img, setModalVis
         <Marker description={description} coordinate={{latitude:lat, longitude:long}} >
             <View style={styles.containerIcon}>
                 <FontAwesome name={img} size={24} color="#294C60" onPress={()=>{
-                    console.log(id)
                     setModalVisible(true)
                     setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId, id:id})
                 }}/>
