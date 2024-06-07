@@ -7,16 +7,20 @@ import {
     Image,
     ScrollView,
 } from 'react-native'
-import React from 'react'
+import React, {useEffect} from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import moment from "moment";
 import { MaterialIcons } from '@expo/vector-icons';
 import {useSelector} from "react-redux";
+import ContainerComments from "@/components/ContainerComments";
+import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
+    // @ts-ignore
+    const {comments} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
     const user = useSelector((state: any) => state.user.value)
     return (
@@ -56,7 +60,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <Text>{selectedMarker.description}</Text>
                                 </View>
                                 <View style={styles.containerComments}>
-                                    <Text>ici ajouter component commentaire</Text>
+                                    {comments && comments.map((comment: any) => {
+                                        return (
+                                            <ContainerComments key={comment._id} com={comment}/>
+                                        )
+                                    })}
                                 </View>
                             </ScrollView>
                     </View>
@@ -131,5 +139,6 @@ const styles = StyleSheet.create({
         height: 1000,
         backgroundColor: '#294C60',
         marginTop: -100,
+        padding:10,
     }
 });
