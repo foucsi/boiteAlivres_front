@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import React, {useEffect} from 'react'
 import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import moment from "moment";
 import { MaterialIcons } from '@expo/vector-icons';
@@ -50,17 +51,22 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
                         </View>
                         <View style={styles.thirdView}>
-                            <View>
+                            <View style={styles.containerIcon}>
                                 <TouchableOpacity>
                                     <MaterialIcons name="assistant-direction" size={48} color="#294C60" />
                                 </TouchableOpacity>
                                 <Text>direction</Text>
                             </View>
-                            <View>
-                                <FontAwesome name="share-alt-square" size={48} color="#294C60" />
+                            <View style={styles.containerIcon}>
+                                <TouchableOpacity>
+                                    <FontAwesome name="share-alt-square" size={48} color="#294C60" />
+                                </TouchableOpacity>
                                 <Text>Partager</Text>
                             </View>
-                            <View>
+                            <View style={styles.containerIcon}>
+                                <TouchableOpacity>
+                                    <FontAwesome5 name="pen-square" size={48} color="#294C60" />
+                                </TouchableOpacity>
                                 <Text>Avis</Text>
                             </View>
 
@@ -128,13 +134,17 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         width: '100%',
         height: '10%',
         backgroundColor: '#F7F9F9',
-        opacity: 0.9,
         borderBottomWidth: 1,
         borderColor: '#294C60',
+    },
+    containerIcon:{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     lastView:{
         paddingTop:20,
