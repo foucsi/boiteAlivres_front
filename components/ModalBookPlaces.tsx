@@ -60,6 +60,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <Text>{selectedMarker.description}</Text>
                                 </View>
                                 <View style={styles.containerComments}>
+                                    <Text style={{fontWeight:"bold"}}>Moyenne : ({comments.length} Avis)</Text>
                                     {comments.map((com: any) => {
                                         return (
                                             <ContainerComments key={com._id} comment={com.comment} user={com.added_by}/>
