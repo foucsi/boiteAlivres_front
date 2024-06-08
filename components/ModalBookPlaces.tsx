@@ -50,10 +50,20 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
                         </View>
                         <View style={styles.thirdView}>
-                            <TouchableOpacity>
-                                <MaterialIcons name="assistant-direction" size={48} color="#294C60" />
-                            </TouchableOpacity>
-                            <Text>direction</Text>
+                            <View>
+                                <TouchableOpacity>
+                                    <MaterialIcons name="assistant-direction" size={48} color="#294C60" />
+                                </TouchableOpacity>
+                                <Text>direction</Text>
+                            </View>
+                            <View>
+                                <FontAwesome name="share-alt-square" size={48} color="#294C60" />
+                                <Text>Partager</Text>
+                            </View>
+                            <View>
+                                <Text>Avis</Text>
+                            </View>
+
                         </View>
                             <ScrollView>
                                 <View style={styles.lastView}>
@@ -115,6 +125,8 @@ const styles = StyleSheet.create({
         width: 30,
     },
     thirdView:{
+        display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
