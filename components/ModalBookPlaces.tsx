@@ -20,7 +20,6 @@ import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
-
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
     const user = useSelector((state: any) => state.user.value)
@@ -76,7 +75,9 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <Text>{selectedMarker.description}</Text>
                                 </View>
                                 <View style={styles.containerComments}>
-                                    <Text style={{fontWeight:"bold"}}>Moyenne : ({comments.length} Avis)</Text>
+                                    <View style={styles.moyenne}>
+                                        <Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>
+                                    </View>
                                     {comments.map((com: any) => {
                                         return (
                                             <ContainerComments key={com._id} comment={com.comment} user={com.added_by}/>
@@ -145,6 +146,14 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+    },
+    moyenne:{
+        margin: 10,
+        padding: 10,
+        borderRadius: 10,
+        borderBottomWidth: 1,
+        borderStyle: 'solid',
+        borderColor: '#EFEFEF',
     },
     lastView:{
         paddingTop:20,
