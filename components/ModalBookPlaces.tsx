@@ -7,16 +7,23 @@ import {
     Image,
     ScrollView,
 } from 'react-native'
-import React, {useEffect} from 'react'
+
+//LIBRARY
+import moment from "moment";
+
+//ICONS
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import moment from "moment";
-import { MaterialIcons } from '@expo/vector-icons';
-import {useSelector} from "react-redux";
-import ContainerComments from "@/components/ContainerComments";
-import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
 
+//COMPONENTS
+import ContainerComments from "@/components/ContainerComments";
+
+//HOOKS
+import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
+import {useSelector} from "react-redux";
+
+//import constants
 import {iconsMaterial} from "@/constants/icons";
 
 // @ts-ignore
