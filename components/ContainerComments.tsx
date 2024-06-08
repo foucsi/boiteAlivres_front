@@ -32,7 +32,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         margin: 10,
         padding: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        borderBottomWidth: 1,
+        borderStyle: 'solid',
+        borderColor: '#EFEFEF',
     },
     firstComponent:{
         display: "flex",
@@ -40,6 +43,7 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     secondComponent:{
+        paddingTop: 10,
         display: "flex",
         flexDirection: "row",
         width: "100%",
