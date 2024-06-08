@@ -8,17 +8,18 @@ export default function ContainerComments({comment, user}) {
     const date = moment(comment.date).format('DD/MM/YYYY')
     return (
         <View style={styles.container}>
-            <View>
-                <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+            <View style={styles.firstComponent}>
+                <View>
+                    <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+                </View>
+                <View>
+                    <Text>{user.username}</Text>
+                    <Text>{date}</Text>
+                </View>
             </View>
-            <View>
-                <Text>{user.username}</Text>
-                <Text>{date}</Text>
+            <View style={styles.secondComponent}>
+                <Text>{comment}</Text>
             </View>
-            <Text>{comment}</Text>
-
-
-
         </View>
     )
 }
@@ -26,11 +27,22 @@ export default function ContainerComments({comment, user}) {
 const styles = StyleSheet.create({
     container:{
         display: "flex",
-        flexDirection: "row",
+        flexDirection:"column",
         alignItems: "center",
         justifyContent: "space-between",
         margin: 10,
         padding: 10,
         borderRadius: 10
+    },
+    firstComponent:{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+    },
+    secondComponent:{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        padding:5,
     }
 })
