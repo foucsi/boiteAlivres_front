@@ -71,7 +71,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                                 <Text>Avis</Text>
                             </View>
-
                         </View>
                             <ScrollView>
                                 <View style={styles.lastView}>
