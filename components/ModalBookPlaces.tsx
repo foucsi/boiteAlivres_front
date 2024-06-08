@@ -17,10 +17,13 @@ import {useSelector} from "react-redux";
 import ContainerComments from "@/components/ContainerComments";
 import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
 
+import {iconsMaterial} from "@/constants/icons";
+
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
+
 
     const user = useSelector((state: any) => state.user.value)
     return (
