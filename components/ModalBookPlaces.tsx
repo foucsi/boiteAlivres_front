@@ -135,8 +135,17 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 30,
         width: '100%',
         height: 1000,
-        backgroundColor: '#294C60',
         marginTop: -100,
         padding:10,
+        backgroundColor: '#FEFEFC',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 1,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     }
 });

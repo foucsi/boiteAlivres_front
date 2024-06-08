@@ -8,10 +8,17 @@ export default function ContainerComments({comment, user}) {
     const date = moment(comment.date).format('DD/MM/YYYY')
     return (
         <View style={styles.container}>
+            <View>
+                <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+            </View>
+            <View>
+                <Text>{user.username}</Text>
+                <Text>{date}</Text>
+            </View>
             <Text>{comment}</Text>
-            <Text>{date}</Text>
-            <Text>{user.username}</Text>
-            <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+
+
+
         </View>
     )
 }
@@ -24,7 +31,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         margin: 10,
         padding: 10,
-        backgroundColor: "#294C60",
         borderRadius: 10
     }
 })
