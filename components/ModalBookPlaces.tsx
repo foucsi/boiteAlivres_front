@@ -28,11 +28,12 @@ import {iconsMaterial} from "@/constants/icons";
 import ContainerDescription from "@/components/ContainerDescription";
 
 // @ts-ignore
-export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
+export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
     const user = useSelector((state: any) => state.user.value)
+    //test
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
                     <View style={styles.centeredView}>
@@ -72,7 +73,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             })}
                         </View>
                             <ScrollView>
-                                <ContainerDescription selectedMarker={selectedMarker}/>
+                                <ContainerDescription selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                                 <View style={styles.containerComments}>
                                     <View style={styles.moyenne}>
                                         <Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {updateDescriptionBookPlace} from "@/functions/updateDescriptionBookPlace";
+import {useDispatch} from "react-redux";
 
 // @ts-ignore
 export const useUpdateDescriptionBookPlace = (bookPlaceId) => {
@@ -11,6 +12,7 @@ export const useUpdateDescriptionBookPlace = (bookPlaceId) => {
         const result = await updateDescriptionBookPlace(bookPlaceId, description)
         if(result.success){
             setUpdated(true)
+            setDescription(result.description)
         }else {
             console.log("error")
         }

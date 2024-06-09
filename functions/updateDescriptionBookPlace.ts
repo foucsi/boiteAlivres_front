@@ -10,7 +10,8 @@ export const updateDescriptionBookPlace = async (bookPlaceId:string, description
         })
         const data = await response.json()
         if(data.result){
-            return {success:true}
+            console.log("result", data.bookPlace.description)
+            return {success:true, description: data.bookPlace.description}
         }else {
             return {success:false, error: data.error}
         }

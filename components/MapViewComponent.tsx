@@ -8,6 +8,7 @@ import MarkerBookPlaces from "@/components/MarkerBookPlaces";
 import {useGetAllBookPlaces} from "@/hooks/useGetAllBookPlaces";
 import ModalAddMarker from "@/components/ModalAddMarker";
 import ModalBookPlaces from "@/components/ModalBookPlaces";
+import {useSelector} from "react-redux";
 
 // @ts-ignore
 export default function MapViewComponent({setModalVisible, modalVisible}) {
@@ -17,6 +18,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
 
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
+
 
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
@@ -49,7 +51,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                 </View>
 
                 <View>
-                    <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker}/>
+                    <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                 </View>
             </MapView>
     )

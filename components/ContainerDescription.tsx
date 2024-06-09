@@ -8,7 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 import {useUpdateDescriptionBookPlace} from "@/hooks/useUpdateDescriptionBookPlace";
 
 // @ts-ignore
-export default function ContainerDescription({selectedMarker}) {
+export default function ContainerDescription({selectedMarker, setSelectedMarker}) {
     const user = useSelector((state: any) => state.user.value)
     const [textInputVisible, setTextInputVisible] = useState(false)
 
@@ -22,6 +22,7 @@ export default function ContainerDescription({selectedMarker}) {
     useEffect(() => {
         if (updated) {
             setTextInputVisible(false);
+            setSelectedMarker({...selectedMarker, description: description})
         }
     }, [updated]);
 
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     containerDescription:{
         padding: 10,
         width: '100%',
-        height: "65%",
+        height: "60%",
     },
     containerUpdateDescription:{
         width: "100%",
