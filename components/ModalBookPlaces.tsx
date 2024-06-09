@@ -26,16 +26,26 @@ import {useSelector} from "react-redux";
 //import constants
 import {iconsMaterial} from "@/constants/icons";
 import ContainerDescription from "@/components/ContainerDescription";
+import {useState} from "react";
+import ModalComment from "@/components/ModalComment";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
+    const [modalCommentVisible, setModalCommentVisible] = useState(false)
+
     const user = useSelector((state: any) => state.user.value)
     //test
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
+
+                    {/* below modal visible or not comment*/}
+                    {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible}/>}
+
+
+
                     <View style={styles.centeredView}>
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
@@ -64,7 +74,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             {iconsMaterial.map((icon: any) => {
                                 return (
                                     <View style={styles.containerIcon} key={icon.name}>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={()=> {
+                                            if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}else{
+                                                icon.onPress
+                                            }
+                                        }}>
                                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
                                         </TouchableOpacity>
                                         <Text>{icon.text}</Text>
