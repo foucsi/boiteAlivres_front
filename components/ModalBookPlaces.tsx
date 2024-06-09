@@ -44,8 +44,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     {/* below modal visible or not comment*/}
                     {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
 
-
-
                     <View style={styles.centeredView}>
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
