@@ -8,7 +8,6 @@ import {FontAwesome} from "@expo/vector-icons";
 // @ts-ignore
 export default function ContainerDescription({selectedMarker}) {
     const user = useSelector((state: any) => state.user.value)
-
     const [textInputVisible, setTextInputVisible] = useState(false)
 
     const displayInput = ()=>{
@@ -19,7 +18,7 @@ export default function ContainerDescription({selectedMarker}) {
             <View style={styles.containerDescription}>
                 <Text>{selectedMarker.description}</Text>
                 {textInputVisible && <View>
-                    <TextInput style={styles.input} multiline={true} placeholder="Ecrivez votre description ici ..."/>
+                    <TextInput style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
                 </View>}
 
             </View>

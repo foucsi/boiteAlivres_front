@@ -12,7 +12,7 @@ export const useAddMarkerInDb = () => {
     const addMarker = async(e:any)=>{
         const {latitude, longitude} = e.nativeEvent.coordinate
         e.persist()
-        const result = await addMarkerInDb(user.uniqueId, latitude, longitude, "Boite A Livres")
+        const result = await addMarkerInDb(user.uniqueId, latitude, longitude, "Découvrez et partagez des livres gratuitement dans cette boîte à livres conviviale.")
         // console.log("NativeEvent: ", e.nativeEvent.coordinate)
          if(result.success){
                 setModalIsVisible(true)
