@@ -9,8 +9,9 @@ import {configureStore, combineReducers} from "@reduxjs/toolkit";
 
 import user from "../redux/users";
 import bookSpace from "../redux/bookSpaces";
+import comment from "../redux/comments";
 
-const reducers = combineReducers({user, bookSpace});
+const reducers = combineReducers({user, bookSpace, comment});
 
 const persistConfig = {
     key: "boiteAlivres",
