@@ -77,7 +77,14 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                         </View>
                             <ScrollView>
                                 <View style={styles.lastView}>
-                                    <Text>{selectedMarker.description}</Text>
+                                    <View style={styles.containerDescription}>
+                                        <Text>{selectedMarker.description}</Text>
+                                    </View>
+                                    <View>
+                                        {user.uniqueId === selectedMarker.uniqueId && <TouchableOpacity>
+                                            <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
+                                        </TouchableOpacity>}
+                                    </View>
                                 </View>
                                 <View style={styles.containerComments}>
                                     <View style={styles.moyenne}>
@@ -163,7 +170,6 @@ const styles = StyleSheet.create({
         borderColor: '#EFEFEF',
     },
     lastView:{
-        paddingTop:20,
         alignItems: 'center',
         width: '100%',
         height: 260,
@@ -184,7 +190,11 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
         elevation: 5,
+    },
+    containerDescription:{
+        padding: 10,
+        width: '100%',
+        height: "50%",
     }
 });
