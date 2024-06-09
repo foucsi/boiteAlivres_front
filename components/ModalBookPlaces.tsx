@@ -76,7 +76,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <View style={styles.containerIcon} key={icon.name}>
                                         <TouchableOpacity onPress={()=> {
                                             if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}else{
-                                                icon.onPress
+                                                icon.onPress()
                                             }
                                         }}>
                                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
