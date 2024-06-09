@@ -1,5 +1,5 @@
 export const updateDescriptionBookPlace = async (bookPlaceId:any, description:string) => {
-    const url = `http://localhost:3000/bookPlaces/${bookPlaceId}`
+    const url = `http://localhost:3000/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
     try{
         const response = await fetch(url,{
             method: 'PUT',

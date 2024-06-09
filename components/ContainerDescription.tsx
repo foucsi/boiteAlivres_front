@@ -5,14 +5,22 @@ import {useSelector} from "react-redux";
 //ICONS
 import {FontAwesome} from "@expo/vector-icons";
 import { AntDesign } from '@expo/vector-icons';
+import {useUpdateDescriptionBookPlace} from "@/hooks/useUpdateDescriptionBookPlace";
 
 // @ts-ignore
 export default function ContainerDescription({selectedMarker}) {
     const user = useSelector((state: any) => state.user.value)
     const [textInputVisible, setTextInputVisible] = useState(false)
 
+    const {updated, description, setDescription, updateDescription} = useUpdateDescriptionBookPlace(selectedMarker.id)
+
+
     const displayInput = ()=>{
         setTextInputVisible((prevState)=>!prevState)
+    }
+
+    if(updated){
+        setTextInputVisible(false)
     }
 
     return (
@@ -25,8 +33,8 @@ export default function ContainerDescription({selectedMarker}) {
                             <AntDesign name="closecircleo" size={24} color="#294C60" />
                         </TouchableOpacity>
                     </View>
-                    <TextInput style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
-                    <TouchableOpacity style={styles.button}>
+                    <TextInput value={description} onChangeText={setDescription} style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
+                    <TouchableOpacity style={styles.button} onPress={updateDescription}>
                         <Text style={styles.buttonText}>Envoyer</Text>
                     </TouchableOpacity>
                 </View>}
