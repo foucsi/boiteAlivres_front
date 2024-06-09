@@ -80,7 +80,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <View style={styles.containerDescription}>
                                         <Text>{selectedMarker.description}</Text>
                                     </View>
-                                    <View>
+                                    <View style={styles.containerUpdateDescription}>
                                         {user.uniqueId === selectedMarker.uniqueId && <TouchableOpacity>
                                             <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
                                         </TouchableOpacity>}
@@ -195,6 +195,11 @@ const styles = StyleSheet.create({
     containerDescription:{
         padding: 10,
         width: '100%',
-        height: "50%",
+        height: "45%",
+    },
+    containerUpdateDescription:{
+        width: "100%",
+        padding: 10,
+        alignItems: 'flex-end',
     }
 });
