@@ -13,8 +13,9 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
             if(result.success){
                 setComments(result.comments)
             }else{
-                console.log(result.error)
-                setError(result.error)
+                // console.log(result.error)
+                // @ts-ignore
+                setError("Impossible de charger les commentaires")
             }
         }
         fetchAllComments()

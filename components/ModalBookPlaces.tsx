@@ -31,8 +31,8 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
-    // if(error){
-    //     return <Text>{error}</Text>
+    // if(comments.length === 0){
+    //     return <Text>Pas de commentaire pour le moment</Text>
     // }
 
 
@@ -83,11 +83,13 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <View style={styles.moyenne}>
                                         <Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>
                                     </View>
-                                    {comments.map((com: any) => {
+                                    {comments.length > 0 ? comments.map((com: any) => {
                                         return (
                                             <ContainerComments key={com._id} comment={com.comment} user={com.added_by}/>
                                         )
-                                    })}
+                                    }):<View style={{padding:10}}>
+                                        <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>
+                                    </View> }
                                 </View>
                             </ScrollView>
                     </View>
