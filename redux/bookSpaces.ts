@@ -3,6 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     value:{
         bookSpaces:[],
+        description:null
     }
 }
 
@@ -16,9 +17,12 @@ export const bookSpaceSlice = createSlice({
         },
         removeBookSpace: (state) => {
             state.value.bookSpaces = []
+        },
+        updateDescription: (state, action) => {
+            state.value.description = action.payload;
         }
     }
 })
 
-export const {addBookSpace, removeBookSpace} = bookSpaceSlice.actions;
+export const {addBookSpace, removeBookSpace, updateDescription} = bookSpaceSlice.actions;
 export default bookSpaceSlice.reducer;
