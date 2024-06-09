@@ -31,6 +31,10 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
+    if(error){
+        return <Text>{error}</Text>
+    }
+
 
     const user = useSelector((state: any) => state.user.value)
     return (
