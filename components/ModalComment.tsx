@@ -1,12 +1,19 @@
 import {View, Text, Modal, TouchableOpacity, StyleSheet, TextInput} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
+import {useAddComment} from "@/hooks/useAddComment";
 
 // @ts-ignore
-export default function ModalComment({setModalCommentVisible}) {
+export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
+
+
+    // @ts-ignore
+    const {comment, setComment, newComment, success} = useAddComment(bookPlaceId)
+
     const closeModal = ()=>{
         setModalCommentVisible((prev: any) => !prev)
     }
+
     return (
         <Modal animationType="slide" transparent={true} >
             <View style={styles.modal}>
@@ -17,11 +24,12 @@ export default function ModalComment({setModalCommentVisible}) {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TextInput multiline={true} style={styles.input} placeholder="Ajouter un commentaire, max 100 caractéres..."/>
+                        <TextInput value={comment} onChangeText={setComment} multiline={true} style={styles.input} placeholder="Ajouter un commentaire, max 100 caractéres..."/>
                     </View>
                     <View>
                         <TouchableOpacity
                             style={styles.button}
+                            onPress={newComment}
                         >
                             <Text style={styles.buttonText}>Envoyer</Text>
                         </TouchableOpacity>

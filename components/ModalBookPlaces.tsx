@@ -42,7 +42,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
 
                     {/* below modal visible or not comment*/}
-                    {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible}/>}
+                    {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
 
 
 

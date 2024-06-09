@@ -6,7 +6,7 @@ export const addComment = async(uniqueId:string, bookPlaceId:string, comment:str
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ bookPlaceId, comment}),
+            body: JSON.stringify({ bookPlaceId : bookPlaceId,comment: comment}),
         })
         const data = await response.json()
         if(data.result){

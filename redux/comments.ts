@@ -10,15 +10,15 @@ export const commentsSlice = createSlice({
     name: "comment",
     initialState,
     reducers:{
-        addComment: (state, action) => {
+        addCommentReducer: (state, action) => {
             // @ts-ignore
             state.value.comments.push(action.payload);
         },
-        removeComment: (state) => {
+        removeCommentReducer: (state) => {
             state.value.comments = []
         }
     }
 })
 
-export const {addComment, removeComment} = commentsSlice.actions;
+export const {addCommentReducer, removeCommentReducer} = commentsSlice.actions;
 export default commentsSlice.reducer;

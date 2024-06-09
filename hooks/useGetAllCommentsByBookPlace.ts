@@ -8,6 +8,8 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
     const [error, setError] = useState(null)
     const[loading, setLoading] = useState(true)
 
+    const commentReducer = useSelector((state: any) => state.comment.value)
+
 
     useEffect(()=>{
         const fetchAllComments = async()=>{
@@ -20,7 +22,7 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
             }
         }
         fetchAllComments()
-    }, [bookPlaceId])
+    }, [bookPlaceId, commentReducer.comments])
 
     return {comments, error, loading}
 }
