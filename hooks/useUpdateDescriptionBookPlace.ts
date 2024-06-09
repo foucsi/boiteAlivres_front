@@ -7,12 +7,12 @@ export const useUpdateDescriptionBookPlace = (bookPlaceId) => {
     const [description, setDescription] = useState("")
 
     // @ts-ignore
-    const updateDescription = async (description) => {
+    const updateDescription = async () => {
         const result = await updateDescriptionBookPlace(bookPlaceId, description)
         if(result.success){
             setUpdated(true)
         }else {
-            console.log(result.error)
+            console.log("error")
         }
     }
     return {updated, description, setDescription, updateDescription}

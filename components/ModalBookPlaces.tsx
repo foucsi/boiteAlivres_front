@@ -32,11 +32,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
-    // if(comments.length === 0){
-    //     return <Text>Pas de commentaire pour le moment</Text>
-    // }
-
-
     const user = useSelector((state: any) => state.user.value)
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>

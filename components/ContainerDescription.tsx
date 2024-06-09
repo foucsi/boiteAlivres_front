@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useSelector} from "react-redux";
 
 //ICONS
@@ -19,9 +19,11 @@ export default function ContainerDescription({selectedMarker}) {
         setTextInputVisible((prevState)=>!prevState)
     }
 
-    if(updated){
-        setTextInputVisible(false)
-    }
+    useEffect(() => {
+        if (updated) {
+            setTextInputVisible(false);
+        }
+    }, [updated]);
 
     return (
         <View style={styles.container}>

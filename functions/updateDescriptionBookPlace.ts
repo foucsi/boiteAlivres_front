@@ -1,4 +1,4 @@
-export const updateDescriptionBookPlace = async (bookPlaceId:any, description:string) => {
+export const updateDescriptionBookPlace = async (bookPlaceId:string, description:string) => {
     const url = `http://localhost:3000/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
     try{
         const response = await fetch(url,{
