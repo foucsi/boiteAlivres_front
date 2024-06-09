@@ -30,23 +30,20 @@ export default function ContainerDescription({selectedMarker, setSelectedMarker}
         <View style={styles.container}>
             <View style={styles.containerDescription}>
                 <Text>{selectedMarker.description}</Text>
+                {user.uniqueId === selectedMarker.uniqueId && <TouchableOpacity onPress={displayInput}>
+                    <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
+                </TouchableOpacity>}
                 {textInputVisible && <View style={styles.containerInput}>
                     <View style={{alignItems:"flex-end"}}>
                         <TouchableOpacity onPress={displayInput}>
                             <AntDesign name="closecircleo" size={24} color="#294C60" />
                         </TouchableOpacity>
                     </View>
-                    <TextInput value={description} onChangeText={setDescription} style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
-                    <TouchableOpacity style={styles.button} onPress={updateDescription}>
-                        <Text style={styles.buttonText}>Envoyer</Text>
-                    </TouchableOpacity>
+                        <TextInput value={description} onChangeText={setDescription} style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
+                        <TouchableOpacity style={styles.button} onPress={updateDescription}>
+                            <Text style={styles.buttonText}>Envoyer</Text>
+                        </TouchableOpacity>
                 </View>}
-
-            </View>
-            <View style={styles.containerUpdateDescription}>
-                {user.uniqueId === selectedMarker.uniqueId && <TouchableOpacity onPress={displayInput}>
-                    <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
-                </TouchableOpacity>}
             </View>
         </View>
     )
@@ -80,7 +77,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     containerInput:{
-        justifyContent:"flex-end",
+        justifyContent:"center",
         height:250,
         paddingTop: 10,
         paddingBottom: 10,
