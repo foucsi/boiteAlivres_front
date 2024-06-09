@@ -17,7 +17,7 @@ export default function ModalComment({setModalCommentVisible}) {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TextInput multiline={true} style={styles.input} placeholder="Ajouter un commentaire"/>
+                        <TextInput multiline={true} style={styles.input} placeholder="Ajouter un commentaire, max 100 caractéres..."/>
                     </View>
                     <View>
                         <TouchableOpacity
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:"center",
         justifyContent:"center",
+        backgroundColor: 'rgba(0,0,0,0.5)',
     },
     modalContainer:{
         padding: 10,
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     input:{
+        fontSize: 12,
         width: '100%',
         height: 70,
         borderStyle:"solid",
