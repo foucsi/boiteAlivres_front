@@ -41,7 +41,7 @@ export default function ContainerDescription({selectedMarker, setSelectedMarker}
                             <AntDesign name="closecircleo" size={24} color="#294C60" />
                         </TouchableOpacity>
                     </View>
-                        <TextInput value={description} onChangeText={setDescription} style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ..."/>
+                        <TextInput maxLength={330} value={description} onChangeText={setDescription} style={styles.input} multiline={true} placeholder="Modifiez votre avis ici ... max 330 caractéres"/>
                         <TouchableOpacity style={styles.button} onPress={updateDescription}>
                             <Text style={styles.buttonText}>Envoyer</Text>
                         </TouchableOpacity>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
     containerInput:{
         justifyContent:"center",
-        height:250,
+        height:230,
         paddingTop: 10,
         paddingBottom: 10,
     },
