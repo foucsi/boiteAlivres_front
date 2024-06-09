@@ -25,6 +25,7 @@ import {useSelector} from "react-redux";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
+import ContainerDescription from "@/components/ContainerDescription";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker}) {
@@ -76,16 +77,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             })}
                         </View>
                             <ScrollView>
-                                <View style={styles.lastView}>
-                                    <View style={styles.containerDescription}>
-                                        <Text>{selectedMarker.description}</Text>
-                                    </View>
-                                    <View style={styles.containerUpdateDescription}>
-                                        {user.uniqueId === selectedMarker.uniqueId && <TouchableOpacity>
-                                            <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
-                                        </TouchableOpacity>}
-                                    </View>
-                                </View>
+                                <ContainerDescription selectedMarker={selectedMarker}/>
                                 <View style={styles.containerComments}>
                                     <View style={styles.moyenne}>
                                         <Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>
