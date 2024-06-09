@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
     container:{
         alignItems: 'center',
         width: '100%',
-        height: 260,
+        height: 360,
         backgroundColor: '#F7F9F9',
     },
     containerDescription:{
         padding: 10,
         width: '100%',
-        height: "45%",
+        height: "55%",
     },
     containerUpdateDescription:{
         width: "100%",

@@ -7,7 +7,7 @@ import {View, StyleSheet} from "react-native";
 // @ts-ignore
 export default function MarkerBookPlaces({lat,long, description,img, setModalVisible, setSelectedMarker, photo, date, username, photoUser, uniqueId, id}) {
     return (
-        <Marker description={description} coordinate={{latitude:lat, longitude:long}} >
+        <Marker description="Boite à livres" coordinate={{latitude:lat, longitude:long}} >
             <View style={styles.containerIcon}>
                 <FontAwesome name={img} size={24} color="#294C60" onPress={()=>{
                     setModalVisible(true)
