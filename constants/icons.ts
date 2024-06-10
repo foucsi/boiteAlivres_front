@@ -1,10 +1,13 @@
+import {handleLinking} from "@/functions/navigationMap";
+
 export const iconsMaterial=[
     {
         name: "directions",
         size: 48,
         color: "#294C60",
         text: "Direction",
-        onPress: () => console.log("Direction")
+        // @ts-ignore
+        onPress: () => handleLinking(latitude, longitude)
     },
     {
         name: "share-alt-square",
