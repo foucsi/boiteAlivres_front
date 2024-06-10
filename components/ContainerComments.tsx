@@ -1,7 +1,8 @@
-import {View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import moment from "moment";
 import {useSelector} from "react-redux";
+import { AntDesign } from '@expo/vector-icons';
 
 
 // @ts-ignore
@@ -11,19 +12,24 @@ export default function ContainerComments({comment, user}) {
     return (
         <View style={styles.container}>
             <View style={styles.firstComponent}>
-                <View>
-                    <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+                <View style={{ width:"50%", display:"flex", flexDirection:"row"}}>
+                    <View style={{paddingRight:5}}>
+                        <Image source={{uri: user.photo}} style={{width: 30, height: 30, borderRadius: 50}}/>
+                    </View>
+                    <View>
+                        <Text>{user.username}</Text>
+                        <Text>{date}</Text>
+                    </View>
                 </View>
-                <View>
-                    <Text>{user.username}</Text>
-                    <Text>{date}</Text>
+                <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
+                    {userReducer.uniqueId === user.uniqueId &&
+                        <TouchableOpacity>
+                            <AntDesign name="closecircleo" size={22} color="#294C60" />
+                        </TouchableOpacity> }
                 </View>
             </View>
             <View style={styles.secondComponent}>
                 <Text>{comment}</Text>
-            </View>
-            <View>
-                {userReducer.uniqueId === user.uniqueId && <Text>test</Text>}
             </View>
         </View>
     )
