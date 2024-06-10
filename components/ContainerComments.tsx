@@ -1,11 +1,13 @@
 import {View, Text, StyleSheet, Image} from 'react-native'
 import React from 'react'
 import moment from "moment";
+import {useSelector} from "react-redux";
 
 
 // @ts-ignore
 export default function ContainerComments({comment, user}) {
     const date = moment(comment.date).format('DD/MM/YYYY')
+    const userReducer = useSelector((state: any) => state.user.value)
     return (
         <View style={styles.container}>
             <View style={styles.firstComponent}>
@@ -19,6 +21,9 @@ export default function ContainerComments({comment, user}) {
             </View>
             <View style={styles.secondComponent}>
                 <Text>{comment}</Text>
+            </View>
+            <View>
+                {userReducer.uniqueId === user.uniqueId && <Text>test</Text>}
             </View>
         </View>
     )
