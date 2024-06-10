@@ -7,7 +7,7 @@ export const iconsMaterial=[
         color: "#294C60",
         text: "Direction",
         // @ts-ignore
-        onPress: () => handleLinking(latitude, longitude)
+        onPress: () => console.log("Direction")
     },
     {
         name: "share-alt-square",
