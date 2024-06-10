@@ -21,6 +21,9 @@ import { AntDesign } from '@expo/vector-icons';
 //COMPONENTS
 import ContainerComments from "@/components/ContainerComments";
 
+//FUNCTIONS
+import {uploadPhoto} from "@/functions/uploadPhoto";
+
 //HOOKS
 import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
 import {useSelector} from "react-redux";
@@ -56,7 +59,10 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=> {
+                                    uploadPhoto(selectedMarker.id)
+                                    console.log("selectedMarkerId:", selectedMarker.id)
+                                }}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>}
