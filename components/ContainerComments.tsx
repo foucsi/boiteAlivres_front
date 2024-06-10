@@ -1,14 +1,18 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import moment from "moment";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
+import {deleteComment} from "@/functions/deleteComment";
 
 
 // @ts-ignore
 export default function ContainerComments({comment, user}) {
     const date = moment(comment.date).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
+
+    const dispatch = useDispatch()
+
     return (
         <View style={styles.container}>
             <View style={styles.firstComponent}>
