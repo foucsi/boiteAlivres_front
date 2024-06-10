@@ -27,7 +27,7 @@ export default function ContainerComments({comment, user, id}) {
                 </View>
                 <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
                     {userReducer.uniqueId === user.uniqueId &&
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>deleteComment(userReducer.uniqueId, id, dispatch)}>
                             <AntDesign name="closecircleo" size={22} color="#294C60" />
                         </TouchableOpacity> }
                 </View>
