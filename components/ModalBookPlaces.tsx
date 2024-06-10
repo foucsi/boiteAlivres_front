@@ -11,6 +11,8 @@ import {
 //LIBRARY
 import moment from "moment";
 
+import {handleLinking} from "@/functions/navigationMap";
+
 //ICONS
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -37,6 +39,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
 
     const user = useSelector((state: any) => state.user.value)
+
     //test
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -73,8 +76,9 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 return (
                                     <View style={styles.containerIcon} key={icon.name}>
                                         <TouchableOpacity onPress={()=> {
-                                            if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}else{
-                                                icon.onPress()
+                                            if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}
+                                            else if(icon.text === "Direction"){
+                                                handleLinking(selectedMarker.lat, selectedMarker.long)
                                             }
                                         }}>
                                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
