@@ -61,7 +61,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
                                 <TouchableOpacity onPress={()=> {
                                     uploadPhoto(selectedMarker.id, dispatch)
-                                    console.log("selectedMarkerId:", selectedMarker.id)
+                                    // console.log("selectedMarkerId:", selectedMarker.id)
                                 }}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
