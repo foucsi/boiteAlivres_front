@@ -26,7 +26,7 @@ import {uploadPhoto} from "@/functions/uploadPhoto";
 
 //HOOKS
 import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
@@ -40,7 +40,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
-
+    const dispatch = useDispatch()
     const user = useSelector((state: any) => state.user.value)
 
     //test
@@ -60,7 +60,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
                                 <TouchableOpacity onPress={()=> {
-                                    uploadPhoto(selectedMarker.id)
+                                    uploadPhoto(selectedMarker.id, dispatch)
                                     console.log("selectedMarkerId:", selectedMarker.id)
                                 }}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />

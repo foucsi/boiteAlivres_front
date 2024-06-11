@@ -15,7 +15,7 @@ export const useGetAllBookPlaces = () => {
             }
         }
        fetchBookPlaces()
-    }, [bookPlace.bookSpaces, bookPlace.description])
+    }, [bookPlace.bookSpaces, bookPlace.description, bookPlace.photo])
 
     return {bookSpaces}
 }

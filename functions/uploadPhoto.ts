@@ -1,6 +1,7 @@
 import * as ImagePicker from "expo-image-picker";
+import {addPhotoReducer} from "@/redux/bookSpaces";
 
-export const uploadPhoto = async (bookPlaceId: string) => {
+export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
     const url = `http://localhost:3000/photos/uploadPhoto/${bookPlaceId}`;
     try {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -38,6 +39,7 @@ export const uploadPhoto = async (bookPlaceId: string) => {
 
             if (data.result) {
                 console.log("Photo uploaded");
+                dispatch(addPhotoReducer(data.photo));
             } else {
                 console.log("Photo not uploaded", data.error);
             }
