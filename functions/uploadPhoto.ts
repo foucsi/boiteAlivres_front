@@ -41,8 +41,7 @@ export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
             if (data.result) {
                 // console.log("Photo uploaded");
                 // console.log("data.photo:", data.bookPlace.photo)
-                dispatch(addPhotoReducer(data.bookPlace.photo));
-                await getAllBookPlaces()
+                dispatch(addPhotoReducer({photo:data.bookPlace.photo}));
             } else {
                 console.log("Photo not uploaded", data.error);
             }

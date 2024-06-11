@@ -23,7 +23,7 @@ export const bookSpaceSlice = createSlice({
             state.value.description = action.payload;
         },
         addPhotoReducer: (state, action) => {
-            state.value.photo = action.payload;
+            state.value.photo = action.payload.photo;
         }
     }
 })
