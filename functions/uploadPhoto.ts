@@ -40,7 +40,7 @@ export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
 
             if (data.result) {
                 // console.log("Photo uploaded");
-                console.log("data.photo:", data.bookPlace.photo)
+                // console.log("data.photo:", data.bookPlace.photo)
                 dispatch(addPhotoReducer(data.bookPlace.photo));
                 await getAllBookPlaces()
             } else {
