@@ -1,5 +1,5 @@
 import {ScrollView, StyleSheet, View} from 'react-native'
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
 import {useGetLocationUser} from "@/hooks/useGetLocationUser";
 import MarkerUser from "@/components/MarkerUser";
@@ -18,24 +18,22 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
-    const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
-        return (
-            <MarkerBookPlaces key={bookSpace._id}
-                              lat={bookSpace.latitude}
-                              long={bookSpace.longitude}
-                              description={bookSpace.description}
-                              img={bookSpace.icon}
-                              photo={bookSpace.photo}
-                              photoUser={bookSpace.addedBy.photo}
-                              date={bookSpace.date_added}
-                              username={bookSpace.addedBy.username}
-                              setModalVisible={setModalVisible}
-                              uniqueId={bookSpace.addedBy.uniqueId}
-                              id={bookSpace._id}
-                              setSelectedMarker={setSelectedMarker}
-                              />
-        )
-    })
+    const allBookSpaces = useMemo(() => bookSpaces.map((bookSpace: any) => (
+        <MarkerBookPlaces key={bookSpace._id}
+                          lat={bookSpace.latitude}
+                          long={bookSpace.longitude}
+                          description={bookSpace.description}
+                          img={bookSpace.icon}
+                          photo={bookSpace.photo}
+                          photoUser={bookSpace.addedBy.photo}
+                          date={bookSpace.date_added}
+                          username={bookSpace.addedBy.username}
+                          setModalVisible={setModalVisible}
+                          uniqueId={bookSpace.addedBy.uniqueId}
+                          id={bookSpace._id}
+                          setSelectedMarker={setSelectedMarker}
+        />
+    )), [bookSpaces, setModalVisible, setSelectedMarker]);
 
 
     return (
@@ -44,7 +42,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                     // @ts-ignore
                     <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
                 )}
-                {allBooksSpaces}
+                {allBookSpaces}
                 <View>
                     {modalIsVisible && <ModalAddMarker modalVisible={modalIsVisible} setModalVisible={setModalIsVisible}/>}
                 </View>
