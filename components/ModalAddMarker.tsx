@@ -18,7 +18,9 @@ export default function ModalAddMarker({modalVisible, setModalVisible}) {
                 <View style={styles.modalView}>
                     <Text style={styles.modalText}>Merci Beaucoup {user.username} !
                         Votre contribution a été soumise avec succès et est en attente de modération.
-                        Un modérateur validera votre ajout sous 24 heures.</Text>
+                        Un modérateur validera votre ajout sous 24 heures.Pensez a prendre une photo de la boite  livres
+                        pour pouvoir la mettre une fois celle-ci validée.
+                        </Text>
                     <Pressable
                         style={[styles.button, styles.buttonClose]}
                         onPress={() => setModalVisible(!modalVisible)}>
