@@ -1,7 +1,7 @@
 import * as ImagePicker from "expo-image-picker";
 import {addPhotoReducer} from "@/redux/bookSpaces";
 
-export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
+export const uploadPhoto = async (bookPlaceId: string, dispatch: any) => {
     const url = `http://localhost:3000/photos/uploadPhoto/${bookPlaceId}`;
     try {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -34,17 +34,19 @@ export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
             } catch (parseError) {
                 console.error("Failed to parse JSON:", parseError);
                 console.error("Server response was:", text);
-                return; // Exit the function if parsing fails
+                return null; // Exit the function if parsing fails
             }
 
             if (data.result) {
-                // console.log("data.photo:", data.bookPlace.photo)
-                dispatch(addPhotoReducer({photo:data.bookPlace.photo}));
+                dispatch(addPhotoReducer({photo: data.bookPlace.photo}));
+                return data.bookPlace.photo; // Return the new photo URL
             } else {
                 console.log("Photo not uploaded", data.error);
+                return null;
             }
         }
     } catch (err) {
         console.log(err);
+        return null;
     }
 };
