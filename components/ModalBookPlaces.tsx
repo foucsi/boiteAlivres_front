@@ -45,14 +45,13 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const dispatch = useDispatch()
     const user = useSelector((state: any) => state.user.value)
 
-    const handleUploadPhoto = async () => {
-        const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
-        // @ts-ignore
-        setSelectedMarker(prevState => ({
-            ...prevState,
-            photo: newPhotoUrl
-        }));
-    };
+    // const handleUploadPhoto = async () => {
+    //     const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
+    //     // @ts-ignore
+    //     setSelectedMarker({...selectedMarker,
+    //         photo: newPhotoUrl
+    //     });
+    // };
 
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -69,7 +68,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
-                                <TouchableOpacity onPress={handleUploadPhoto}>
+                                <TouchableOpacity onPress={()=>uploadPhoto(selectedMarker.id, dispatch)}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>}
