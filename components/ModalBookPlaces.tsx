@@ -31,7 +31,7 @@ import {useDispatch, useSelector} from "react-redux";
 //import constants
 import {iconsMaterial} from "@/constants/icons";
 import ContainerDescription from "@/components/ContainerDescription";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ModalComment from "@/components/ModalComment";
 
 // @ts-ignore
@@ -43,7 +43,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const dispatch = useDispatch()
     const user = useSelector((state: any) => state.user.value)
 
-    //test
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
 
