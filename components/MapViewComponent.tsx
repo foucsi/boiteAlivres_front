@@ -18,9 +18,6 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
-    useEffect(() => {
-        console.log("Update component")
-    }, [selectedMarker]);
 
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {

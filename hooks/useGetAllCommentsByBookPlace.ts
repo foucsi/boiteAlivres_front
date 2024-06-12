@@ -22,7 +22,7 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
             }
         }
         fetchAllComments()
-    }, [bookPlaceId, commentReducer.comments])
+    }, [commentReducer.comments])
 
     return {comments, error, loading}
 }

@@ -1,6 +1,5 @@
 import * as ImagePicker from "expo-image-picker";
 import {addPhotoReducer} from "@/redux/bookSpaces";
-import {getAllBookPlaces} from "@/functions/getAllBookPlaces";
 
 export const uploadPhoto = async (bookPlaceId: string, dispatch:any) => {
     const url = `http://localhost:3000/photos/uploadPhoto/${bookPlaceId}`;
