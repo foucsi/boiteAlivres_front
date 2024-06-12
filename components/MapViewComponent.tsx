@@ -18,7 +18,9 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
-
+    useEffect(() => {
+        console.log("test")
+    }, []);
 
     const allBooksSpaces = bookSpaces.map((bookSpace: any) => {
         return (
@@ -39,6 +41,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
         )
     })
 
+
     return (
             <MapView onLongPress={addMarker} style={styles.map}>
                 {location && (
@@ -51,6 +54,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                 </View>
 
                 <View>
+                    {/*@ts-ignore*/}
                     <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                 </View>
             </MapView>
