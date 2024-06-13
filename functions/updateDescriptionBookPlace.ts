@@ -8,6 +8,9 @@ export const updateDescriptionBookPlace = async (bookPlaceId:string, description
             },
             body: JSON.stringify({description:description})
         })
+        if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
+        }
         const data = await response.json()
         if(data.result){
             console.log("result", data.bookPlace.description)
