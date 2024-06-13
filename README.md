@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+# Boîte à Livres - Application Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
+**Boîte à Livres** est une application mobile conçue pour partager et découvrir des emplacements de boîtes à livres. Les utilisateurs peuvent ajouter de nouvelles boîtes à livres, voir celles qui sont à proximité, et partager leurs découvertes avec la communauté.
 
-## Get started
+## Fonctionnalités
+- **Localisation des Boîtes à Livres** : Trouvez les boîtes à livres les plus proches de votre emplacement actuel.
+- **Ajout de Nouvelles Boîtes à Livres** : Ajoutez de nouvelles boîtes à livres et partagez-les avec la communauté.
+- **Recherche** : Recherchez des boîtes à livres par ville, adresse ou nom.
+- **Favoris** : Sauvegardez vos boîtes à livres préférées pour un accès rapide.
+- **Notifications** : Recevez des notifications lorsqu'une nouvelle boîte à livres est ajoutée près de chez vous.
 
-1. Install dependencies
+## Captures d'écran
+*(Incluez ici quelques captures d'écran de l'application pour montrer son interface et ses fonctionnalités)*
 
-   ```bash
-   npm install
-   ```
+## Installation
 
-2. Start the app
+### Prérequis
+- Un appareil mobile avec Android ou iOS.
+- Connexion Internet pour télécharger et utiliser l'application.
 
-   ```bash
-    npx expo start
-   ```
+### Téléchargement et Installation
+1. Téléchargez l'application depuis [Google Play Store](#) pour Android ou [Apple App Store](#) pour iOS.
+2. Installez l'application sur votre appareil.
+3. Ouvrez l'application et créez un compte pour commencer à utiliser les fonctionnalités.
 
-In the output, you'll find options to open the app in a
+## Utilisation
+1. **S'inscrire/Se connecter** : Créez un nouveau compte ou connectez-vous avec vos identifiants existants.
+2. **Explorer** : Utilisez la carte pour explorer les boîtes à livres autour de vous.
+3. **Ajouter une Boîte à Livres** : Cliquez sur le bouton d'ajout, remplissez les informations nécessaires et soumettez.
+4. **Favoris** : Ajoutez des boîtes à livres à vos favoris pour les retrouver facilement.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Contribution
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer au projet, veuillez suivre ces étapes :
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. **Fork** le projet.
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/YourFeature`).
+3. **Commit** vos modifications (`git commit -m 'Add YourFeature'`).
+4. **Push** vers la branche (`git push origin feature/YourFeature`).
+5. Ouvrez une **Pull Request**.
 
-## Get a fresh project
+## Auteurs
+- **Julien Foucart** - *Développeur principal* - [Votre Profil LinkedIn](#) - [Votre Adresse Email](mailto:julien.foucart@example.com)
 
-When you're ready, run:
+## License
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-```bash
-npm run reset-project
-```
+## Remerciements
+- Merci à tous ceux qui ont contribué à l'application.
+- Merci à la communauté des boîtes à livres pour l'inspiration et le soutien.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+*(Vous pouvez ajouter des sections supplémentaires selon les besoins de votre projet, comme des FAQ, des liens vers la documentation, etc.)*
