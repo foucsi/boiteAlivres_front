@@ -37,7 +37,7 @@ import ModalComment from "@/components/ModalComment";
 import {getAllBookPlaces} from "@/functions/getAllBookPlaces";
 
 // @ts-ignore
-export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker, navigation}) {
+export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
