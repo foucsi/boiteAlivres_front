@@ -49,13 +49,13 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
         console.log("test")
     }, []);
 
-    // const handleUploadPhoto = async () => {
-    //     const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
-    //     // @ts-ignore
-    //     setSelectedMarker({...selectedMarker,
-    //         photo: newPhotoUrl
-    //     });
-    // };
+    const handleUploadPhoto = async () => {
+        const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
+        // @ts-ignore
+        setSelectedMarker({
+            photo: newPhotoUrl
+        });
+    };
 
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
