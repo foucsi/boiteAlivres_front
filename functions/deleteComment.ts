@@ -10,6 +10,9 @@ export const deleteComment = async(uniqueId:string,commentId:string, dispatch:an
             },
             body:JSON.stringify({commentId})
         })
+        if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
+        }
         const data = await response.json()
         if(data.result){
             dispatch(removeCommentReducer())
