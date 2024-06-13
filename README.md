@@ -15,11 +15,9 @@
 <div style="display: flex; justify-content: space-around;">
   <div style="margin: 10px;">
     <img src="screenshots/homePage.png" alt="Écran d'accueil" width="200">
-    <p style="text-align: center;">Écran d'accueil</p>
   </div>
   <div style="margin: 10px;">
     <img src="screenshots/loginPage.png" alt="Carte des boîtes à livres" width="200">
-    <p style="text-align: center;">Carte des boîtes à livres</p>
   </div>
 </div>
 
