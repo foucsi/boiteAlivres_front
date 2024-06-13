@@ -50,7 +50,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer au projet, 
 5. Ouvrez une **Pull Request**.
 
 ## Auteurs
-- **Julien Foucart** - *Développeur principal* - [Votre Profil LinkedIn](#) - [Votre Adresse Email](mailto:julien.foucart@example.com)
+- **Julien Foucart** - *Développeur principal* - [https://www.linkedin.com/in/julien-foucart-333a40251/](#) - [Votre Adresse Email](mailto:julien.foucart@example.com)
 
 ## License
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
