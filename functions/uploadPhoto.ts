@@ -39,7 +39,7 @@ export const uploadPhoto = async (bookPlaceId: string, dispatch: any) => {
 
             if (data.result) {
                 dispatch(addPhotoReducer({photo: data.bookPlace.photo}));
-                // return data.bookPlace.photo; // Return the new photo URL
+                return data.bookPlace.photo; // Return the new photo URL
             } else {
                 console.log("Photo not uploaded", data.error);
                 return null;

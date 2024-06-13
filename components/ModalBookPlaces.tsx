@@ -52,7 +52,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const handleUploadPhoto = async () => {
         const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
         // @ts-ignore
-        setSelectedMarker({
+        setSelectedMarker({...selectedMarker,
             photo: newPhotoUrl
         });
     };
@@ -72,7 +72,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
-                                <TouchableOpacity onPress={()=>uploadPhoto(selectedMarker.id, dispatch)}>
+                                <TouchableOpacity onPress={handleUploadPhoto}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>}
