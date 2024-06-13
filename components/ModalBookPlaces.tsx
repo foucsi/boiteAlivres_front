@@ -39,15 +39,11 @@ import {getAllBookPlaces} from "@/functions/getAllBookPlaces";
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
-    // const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
+    const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
     const dispatch = useDispatch()
     const user = useSelector((state: any) => state.user.value)
-
-    useEffect(() => {
-        console.log("test")
-    }, []);
 
     const handleUploadPhoto = async () => {
         const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
@@ -108,15 +104,15 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 <ContainerDescription selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                                 <View style={styles.containerComments}>
                                     <View style={styles.moyenne}>
-                                        {/*<Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>*/}
+                                        <Text style={{fontWeight:"bold", padding:5}}>Moyenne : ({comments.length} Avis)</Text>
                                     </View>
-                                    {/*{comments.length > 0 ? comments.map((com: any) => {*/}
-                                    {/*    return (*/}
-                                    {/*        <ContainerComments key={com._id} id={com._id} comment={com.comment} user={com.added_by}/>*/}
-                                    {/*    )*/}
-                                    {/*}):<View style={{padding:10}}>*/}
-                                    {/*    <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>*/}
-                                    {/*</View> }*/}
+                                    {comments.length > 0 ? comments.map((com: any) => {
+                                        return (
+                                            <ContainerComments key={com._id} id={com._id} comment={com.comment} user={com.added_by}/>
+                                        )
+                                    }):<View style={{padding:10}}>
+                                        <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>
+                                    </View> }
                                 </View>
                             </ScrollView>
                     </View>

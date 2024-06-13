@@ -1,28 +1,37 @@
-import {useEffect, useState} from "react";
-import {getAllCommentsByBookPlace} from "@/functions/getAllCommentsByBookPlace";
-import {useSelector} from "react-redux";
+import { useEffect, useState } from "react";
+import { getAllCommentsByBookPlace } from "@/functions/getAllCommentsByBookPlace";
+import { useSelector } from "react-redux";
 
-// @ts-ignore
-export const useGetAllCommentsByBookPlace = (bookPlaceId)=>{
-    const [comments, setComments] = useState([])
-    const [error, setError] = useState(null)
-    const[loading, setLoading] = useState(true)
+export const useGetAllCommentsByBookPlace = (bookPlaceId:string) => {
+    const [comments, setComments] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const commentReducer = useSelector((state: any) => state.comment.value)
+    // @ts-ignore
+    const commentReducer = useSelector((state) => state.comment.value);
 
+    useEffect(() => {
+        const fetchAllComments = async () => {
+            if (!bookPlaceId) return;
 
-    useEffect(()=>{
-        const fetchAllComments = async()=>{
-            const result = await getAllCommentsByBookPlace(bookPlaceId)
-            if(result.success){
-                setComments(result.comments)
-            }else{
+            try {
+                const result = await getAllCommentsByBookPlace(bookPlaceId);
+                if (result.success) {
+                    setComments(result.comments);
+                } else {
+                    // @ts-ignore
+                    setError("Impossible de charger les commentaires");
+                }
+            } catch (err) {
                 // @ts-ignore
-                setError("Impossible de charger les commentaires")
+                setError("Une erreur s'est produite");
+            } finally {
+                setLoading(false);
             }
-        }
-        fetchAllComments()
-    }, [commentReducer.comments])
+        };
 
-    return {comments, error, loading}
-}
+        fetchAllComments();
+    }, [bookPlaceId, commentReducer.comments]);
+
+    return { comments, error, loading };
+};
