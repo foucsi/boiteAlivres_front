@@ -13,6 +13,9 @@
 ## Captures d'écran
 *(Incluez ici quelques captures d'écran de l'application pour montrer son interface et ses fonctionnalités)*
 
+### Écran d'accueil
+![Écran d'accueil](screenshots/loginPage.png)
+
 ## Installation
 
 ### Prérequis
