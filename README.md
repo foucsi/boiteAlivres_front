@@ -11,7 +11,6 @@
 - **Notifications** : Recevez des notifications lorsqu'une nouvelle boîte à livres est ajoutée près de chez vous.
 
 ## Captures d'écran
-*(Incluez ici quelques captures d'écran de l'application pour montrer son interface et ses fonctionnalités)*
 
 ### Écran d'accueil
 <img src="screenshots/loginPage.png" alt="Écran d'accueil" width="150">
