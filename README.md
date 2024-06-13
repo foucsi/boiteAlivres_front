@@ -12,7 +12,7 @@
 
 ## Captures d'écran
 
-### Écran d'accueil
+### Écran de connection
 <img src="screenshots/loginPage.png" alt="Écran d'accueil" width="150">
 
 ## Installation
