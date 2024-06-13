@@ -12,7 +12,7 @@
 
 ## Captures d'écran
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+<div style="display: flex; justify-content: space-around;">
   <div style="margin: 10px;">
     <img src="screenshots/homePage.png" alt="Écran d'accueil" width="200">
     <p style="text-align: center;">Écran d'accueil</p>
