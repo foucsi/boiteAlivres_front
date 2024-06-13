@@ -45,6 +45,10 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const dispatch = useDispatch()
     const user = useSelector((state: any) => state.user.value)
 
+    useEffect(() => {
+        console.log("test")
+    }, []);
+
     // const handleUploadPhoto = async () => {
     //     const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
     //     // @ts-ignore
