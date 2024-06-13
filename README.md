@@ -14,7 +14,7 @@
 *(Incluez ici quelques captures d'écran de l'application pour montrer son interface et ses fonctionnalités)*
 
 ### Écran d'accueil
-![Écran d'accueil](screenshots/loginPage.png)
+<img src="screenshots/loginPage.png" alt="Écran d'accueil" width="150">
 
 ## Installation
 
