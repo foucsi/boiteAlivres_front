@@ -13,8 +13,6 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId:string) => {
     useEffect(() => {
         const fetchAllComments = async () => {
             if (!bookPlaceId) return;
-
-            try {
                 const result = await getAllCommentsByBookPlace(bookPlaceId);
                 if (result.success) {
                     setComments(result.comments);
@@ -22,12 +20,6 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId:string) => {
                     // @ts-ignore
                     setError("Impossible de charger les commentaires");
                 }
-            } catch (err) {
-                // @ts-ignore
-                setError("Une erreur s'est produite");
-            } finally {
-                setLoading(false);
-            }
         };
 
         fetchAllComments();
