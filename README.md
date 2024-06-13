@@ -12,8 +12,8 @@
 
 ## Captures d'écran
 
-### Écran de connection
-<img src="screenshots/loginPage.png" alt="Écran d'accueil" width="150">
+### Écran d'acceuil
+<img src="screenshots/homePage.png" alt="Écran d'accueil" width="150">
 
 ## Installation
 
