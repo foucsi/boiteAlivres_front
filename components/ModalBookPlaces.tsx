@@ -12,6 +12,7 @@ import {
 import moment from "moment";
 
 import {handleLinking} from "@/functions/navigationMap";
+import {shareBookPlace} from "@/functions/shareBookPlace";
 
 //ICONS
 import { FontAwesome } from '@expo/vector-icons';
@@ -91,6 +92,8 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                             if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}
                                             else if(icon.text === "Direction"){
                                                 handleLinking(selectedMarker.lat, selectedMarker.long)
+                                            }else if(icon.text === "Partager"){
+                                                shareBookPlace()
                                             }
                                         }}>
                                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
