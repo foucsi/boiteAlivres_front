@@ -10,8 +10,8 @@ export const URL_REGISTER:string = `${baseUrl}/users/register`
 // URL for get AllBookPlaces
 export const URL_GET_ALL_BOOK_PLACES:string = `${baseUrl}/bookPlaces/getAllBookPlaces`
 
-//URL add Comment
+//URL add Comment and delete
 export const URL_ADD_COMMENT =(uniqueId:string):string=>`${baseUrl}/comments/addComment/${uniqueId}`
-
+export const URL_DELETE_COMMENT =(uniqueId:string):string=>`${baseUrl}/comments/removeComment/${uniqueId}`
 //URL ADD marker in db
 export const URL_ADD_MARKER_IN_DB=(uniqueId:string):string =>`${baseUrl}/bookPlaces/addBookPlace${uniqueId}`
