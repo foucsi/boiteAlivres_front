@@ -1,3 +1,5 @@
+import {URL_GET_ALL_COMMENTS_BY_BOOK_PLACE} from "@/constants/Url";
+
 export const getAllCommentsByBookPlace = async(bookPlaceId:string)=>{
     const url = `http://localhost:3000/comments/getAllCommentsByBookPlace/${bookPlaceId}`
     try{
