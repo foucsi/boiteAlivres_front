@@ -1,5 +1,8 @@
+import {URL_UPDATE_DESCRIPTION_BOOK_PLACE} from "@/constants/Url";
+
 export const updateDescriptionBookPlace = async (bookPlaceId:string, description:string) => {
-    const url = `http://localhost:3000/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
+    // const url = `http://localhost:3000/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
+    const url = URL_UPDATE_DESCRIPTION_BOOK_PLACE(bookPlaceId)
     try{
         const response = await fetch(url,{
             method: 'PUT',
