@@ -20,3 +20,6 @@ export const URL_ADD_MARKER_IN_DB=(uniqueId:string):string =>`${baseUrl}/bookPla
 
 //URL update description bookPlace
 export const URL_UPDATE_DESCRIPTION_BOOK_PLACE =(bookPlaceId:string):string=>`${baseUrl}/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
+
+//URL UPLOAD PHOTO
+export const URL_UPLOAD_PHOTO =(bookPlaceId:string):string=>`${baseUrl}/photos/uploadPhoto/${bookPlaceId}`
