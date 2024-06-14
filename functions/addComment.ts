@@ -1,5 +1,8 @@
+import {URL_ADD_COMMENT} from "@/constants/Url";
+
 export const addComment = async(uniqueId:string, bookPlaceId:string, comment:string)=>{
-    const url=`http://localhost:3000/comments/addComment/${uniqueId}`
+    // const url=`http://localhost:3000/comments/addComment/${uniqueId}`
+    const url = URL_ADD_COMMENT(uniqueId)
     try {
         const response = await fetch(url, {
             method: 'POST',

@@ -11,4 +11,4 @@ export const URL_REGISTER:string = `${baseUrl}/users/register`
 export const URL_GET_ALL_BOOK_PLACES:string = `${baseUrl}/bookPlaces/getAllBookPlaces`
 
 //URL add Comment
-export const URL_ADD_COMMENT:string =`${baseUrl}/comments/addComment/:uniqueId`
+export const URL_ADD_COMMENT =(uniqueId:string):string=>`${baseUrl}/comments/addComment/${uniqueId}`
