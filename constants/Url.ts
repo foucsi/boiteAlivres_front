@@ -8,4 +8,7 @@ export const URL_LOGIN :string = `${baseUrl}/users/login`
 export const URL_REGISTER:string = `${baseUrl}/users/register`
 
 // URL for get AllBookPlaces
-export const URL_GET_ALL_BOOK_PLACES:string = "http://localhost:3000/bookPlaces/getAllBookPlaces"
+export const URL_GET_ALL_BOOK_PLACES:string = `${baseUrl}/bookPlaces/getAllBookPlaces`
+
+//URL add Comment
+export const URL_ADD_COMMENT:string =`${baseUrl}/comments/addComment/:uniqueId`
