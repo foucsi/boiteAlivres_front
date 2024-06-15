@@ -7,6 +7,8 @@ import {PersistGate} from "redux-persist/integration/react";
 import {Provider} from "react-redux";
 import {configureStore, combineReducers} from "@reduxjs/toolkit";
 
+import { composeWithDevTools } from "redux-devtools-extension";
+
 import user from "../redux/users";
 import bookSpace from "../redux/bookSpaces";
 import comment from "../redux/comments";
@@ -22,6 +24,7 @@ const store = configureStore({
     reducer: persistReducer(persistConfig, reducers),
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({serializableCheck: false}),
+    // enhancers: [composeWithDevTools()],
 });
 
 const persistor = persistStore(store);

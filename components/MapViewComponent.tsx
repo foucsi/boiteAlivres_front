@@ -18,6 +18,12 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
+    const user = useSelector((state: any) => state.user.value);
+
+    useEffect(() => {
+        console.log("Reducer User: ", user)
+    }, []);
+
 
     const allBookSpaces = useMemo(() => bookSpaces.map((bookSpace: any) => (
         <MarkerBookPlaces key={bookSpace._id}
