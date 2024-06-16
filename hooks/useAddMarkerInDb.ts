@@ -5,6 +5,7 @@ import {addBookSpace} from "@/redux/bookSpaces"
 
 export const useAddMarkerInDb = () => {
     const [modalIsVisible, setModalIsVisible] = useState(false)
+
     const dispatch = useDispatch();
     // @ts-ignore
     const user = useSelector((state) => state.user.value);
@@ -20,6 +21,8 @@ export const useAddMarkerInDb = () => {
             }else{
                 console.log("error add marker: ", result)
             }
+        }else{
+            console.log("Vous devez être premium pour ajouter un marqueur")
         }
 
     }
