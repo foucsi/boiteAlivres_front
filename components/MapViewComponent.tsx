@@ -21,10 +21,10 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const user = useSelector((state: any) => state.user.value);
     let premium = user.premium
 
-    useEffect(() => {
-        // console.log("Reducer User: ", user)
-        console.log("Premium: ", premium)
-    }, []);
+    // useEffect(() => {
+    //     // console.log("Reducer User: ", user)
+    //     console.log("Premium: ", premium)
+    // }, []);
 
 
     const allBookSpaces = useMemo(() => bookSpaces.map((bookSpace: any) => (
