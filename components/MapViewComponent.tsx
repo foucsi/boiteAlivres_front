@@ -46,7 +46,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
 
     return (
             <MapView onLongPress={addMarker} style={styles.map}>
-                {location && premium &&(
+                {location &&(
                     // @ts-ignore
                     <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
                 )}

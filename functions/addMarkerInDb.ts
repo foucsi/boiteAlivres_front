@@ -7,8 +7,8 @@ export const addMarkerInDb = async(uniqueId:string, latitude:number, longitude:n
         region: 'test',
         postalCode: 'test',
     }
-    const url = `http://localhost:3000/bookPlaces/addBookPlace/${uniqueId}`;
-    // const url = URL_ADD_MARKER_IN_DB(uniqueId);
+    // const url = `http://localhost:3000/bookPlaces/addBookPlace/${uniqueId}`;
+    const url = URL_ADD_MARKER_IN_DB(uniqueId);
     try{
         const response = await fetch(url, {
             method: 'POST',
