@@ -1,10 +1,15 @@
-import {View, Text} from 'react-native'
+import {View, Text, Modal, TouchableOpacity} from 'react-native'
 import React from 'react'
 
+// @ts-ignore
 export default function ModalPremium({setModalPremiumIsVisible}) {
     return (
-        <View>
-            <Text>ModalPremium</Text>
-        </View>
+        <Modal animationType="slide" transparent={true}>
+            <View>
+                <TouchableOpacity onPress={()=>setModalPremiumIsVisible(false)}>
+                    <Text>Close Modal</Text>
+                </TouchableOpacity>
+            </View>
+        </Modal>
     )
 }
