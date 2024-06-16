@@ -19,6 +19,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
     const user = useSelector((state: any) => state.user.value);
+    let premium = user.premium
 
     useEffect(() => {
         console.log("Reducer User: ", user)
@@ -45,7 +46,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
 
     return (
             <MapView onLongPress={addMarker} style={styles.map}>
-                {location && (
+                {location && premium && (
                     // @ts-ignore
                     <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
                 )}
