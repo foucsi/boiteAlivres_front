@@ -16,9 +16,6 @@ export const useAddMarkerInDb = () => {
         // console.log("NativeEvent: ", e.nativeEvent.coordinate)
          if(result.success && user.premium){
                 setModalIsVisible(true)
-             // console.log("markerDb: ", markerDb)
-             // console.log("Add marker successfully: ", result.data)
-             //  setMarkerDb(result.data)
               dispatch(addBookSpace(result.data))
          }else{
                 console.log("error add marker: ", result)
