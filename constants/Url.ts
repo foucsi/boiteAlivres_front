@@ -16,7 +16,7 @@ export const URL_DELETE_COMMENT =(uniqueId:string):string=>`${baseUrl}/comments/
 export const URL_GET_ALL_COMMENTS_BY_BOOK_PLACE =(bookPlaceId:string):string=>`${baseUrl}/comments/getAllCommentsByBookPlace/${bookPlaceId}`
 
 //URL ADD marker in db
-export const URL_ADD_MARKER_IN_DB=(uniqueId:string):string =>`${baseUrl}/bookPlaces/addBookPlace${uniqueId}`
+export const URL_ADD_MARKER_IN_DB=(uniqueId:string):string =>`${baseUrl}/bookPlaces/addBookPlace/${uniqueId}`
 
 //URL update description bookPlace
 export const URL_UPDATE_DESCRIPTION_BOOK_PLACE =(bookPlaceId:string):string=>`${baseUrl}/bookPlaces/updateDescriptionBookPlace/${bookPlaceId}`
