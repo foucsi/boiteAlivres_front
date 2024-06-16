@@ -22,7 +22,8 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     let premium = user.premium
 
     useEffect(() => {
-        console.log("Reducer User: ", user)
+        // console.log("Reducer User: ", user)
+        console.log("Premium: ", premium)
     }, []);
 
 

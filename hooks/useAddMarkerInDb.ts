@@ -14,7 +14,7 @@ export const useAddMarkerInDb = () => {
         e.persist()
         const result = await addMarkerInDb(user.uniqueId, latitude, longitude, "Découvrez et partagez des livres gratuitement dans cette boîte à livres conviviale.")
         // console.log("NativeEvent: ", e.nativeEvent.coordinate)
-         if(result.success){
+         if(result.success && user.premium){
                 setModalIsVisible(true)
              // console.log("markerDb: ", markerDb)
              // console.log("Add marker successfully: ", result.data)
