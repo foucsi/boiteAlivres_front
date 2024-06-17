@@ -1,10 +1,16 @@
 import {View, Text, Modal, TouchableOpacity, StyleSheet} from 'react-native'
 import React from 'react'
+import {router} from 'expo-router'
 
 import { AntDesign } from '@expo/vector-icons';
 
 // @ts-ignore
 export default function ModalPremium({setModalPremiumIsVisible}) {
+
+    const navigationStripeComponent = ()=>{
+        setModalPremiumIsVisible(false)
+        router.navigate("/stripePremiumAccount")
+    }
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
