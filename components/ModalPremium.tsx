@@ -23,7 +23,7 @@ export default function ModalPremium({setModalPremiumIsVisible}) {
                     <Text style={styles.mainText}>Compte Premium Requis</Text>
                     <Text style={styles.secondText}>Pour ajouter une boîte à livres, vous devez disposer d'un compte premium. Veuillez mettre à niveau votre compte pour accéder à cette fonctionnalité exclusive et profiter de nombreux autres avantages.</Text>
                     <View style={styles.containerAccount}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={navigationStripeComponent}>
                             <Text style={{color:"white"}}>Mettre à niveau mon compte</Text>
                         </TouchableOpacity>
                     </View>
