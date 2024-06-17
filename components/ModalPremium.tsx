@@ -8,7 +8,8 @@ import { AntDesign } from '@expo/vector-icons';
 export default function ModalPremium({setModalPremiumIsVisible}) {
 
     const navigationStripeComponent = ()=>{
-        setModalPremiumIsVisible(false)
+        // @ts-ignore
+        setModalPremiumIsVisible((prev)=>!prev)
         router.navigate("/stripePremiumAccount")
     }
     return (
