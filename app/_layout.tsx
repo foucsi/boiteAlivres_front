@@ -48,6 +48,7 @@ export default function RootLayout() {
                 <Stack.Screen name="register" />
                 <Stack.Screen name="welcome" />
                 <Stack.Screen name="mapScreen" />
+                <Stack.Screen name="stripePremiumAccount" />
             </Stack>
           </PersistGate>
       </Provider>
