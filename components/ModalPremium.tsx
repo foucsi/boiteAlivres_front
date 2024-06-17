@@ -9,11 +9,18 @@ export default function ModalPremium({setModalPremiumIsVisible}) {
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
                 <View style={styles.modalContainer}>
+                    <View style={styles.iconClose}>
+                        <TouchableOpacity onPress={()=>setModalPremiumIsVisible(false)}>
+                            <AntDesign name="closecircleo" size={24} color="#294C60" />
+                        </TouchableOpacity>
+                    </View>
                     <Text style={styles.mainText}>Compte Premium Requis</Text>
                     <Text style={styles.secondText}>Pour ajouter une boîte à livres, vous devez disposer d'un compte premium. Veuillez mettre à niveau votre compte pour accéder à cette fonctionnalité exclusive et profiter de nombreux autres avantages.</Text>
-                    <TouchableOpacity onPress={()=>setModalPremiumIsVisible(false)}>
-                        <Text>Close Modal</Text>
-                    </TouchableOpacity>
+                    <View style={styles.containerAccount}>
+                        <TouchableOpacity>
+                            <Text style={{color:"white"}}>Mettre à niveau mon compte</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </Modal>
@@ -29,7 +36,7 @@ const styles = StyleSheet.create({
     },
     modalContainer:{
         padding: 10,
-        height:200,
+        height:230,
         width:300,
         backgroundColor:"white",
         borderRadius: 10,
@@ -46,11 +53,23 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: '#294C60',
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: 10
     },
     secondText:{
-        fontSize: 16,
+        fontSize: 14,
         color: '#294C60',
         textAlign: 'center'
+    },
+    iconClose:{
+        alignItems: 'flex-end'
+    },
+    containerAccount:{
+        cursor: 'pointer',
+        marginTop: 10,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#294C60',
     }
 })
