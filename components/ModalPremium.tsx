@@ -7,6 +7,7 @@ export default function ModalPremium({setModalPremiumIsVisible}) {
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
                 <View style={styles.modalContainer}>
+                    <Text>Modal Premium</Text>
                     <TouchableOpacity onPress={()=>setModalPremiumIsVisible(false)}>
                         <Text>Close Modal</Text>
                     </TouchableOpacity>
