@@ -7,7 +7,8 @@ export default function ModalPremium({setModalPremiumIsVisible}) {
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
                 <View style={styles.modalContainer}>
-                    <Text>Modal Premium</Text>
+                    <Text style={styles.mainText}>Compte Premium Requis</Text>
+                    <Text style={styles.secondText}>Pour ajouter une boîte à livres, vous devez disposer d'un compte premium. Veuillez mettre à niveau votre compte pour accéder à cette fonctionnalité exclusive et profiter de nombreux autres avantages.</Text>
                     <TouchableOpacity onPress={()=>setModalPremiumIsVisible(false)}>
                         <Text>Close Modal</Text>
                     </TouchableOpacity>
@@ -39,4 +40,15 @@ const styles = StyleSheet.create({
         shadowRadius: 4.84,
         elevation: 5,
     },
+    mainText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#294C60',
+        textAlign: 'center'
+    },
+    secondText:{
+        fontSize: 16,
+        color: '#294C60',
+        textAlign: 'center'
+    }
 })
