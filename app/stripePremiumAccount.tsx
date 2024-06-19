@@ -51,6 +51,8 @@ const styles = StyleSheet.create({
         width:"50%",
     },
     btnCancel:{
+        alignItems:"center",
+        justifyContent:"center" ,
         padding:10,
         borderRadius:5,
         margin:10,
