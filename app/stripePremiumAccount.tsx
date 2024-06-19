@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native'
+import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 
@@ -10,6 +10,12 @@ export default function StripePremiumAccount() {
                 <TextInput style={styles.input} placeholder="Card Number" />
                 <TextInput style={styles.input} placeholder="MM/YY" />
                 <TextInput style={styles.input} placeholder="CVC" />
+                <View>
+                    <Text>By clicking "Submit" you agree to our terms and conditions</Text>
+                    <TouchableOpacity style={styles.btnSubmit}>
+                        <Text>Submit</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -28,5 +34,11 @@ const styles = StyleSheet.create({
         padding:10,
         margin:10,
         width:300
+    },
+    btnSubmit:{
+        backgroundColor:"black",
+        padding:10,
+        borderRadius:5,
+        margin:10
     }
 })
