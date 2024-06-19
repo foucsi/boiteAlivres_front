@@ -11,7 +11,6 @@ export default function StripePremiumAccount() {
                 <TextInput style={styles.input} placeholder="MM/YY" />
                 <TextInput style={styles.input} placeholder="CVC" />
                 <View>
-                    <Text>By clicking "Submit" you agree to our terms and conditions</Text>
                     <TouchableOpacity style={styles.btnSubmit}>
                         <Text>Submit</Text>
                     </TouchableOpacity>
