@@ -29,6 +29,7 @@
     "@react-navigation/native": "6",
     "@react-navigation/native-stack": "6",
     "@reduxjs/toolkit": "^2.2.5",
+    "@stripe/stripe-react-native": "0.37.2",
     "cloudinary": "^2.2.0",
     "expo": "~51.0.14",
     "expo-camera": "~15.0.11",
