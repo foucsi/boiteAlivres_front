@@ -12,10 +12,10 @@ export default function StripePremiumAccount() {
                 <TextInput style={styles.input} placeholder="CVC" />
                 <View style={styles.containerBtn}>
                     <TouchableOpacity style={styles.btnSubmit}>
-                        <Text style={{color:"white"}}>Submit</Text>
+                        <Text style={{color:"white"}}>PAY NOW</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnCancel}>
-                        <Text style={{color:"white"}}>Cancel</Text>
+                        <Text style={{color:"#294C60"}}>CANCEL</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -46,11 +46,13 @@ const styles = StyleSheet.create({
         padding:10,
         borderRadius:5,
         margin:10,
+        width:"50%",
     },
     btnCancel:{
-        backgroundColor:"red",
         padding:10,
         borderRadius:5,
-        margin:10
+        margin:10,
+        borderColor:"#294C60",
+        borderWidth:2,
     }
 })
