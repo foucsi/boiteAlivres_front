@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         justifyContent:"space-between"
     },
     btnSubmit:{
-        backgroundColor:"black",
+        backgroundColor:"#294C60",
         padding:10,
         borderRadius:5,
         margin:10,
