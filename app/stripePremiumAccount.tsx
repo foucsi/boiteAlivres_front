@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
         justifyContent:"space-between"
     },
     btnSubmit:{
+        alignItems:"center",
+        justifyContent:"center" ,
         backgroundColor:"#294C60",
         padding:10,
         borderRadius:5,
