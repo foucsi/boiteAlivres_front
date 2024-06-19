@@ -10,9 +10,12 @@ export default function StripePremiumAccount() {
                 <TextInput style={styles.input} placeholder="Card Number" />
                 <TextInput style={styles.input} placeholder="MM/YY" />
                 <TextInput style={styles.input} placeholder="CVC" />
-                <View>
+                <View style={styles.containerBtn}>
                     <TouchableOpacity style={styles.btnSubmit}>
                         <Text>Submit</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnCancel}>
+                        <Text>Cancel</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -34,8 +37,18 @@ const styles = StyleSheet.create({
         margin:10,
         width:300
     },
+    containerBtn:{
+        flexDirection:"row",
+        justifyContent:"space-between"
+    },
     btnSubmit:{
         backgroundColor:"black",
+        padding:10,
+        borderRadius:5,
+        margin:10
+    },
+    btnCancel:{
+        backgroundColor:"red",
         padding:10,
         borderRadius:5,
         margin:10
