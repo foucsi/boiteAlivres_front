@@ -1,4 +1,4 @@
-const SERVER_URL_PRODUCTION = 'http://192.168.1.38:3000'; // Adresse de production
+const SERVER_URL_PRODUCTION = 'http://172.20.10.3:3000'; // Adresse de production
 const SERVER_URL_DEVELOPMENT = 'http://localhost:3000'; // Adresse de développement local
 
 export const serverConfig = () => {
