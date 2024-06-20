@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import Welcome from "@/app/welcome";
-import MapScreen from "@/app/mapScreen";
+import MapScreen from "@/app/(tabs)/mapScreen";
 
 export default function Tab() {
   return (
