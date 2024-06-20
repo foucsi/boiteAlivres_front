@@ -11,6 +11,7 @@ import {maxHeight} from "@mui/system";
 //ICONS
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Settings() {
     const dispatch = useDispatch()
@@ -41,11 +42,18 @@ export default function Settings() {
                             <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/julien-foucart-333a40251/")}>
                                 <AntDesign name="linkedin-square" size={24} color="#294C60" />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/julien-foucart-333a40251/")}>
-                                <AntDesign name="linkedin-square" size={24} color="#294C60" />
+                            <TouchableOpacity style={{marginLeft:10}} onPress={() => Linking.openURL("https://github.com/foucsi")}>
+                                <AntDesign name="github" size={24} color="#294C60" />
                             </TouchableOpacity>
+                        <TouchableOpacity style={{marginLeft:10}} onPress={() => Linking.openURL("https://www.julienfoucart.fr/")}>
+                            <MaterialIcons name="http" size={28} color="#294C60" />
+                        </TouchableOpacity>
                     </View>
-
+                    <View style={{paddingTop:10}}>
+                        <Text>
+                            Merci d'utiliser Boite à livres. Votre soutien et vos commentaires sont essentiels pour moi, et je suis honoré de vous avoir parmi les utilisateurs de cette application.
+                        </Text>
+                    </View>
                 </View>
             </View>
         </View>
@@ -91,7 +99,6 @@ const styles = StyleSheet.create({
     },
     containerIconContact:{
         flexDirection: 'row',
-        justifyContent: 'space-between',
         marginTop: 10,
     }
 })
