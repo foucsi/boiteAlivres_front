@@ -24,7 +24,7 @@ export default function Login() {
             </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
                 <Text style={styles.textWhite}>Vous n'avez pas encore de compte ?</Text>
-                <Link  href="/register" style={styles.textWhite}>S'enregistrer</Link>
+                <Link href="/client/app/(tabs)/register" style={styles.textWhite}>S'enregistrer</Link>
             </View>
         </KeyboardAvoidingView>
     )
