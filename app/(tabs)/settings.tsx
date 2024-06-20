@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {router} from 'expo-router'
 
-//IMPORT FUNCTION
+//IMPORT FUNCTION handleLogout
 import {handleLogout} from "@/functions/handleLogout";
 import {useDispatch} from "react-redux";
 
