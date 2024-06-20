@@ -28,7 +28,16 @@ export default function Settings() {
                     <Text style={{color:"white"}}>Se déconnecter</Text>
                 </TouchableOpacity>
             </View>
+            <View>
+                <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>Version 1.0.0</Text>
+                <View style={styles.containerAbout}>
+                    <Text style={{fontWeight:"bold", paddingBottom:10}}>A propos du développeur</Text>
+                    <Text>Bonjour ! Je suis Julien Foucart, le développeur de Boite à livres. Passionné par la technologie, l'innovation et la littérature, je me consacre à créer des applications qui simplifient la vie quotidienne et apportent une valeur ajoutée aux utilisateurs.</Text>
 
+                    <Text style={{fontWeight:"bold", paddingBottom:10 ,marginTop:10}}>Contact</Text>
+                    <Text></Text>
+                </View>
+            </View>
         </View>
     )
 }
@@ -57,7 +66,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         marginTop: 20,
-        height:"40%",
     },
     btnLogout:{
         backgroundColor: '#294C60',
@@ -66,5 +74,9 @@ const styles = StyleSheet.create({
         width: "50%",
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    containerAbout:{
+        marginTop: 20,
+        padding: 20,
     }
 })
