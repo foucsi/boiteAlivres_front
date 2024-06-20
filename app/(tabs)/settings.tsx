@@ -6,13 +6,18 @@ import {router} from 'expo-router'
 import {handleLogout} from "@/functions/handleLogout";
 import {useDispatch, useSelector} from "react-redux";
 
-const users = useSelector(state => state.user.value)
+
+//username, email, photo, premium
 
 export default function Settings() {
     const dispatch = useDispatch()
+    // @ts-ignore
+    const users = useSelector(state => state.user.value)
     return (
         <View style={styles.container}>
-            <Text>Settings</Text>
+            <Text>{users.username}</Text>
+            <Text>{users.email}</Text>
+
             <TouchableOpacity onPress={()=>handleLogout(dispatch, router)}>
                 <Text>Logout</Text>
             </TouchableOpacity>
