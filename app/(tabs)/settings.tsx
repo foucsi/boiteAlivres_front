@@ -4,7 +4,9 @@ import {router} from 'expo-router'
 
 //IMPORT FUNCTION handleLogout
 import {handleLogout} from "@/functions/handleLogout";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+
+const users = useSelector(state => state.user.value)
 
 export default function Settings() {
     const dispatch = useDispatch()
