@@ -10,9 +10,6 @@ import {maxHeight} from "@mui/system";
 //ICONS
 import { Entypo } from '@expo/vector-icons';
 
-
-//username, email, photo, premium
-
 export default function Settings() {
     const dispatch = useDispatch()
     // @ts-ignore
