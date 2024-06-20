@@ -1,25 +1,38 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
+import { BlurView } from 'expo-blur'
+import {StyleSheet } from "react-native";
 
 export default function TabLayout() {
     return (
-        <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
+        <Tabs screenOptions={{ tabBarActiveTintColor: '#294C60', tabBarBackground: () => (
+                <BlurView tint="light" intensity={100}  style={styles.tabBar}/>
+            ), }}>
             <Tabs.Screen
                 name="mapScreen"
                 options={{
                     headerShown: false,
-                    title: 'mapScreen',
-                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+                    title: 'Carte',
+                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="map" color={color} />,
                 }}
             />
             <Tabs.Screen
                 name="settings"
                 options={{
                     headerShown: false,
-                    title: 'Settings',
+                    title: 'Paramètres',
                     tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
                 }}
             />
         </Tabs>
     );
 }
+
+const styles = StyleSheet.create({
+    tabBar: {
+        backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fond de la tabBar semi-transparent
+        borderTopWidth: 0, // Pour enlever la bordure supérieure par défaut
+        elevation: 0, // Pour enlever l'ombre sur Android
+        shadowOpacity: 0, // Pour enlever l'ombre sur iOS
+    },
+})
