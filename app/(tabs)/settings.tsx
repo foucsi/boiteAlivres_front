@@ -19,12 +19,12 @@ export default function Settings() {
             <View style={styles.settingsContainer}>
                 <Text style={styles.mainTitle}>PARAMÈTRES</Text>
                 <Image source={{uri: users.photo}} style={{width: 100, height: 100}}/>
-                <Text style={styles.text}>{users.username}</Text>
-                <Text style={styles.text}>{users.email}</Text>
+                <Text style={styles.text}>Utilisateur: {users.username}</Text>
+                <Text style={styles.text}>Email: {users.email}</Text>
             </View>
             <View style={styles.containerLogout}>
                 <TouchableOpacity style={styles.btnLogout} onPress={()=>handleLogout(dispatch, router, "/login")}>
-                    <Text>Déconnecter</Text>
+                    <Text>Se déconnecter</Text>
                 </TouchableOpacity>
             </View>
 
