@@ -18,7 +18,7 @@ export default function Settings() {
             <Text>{users.username}</Text>
             <Text>{users.email}</Text>
 
-            <TouchableOpacity onPress={()=>handleLogout(dispatch, router)}>
+            <TouchableOpacity onPress={()=>handleLogout(dispatch, router, "/login")}>
                 <Text>Logout</Text>
             </TouchableOpacity>
         </View>
