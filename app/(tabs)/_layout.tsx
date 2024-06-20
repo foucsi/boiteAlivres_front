@@ -17,7 +17,7 @@ export default function TabLayout() {
                 options={{
                     headerShown: false,
                     title: 'Settings',
-                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
                 }}
             />
         </Tabs>
