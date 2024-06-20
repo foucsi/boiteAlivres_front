@@ -25,7 +25,7 @@ export default function Settings() {
             </View>
             <View style={styles.containerLogout}>
                 <TouchableOpacity style={styles.btnLogout} onPress={()=>handleLogout(dispatch, router, "/login")}>
-                    <Text>Se déconnecter</Text>
+                    <Text style={{color:"white"}}>Se déconnecter</Text>
                 </TouchableOpacity>
             </View>
 
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         height:"40%",
     },
     btnLogout:{
-        backgroundColor: 'red',
+        backgroundColor: '#294C60',
         padding: 10,
         borderRadius: 5,
         width: "50%",
