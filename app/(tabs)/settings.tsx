@@ -1,6 +1,7 @@
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React from 'react'
 import {router} from 'expo-router'
+import {Linking} from 'react-native'
 
 //IMPORT FUNCTION handleLogout
 import {handleLogout} from "@/functions/handleLogout";
@@ -9,6 +10,7 @@ import {maxHeight} from "@mui/system";
 
 //ICONS
 import { Entypo } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Settings() {
     const dispatch = useDispatch()
@@ -31,11 +33,19 @@ export default function Settings() {
             <View>
                 <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>Version 1.0.0</Text>
                 <View style={styles.containerAbout}>
-                    <Text style={{fontWeight:"bold", paddingBottom:10}}>A propos du développeur</Text>
+                    <Text style={{fontWeight:"bold", paddingBottom:5}}>A propos du développeur</Text>
                     <Text>Bonjour ! Je suis Julien Foucart, le développeur de Boite à livres. Passionné par la technologie, l'innovation et la littérature, je me consacre à créer des applications qui simplifient la vie quotidienne et apportent une valeur ajoutée aux utilisateurs.</Text>
 
-                    <Text style={{fontWeight:"bold", paddingBottom:10 ,marginTop:10}}>Contact</Text>
-                    <Text></Text>
+                    <Text style={{fontWeight:"bold", paddingBottom:5 ,marginTop:20}}>Contact</Text>
+                    <View style={styles.containerIconContact}>
+                            <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/julien-foucart-333a40251/")}>
+                                <AntDesign name="linkedin-square" size={24} color="#294C60" />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/julien-foucart-333a40251/")}>
+                                <AntDesign name="linkedin-square" size={24} color="#294C60" />
+                            </TouchableOpacity>
+                    </View>
+
                 </View>
             </View>
         </View>
@@ -78,5 +88,10 @@ const styles = StyleSheet.create({
     containerAbout:{
         marginTop: 20,
         padding: 20,
+    },
+    containerIconContact:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 10,
     }
 })
