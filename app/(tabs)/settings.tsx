@@ -32,12 +32,12 @@ export default function Settings() {
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>Version 1.0.0</Text>
+                <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16, color:"#294C60"}}>Version 1.0.0</Text>
                 <View style={styles.containerAbout}>
-                    <Text style={{fontWeight:"bold", paddingBottom:5}}>A propos du développeur</Text>
-                    <Text>Bonjour ! Je suis Julien Foucart, le développeur de Boite à livres. Passionné par la technologie, l'innovation et la littérature, je me consacre à créer des applications qui simplifient la vie quotidienne et apportent une valeur ajoutée aux utilisateurs.</Text>
+                    <Text style={{fontWeight:"bold", paddingBottom:5, color:"#294C60"}}>A propos du développeur</Text>
+                    <Text style={{color:"#294C60"}}>Bonjour ! Je suis Julien Foucart, le développeur de Boite à livres. Passionné par la technologie, l'innovation et la littérature, je me consacre à créer des applications qui simplifient la vie quotidienne et apportent une valeur ajoutée aux utilisateurs.</Text>
 
-                    <Text style={{fontWeight:"bold", paddingBottom:5 ,marginTop:20}}>Contact</Text>
+                    <Text style={{fontWeight:"bold", paddingBottom:5 ,marginTop:20, color:"#294C60"}}>Contact</Text>
                     <View style={styles.containerIconContact}>
                             <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/julien-foucart-333a40251/")}>
                                 <AntDesign name="linkedin-square" size={24} color="#294C60" />
@@ -50,7 +50,7 @@ export default function Settings() {
                         </TouchableOpacity>
                     </View>
                     <View style={{paddingTop:10}}>
-                        <Text>
+                        <Text style={{color:"#294C60"}}>
                             Merci d'utiliser Boite à livres. Votre soutien et vos commentaires sont essentiels pour moi, et je suis honoré de vous avoir parmi les utilisateurs de cette application.
                         </Text>
                     </View>
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     text:{
         fontSize: 20,
         marginTop: 20,
+        color: '#294C60',
     },
     settingsContainer:{
         padding: 20,
