@@ -1,11 +1,15 @@
-import {View, Text, Modal, StyleSheet} from 'react-native'
+import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 
-export default function ModalFirstConnection() {
+// @ts-ignore
+export default function ModalFirstConnection({setFirstLogin}) {
     return (
         <Modal transparent={true} animationType="slide">
            <View style={styles.modal}>
             <Text>modal first connection</Text>
+               <TouchableOpacity onPress={()=>setFirstLogin(false)}>
+                   <Text>Close Modal</Text>
+               </TouchableOpacity>
            </View>
         </Modal>
     )
