@@ -10,6 +10,8 @@ import ModalAddMarker from "@/components/ModalAddMarker";
 import ModalBookPlaces from "@/components/ModalBookPlaces";
 import {useSelector} from "react-redux";
 import ModalPremium from "@/components/ModalPremium";
+import {getFirstConnection} from "@/hooks/getFisrtConnection";
+import ModalFirstConnection from "@/components/ModalFirstConnection";
 
 // @ts-ignore
 export default function MapViewComponent({setModalVisible, modalVisible}) {
@@ -18,6 +20,8 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const {bookSpaces} = useGetAllBookPlaces();
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
+
+    const {firstLogin, setFirstLogin} = getFirstConnection()
 
     const user = useSelector((state: any) => state.user.value);
     let premium = user.premium
@@ -62,6 +66,9 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                 <View>
                     {/*@ts-ignore*/}
                     <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
+                </View>
+                <View>
+                    {firstLogin && <ModalFirstConnection setFirstLogin={setFirstLogin}/>}
                 </View>
             </MapView>
     )
