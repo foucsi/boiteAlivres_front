@@ -4,8 +4,8 @@ export const firstConnection =async () => {
     const firstConnection = await AsyncStorage.getItem('firstConnection');
     if (firstConnection === null) {
         await AsyncStorage.setItem('firstConnection', 'true');
-        return true;
+        return {success: true,}
     } else {
-        return false;
+        return {success: false,}
     }
 }
