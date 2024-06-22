@@ -6,10 +6,13 @@ export default function ModalFirstConnection({setFirstLogin}) {
     return (
         <Modal transparent={true} animationType="slide">
            <View style={styles.modal}>
-            <Text>modal first connection</Text>
-               <TouchableOpacity onPress={()=>setFirstLogin(false)}>
-                   <Text>Close Modal</Text>
-               </TouchableOpacity>
+               <View style={styles.firstConnection}>
+                   <Text>modal first connection</Text>
+                   <TouchableOpacity onPress={()=>setFirstLogin(false)}>
+                       <Text>Close Modal</Text>
+                   </TouchableOpacity>
+               </View>
+
            </View>
         </Modal>
     )
@@ -21,5 +24,10 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    firstConnection:{
+        backgroundColor: "white",
+        padding: 20,
+        borderRadius: 10,
     }
 })
