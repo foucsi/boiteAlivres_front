@@ -12,7 +12,6 @@ export default function ModalFirstConnection({setFirstLogin}) {
                        <Text>Close Modal</Text>
                    </TouchableOpacity>
                </View>
-
            </View>
         </Modal>
     )
