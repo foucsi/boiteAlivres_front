@@ -6,16 +6,20 @@ import { AntDesign } from '@expo/vector-icons';
 // @ts-ignore
 export default function ModalFirstConnection({setFirstLogin}) {
     const users = useSelector((state: any) => state.user.value);
+
+    const closeModal = ()=>{
+        setFirstLogin((prev:any)=> !prev)
+    }
+
     return (
         <Modal transparent={true} animationType="slide">
            <View style={styles.modal}>
                <View style={styles.firstConnection}>
                    <View style={{alignItems:"flex-end", padding:5}}>
-                       <TouchableOpacity onPress={()=>setFirstLogin(false)}>
+                       <TouchableOpacity onPress={closeModal}>
                            <AntDesign name="closecircleo" size={24} color="black" />
                        </TouchableOpacity>
                    </View>
-
                     <View style={styles.containerText}>
                         <Text>
                             Bienvenue dans l'application de partage de boîte à livres {users.username} !
@@ -32,10 +36,7 @@ export default function ModalFirstConnection({setFirstLogin}) {
                             {"\n\n"}
                             Bon partage et bonne lecture !
                         </Text>
-
-
                     </View>
-
                </View>
            </View>
         </Modal>

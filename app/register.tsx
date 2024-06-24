@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView,Platform, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
-import {useRegister} from "@/hooks/useRegister";
+import {useRegister} from "@/helpers/hooks/useRegister";
 
 export default function Register() {
     const {username, password, email, setUsername, setPassword, setEmail, handleRegister, error} = useRegister()

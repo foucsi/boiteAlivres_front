@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getAllBookPlaces} from "@/functions/getAllBookPlaces";
+import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
 import {useSelector} from "react-redux";
 
 export const useGetAllBookPlaces = () => {

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {login} from "@/functions/login";
+import {login} from "@/helpers/functions/login";
 import {router} from "expo-router"
 import {useDispatch} from "react-redux";
 import {loginReducer} from "@/redux/users";

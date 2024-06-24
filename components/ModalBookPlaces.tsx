@@ -11,8 +11,8 @@ import {
 //LIBRARY
 import moment from "moment";
 
-import {handleLinking} from "@/functions/navigationMap";
-import {shareBookPlace} from "@/functions/shareBookPlace";
+import {handleLinking} from "@/helpers/functions/navigationMap";
+import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
 
 //ICONS
 import { FontAwesome } from '@expo/vector-icons';
@@ -23,10 +23,10 @@ import { AntDesign } from '@expo/vector-icons';
 import ContainerComments from "@/components/ContainerComments";
 
 //FUNCTIONS
-import {uploadPhoto} from "@/functions/uploadPhoto";
+import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
 
 //HOOKS
-import {useGetAllCommentsByBookPlace} from "@/hooks/useGetAllCommentsByBookPlace";
+import {useGetAllCommentsByBookPlace} from "@/helpers/hooks/useGetAllCommentsByBookPlace";
 import {useDispatch, useSelector} from "react-redux";
 
 //import constants
@@ -35,7 +35,7 @@ import ContainerDescription from "@/components/ContainerDescription";
 import {useEffect, useState} from "react";
 import ModalComment from "@/components/ModalComment";
 
-import {getAllBookPlaces} from "@/functions/getAllBookPlaces";
+import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {

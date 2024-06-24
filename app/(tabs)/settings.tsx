@@ -4,7 +4,7 @@ import {router} from 'expo-router'
 import {Linking} from 'react-native'
 
 //IMPORT FUNCTION handleLogout
-import {handleLogout} from "@/functions/handleLogout";
+import {handleLogout} from "@/helpers/functions/handleLogout";
 import {useDispatch, useSelector} from "react-redux";
 import {maxHeight} from "@mui/system";
 

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {updateDescriptionBookPlace} from "@/functions/updateDescriptionBookPlace";
+import {updateDescriptionBookPlace} from "@/helpers/functions/updateDescriptionBookPlace";
 import {useDispatch} from "react-redux";
 import {updateDescriptionReducer} from "@/redux/bookSpaces";
 

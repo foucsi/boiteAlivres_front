@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {addComment} from "@/functions/addComment";
+import {addComment} from "@/helpers/functions/addComment";
 import {useDispatch, useSelector} from "react-redux";
 import {addCommentReducer} from "@/redux/comments";
 

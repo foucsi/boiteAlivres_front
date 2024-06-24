@@ -1,7 +1,7 @@
 import {View, Text, Modal, TouchableOpacity, StyleSheet, TextInput} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
-import {useAddComment} from "@/hooks/useAddComment";
+import {useAddComment} from "@/helpers/hooks/useAddComment";
 
 // @ts-ignore
 export default function ModalComment({setModalCommentVisible, bookPlaceId}) {

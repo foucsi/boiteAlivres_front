@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 import {Link} from "expo-router";
-import {useLogin} from "@/hooks/useLogin";
+import {useLogin} from "@/helpers/hooks/useLogin";
 
 
 export default function Login() {

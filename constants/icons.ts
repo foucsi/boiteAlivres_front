@@ -1,4 +1,4 @@
-import {handleLinking} from "@/functions/navigationMap";
+import {handleLinking} from "@/helpers/functions/navigationMap";
 
 export const iconsMaterial=[
     {

@@ -3,7 +3,7 @@ import React from 'react'
 import moment from "moment";
 import {useDispatch, useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
-import {deleteComment} from "@/functions/deleteComment";
+import {deleteComment} from "@/helpers/functions/deleteComment";
 
 
 // @ts-ignore

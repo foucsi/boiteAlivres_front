@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {firstConnection} from "@/functions/firstConnection";
+import {firstConnection} from "@/helpers/functions/firstConnection";
 
 export const getFirstConnection =  () => {
     const [firstLogin, setFirstLogin] = useState(null)

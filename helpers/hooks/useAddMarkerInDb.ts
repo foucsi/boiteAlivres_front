@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {addMarkerInDb} from "@/functions/addMarkerInDb";
+import {addMarkerInDb} from "@/helpers/functions/addMarkerInDb";
 import {useDispatch, useSelector} from "react-redux";
 import {addBookSpace} from "@/redux/bookSpaces"
 

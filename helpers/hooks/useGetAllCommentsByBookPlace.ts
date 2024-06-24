@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllCommentsByBookPlace } from "@/functions/getAllCommentsByBookPlace";
+import { getAllCommentsByBookPlace } from "@/helpers/functions/getAllCommentsByBookPlace";
 import { useSelector } from "react-redux";
 
 export const useGetAllCommentsByBookPlace = (bookPlaceId:string) => {

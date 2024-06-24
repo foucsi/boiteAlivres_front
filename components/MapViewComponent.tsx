@@ -1,16 +1,16 @@
 import {ScrollView, StyleSheet, View} from 'react-native'
 import React, {useEffect, useMemo, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
-import {useGetLocationUser} from "@/hooks/useGetLocationUser";
+import {useGetLocationUser} from "@/helpers/hooks/useGetLocationUser";
 import MarkerUser from "@/components/MarkerUser";
-import {useAddMarkerInDb} from "@/hooks/useAddMarkerInDb";
+import {useAddMarkerInDb} from "@/helpers/hooks/useAddMarkerInDb";
 import MarkerBookPlaces from "@/components/MarkerBookPlaces";
-import {useGetAllBookPlaces} from "@/hooks/useGetAllBookPlaces";
+import {useGetAllBookPlaces} from "@/helpers/hooks/useGetAllBookPlaces";
 import ModalAddMarker from "@/components/ModalAddMarker";
 import ModalBookPlaces from "@/components/ModalBookPlaces";
 import {useSelector} from "react-redux";
 import ModalPremium from "@/components/ModalPremium";
-import {getFirstConnection} from "@/hooks/getFisrtConnection";
+import {getFirstConnection} from "@/helpers/hooks/getFisrtConnection";
 import ModalFirstConnection from "@/components/ModalFirstConnection";
 
 // @ts-ignore

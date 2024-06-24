@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 //ICONS
 import {FontAwesome} from "@expo/vector-icons";
 import { AntDesign } from '@expo/vector-icons';
-import {useUpdateDescriptionBookPlace} from "@/hooks/useUpdateDescriptionBookPlace";
+import {useUpdateDescriptionBookPlace} from "@/helpers/hooks/useUpdateDescriptionBookPlace";
 
 // @ts-ignore
 export default function ContainerDescription({selectedMarker, setSelectedMarker}) {

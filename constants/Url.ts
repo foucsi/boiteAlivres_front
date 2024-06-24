@@ -1,4 +1,4 @@
-import {serverConfig} from "@/functions/serverConfig";
+import {serverConfig} from "@/helpers/functions/serverConfig";
 
 /* ---------------- URL ROUTES USERS ---------------- */
 const baseUrl = serverConfig()
