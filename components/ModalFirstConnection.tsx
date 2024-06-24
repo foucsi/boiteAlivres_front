@@ -1,15 +1,24 @@
 import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React, {useMemo} from 'react'
 import {useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
+import ModalContent from "@/components/ModalContent";
+
+interface ModalFirstConnectionProps {
+    setFirstLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 // @ts-ignore
-export default function ModalFirstConnection({setFirstLogin}) {
-    const users = useSelector((state: any) => state.user.value);
+export default function ModalFirstConnection({setFirstLogin}:ModalFirstConnectionProps) {
+    const username = useSelector((state: any) => state.user.value.username);
 
     const closeModal = ()=>{
-        setFirstLogin((prev:boolean)=> !prev)
+        setFirstLogin((prev)=> !prev)
     }
+
+    const memoizedContent = useMemo(() => (
+        <ModalContent username={username} />
+    ), [username]);
 
     return (
         <Modal transparent={true} animationType="slide">
@@ -21,21 +30,7 @@ export default function ModalFirstConnection({setFirstLogin}) {
                        </TouchableOpacity>
                    </View>
                     <View style={styles.containerText}>
-                        <Text>
-                            Bienvenue dans l'application de partage de boîte à livres {users.username} !
-                            {"\n\n"}
-                            Pour ajouter une boîte à livres :
-                            {"\n\n"}
-                            1. Localisation : Effectuez une longue pression sur l'endroit de la carte où se trouve la boîte à livres.
-                            {"\n\n"}
-                            2. Validation : Votre ajout sera soumis à un modérateur pour validation sous 24h.
-                            {"\n\n"}
-                            3. Affichage : Une fois validée, la boîte à livres sera visible sur la carte avec une icône.
-                            {"\n\n"}
-                            4. Personnalisation : Vous pourrez alors ajouter une photo et personnaliser la description du lieu.
-                            {"\n\n"}
-                            Bon partage et bonne lecture !
-                        </Text>
+                        {memoizedContent}
                     </View>
                </View>
            </View>
