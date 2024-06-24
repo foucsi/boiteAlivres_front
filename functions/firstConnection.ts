@@ -8,7 +8,7 @@ export const firstConnection =async () => {
             await AsyncStorage.setItem("firstConnection", 'true');
             return { success: true };
         } else {
-            return { success: true };
+            return { success: false };
         }
     } catch (error) {
         console.error("Error accessing AsyncStorage: ", error);
