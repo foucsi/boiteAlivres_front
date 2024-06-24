@@ -1,29 +1,28 @@
 import {View, Text, StyleSheet, ScrollView} from 'react-native'
 import React from 'react'
 import {useGetAllFeatures} from "@/helpers/hooks/useGetAllFeatures";
+import Features from "@/components/Features";
 
-interface Features{
+interface FeaturesUser{
     _id: string,
     feature: string
-
+    feat: any
 }
 
 
 export default function Notification() {
 
     const {features} = useGetAllFeatures()
-    const allFeatures= features.map((feat:Features)=>{
-        return <View key={feat._id}>
-                <Text>{feat.feature}</Text>
-            </View>
-    })
 
     return (
         <View style={styles.container}>
             <ScrollView>
                 <Text style={styles.mainTitle}>Fonctionnalités à venir</Text>
                 <View style={styles.containerFeatures}>
-                    {allFeatures}
+                    {features.map((feature:FeaturesUser) =>{
+                        // @ts-ignore
+                        return <Features key={feature._id} feat={feature}/>
+                    })}
                 </View>
             </ScrollView>
 
