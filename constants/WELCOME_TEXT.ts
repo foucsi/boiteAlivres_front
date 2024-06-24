@@ -1,5 +1,5 @@
 export const WELCOME_TEXT = (username: string) => `
-    Bienvenue dans l'application de partage de boîte à livres ${username} !
+   Bienvenue dans l'application de partage de boîte à livres ${username} !
     
     Pour ajouter une boîte à livres :
     
