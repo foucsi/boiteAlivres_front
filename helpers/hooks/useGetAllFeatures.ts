@@ -14,7 +14,7 @@ export const useGetAllFeatures = () => {
             }
         }
          fetchFeatures()
-    }, [features])
+    }, [])
 
     return {features}
 }
