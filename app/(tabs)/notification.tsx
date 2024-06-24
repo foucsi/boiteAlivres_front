@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, ScrollView} from 'react-native'
 import React from 'react'
 
 
@@ -6,7 +6,10 @@ export default function Notification() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.mainTitle}>Fonctionnalités à venir</Text>
+            <ScrollView>
+                <Text style={styles.mainTitle}>Fonctionnalités à venir</Text>
+                <View style={styles.containerFeatures}></View>
+            </ScrollView>
 
         </View>
     )
@@ -21,5 +24,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginLeft: 20,
         fontWeight: 'bold',
+    },
+    containerFeatures:{
+        width:"100%",
+        height: 2000,
+        padding: 20,
     }
 })
