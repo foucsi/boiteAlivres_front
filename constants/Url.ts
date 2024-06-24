@@ -23,3 +23,6 @@ export const URL_UPDATE_DESCRIPTION_BOOK_PLACE =(bookPlaceId:string):string=>`${
 
 //URL UPLOAD PHOTO
 export const URL_UPLOAD_PHOTO =(bookPlaceId:string):string=>`${baseUrl}/photos/uploadPhoto/${bookPlaceId}`
+
+// GET ALL Features
+export const URL_GET_ALL_FEATURES:string = `${baseUrl}/features/features`
