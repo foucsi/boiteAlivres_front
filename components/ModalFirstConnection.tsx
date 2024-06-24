@@ -9,7 +9,7 @@ export default function ModalFirstConnection({setFirstLogin}) {
         <Modal transparent={true} animationType="slide">
            <View style={styles.modal}>
                <View style={styles.firstConnection}>
-                   <Text>Bienvenue dans l'application de partage de boîte à livres !
+                   <Text>Bienvenue dans l'application de partage de boîte à livres {users.username}!
 
                        Pour ajouter une boîte à livres :
 
