@@ -8,7 +8,7 @@ export default function ModalFirstConnection({setFirstLogin}) {
     const users = useSelector((state: any) => state.user.value);
 
     const closeModal = ()=>{
-        setFirstLogin((prev:any)=> !prev)
+        setFirstLogin((prev:boolean)=> !prev)
     }
 
     return (
