@@ -2,13 +2,17 @@ import {View, Text, StyleSheet} from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 
+import {INFOS_TEXT} from "@/constants/infoText";
+
 export default function Notification() {
+
+    const infosText = INFOS_TEXT('infos')
     return (
         <View style={styles.container}>
             <View style={styles.containerCenter}>
                 <FontAwesome name="info-circle" size={44} color="#294C60" />
                 <Text style={styles.text}>
-                    L'écran infos est en cours de développement. Revenez bientôt pour découvrir de nouvelles fonctionnalités passionnantes !
+                    {infosText}
                 </Text>
             </View>
         </View>
