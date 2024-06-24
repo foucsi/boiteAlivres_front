@@ -2,6 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import { BlurView } from 'expo-blur'
 import {StyleSheet } from "react-native";
+import { AntDesign } from '@expo/vector-icons';
 
 export default function TabLayout() {
     return (
@@ -14,6 +15,22 @@ export default function TabLayout() {
                     headerShown: false,
                     title: 'Carte',
                     tabBarIcon: ({ color }) => <FontAwesome size={28} name="map" color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="notification"
+                options={{
+                    headerShown: false,
+                    title: 'Infos',
+                    tabBarIcon: ({ color }) => <FontAwesome name="info-circle" size={28} color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="favoris"
+                options={{
+                    headerShown: false,
+                    title: 'Favoris',
+                    tabBarIcon: ({ color }) => <FontAwesome name="heart" size={28} color={color} />,
                 }}
             />
             <Tabs.Screen
