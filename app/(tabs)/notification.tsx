@@ -14,6 +14,7 @@ export default function Notification() {
                 <Text style={styles.text}>
                     {infosText}
                 </Text>
+                <Text>Vous pourrez retrouver sur cette écran toutes les futurs fonctionnalitées en développement</Text>
             </View>
         </View>
     )
