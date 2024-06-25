@@ -12,7 +12,7 @@ interface FeaturesUser{
 
 export default function Notification() {
 
-    const {features} = useGetAllFeatures()
+    const {features,isLoading, error} = useGetAllFeatures()
 
     return (
         <View style={styles.container}>
