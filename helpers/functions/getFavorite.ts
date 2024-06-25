@@ -15,10 +15,10 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
         }
         const data = await response.json()
         if(data.result){
-            log.info(`getFavorite: Successful`, data.result)
+            log.info(`getFavorite: Successfully retrieved favorite`);
             return {success: true, data: data.result}
         }else {
-            log.error(`getFavorite: Error`, data.error || "Error")
+            log.warn(`getFavorite: Error`, data.error || "Error")
             return {success: false, error: data.error}
         }
     }catch(err){
