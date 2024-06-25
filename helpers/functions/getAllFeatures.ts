@@ -1,21 +1,23 @@
 import {URL_GET_ALL_FEATURES} from "@/constants/Url";
+import {log} from "@/utils/logger";
 
 export const getAllFeatures = async() => {
     try{
-        //logger.info("getAllFeatures")
+        log.info("fetch getAllFeatures")
         const response = await fetch(URL_GET_ALL_FEATURES)
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
         if(data.result){
-            //logger.info("getAllFeatures", data.features)
+            log.info("getAllFeatures", data.features)
             return {success: true, data: data.features}
         }else {
-            //logger.error("getAllFeatures", data.error)
+            log.error("getAllFeatures", data.error || "Error")
             return {success: false, error: data.error}
         }
     }catch(err){
+        log.error("getAllFeatures", err)
         return {success: false, error: err}
     }
 }
