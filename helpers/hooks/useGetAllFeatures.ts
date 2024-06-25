@@ -3,6 +3,7 @@ import {getAllFeatures} from "@/helpers/functions/getAllFeatures";
 
 export const useGetAllFeatures = () => {
     const [features, setFeatures] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(()=>{
         const fetchFeatures = async()=>{
