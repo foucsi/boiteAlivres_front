@@ -47,7 +47,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
     //HOOKS
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
-    const {favorites, setFavorites, addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
+    const {favorites,addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
     const dispatch = useDispatch()
@@ -83,7 +83,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.containerFavoris}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={addFavorite}>
                                     <AntDesign name="heart" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>

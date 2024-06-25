@@ -12,5 +12,5 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
             console.log(result.error)
         }
     }
-    return {favorites, setFavorites, addFavorite}
+    return {favorites,  addFavorite}
 }

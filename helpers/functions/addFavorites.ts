@@ -1,12 +1,11 @@
 export const addFavorites = async (uniqueId:string, bookPlaceId:string)=>{
-    const url = ""
+    const url = `http://localhost:3000/favorites/addFavorite/${uniqueId}/${bookPlaceId}`
     try{
         const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({uniqueId, bookPlaceId}),
         });
         const data = await response.json();
         if(data.result){
