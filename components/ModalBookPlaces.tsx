@@ -47,7 +47,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
     //HOOKS
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
-    const {favorites,addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
+    const {addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
     const dispatch = useDispatch()
