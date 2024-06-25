@@ -75,6 +75,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <AntDesign name="closecircle" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>
+                            <View style={styles.containerFavoris}>
+                                <TouchableOpacity>
+                                    <AntDesign name="heart" size={28} color="#F7F9F9" />
+                                </TouchableOpacity>
+                            </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
                                 <TouchableOpacity onPress={handleUploadPhoto}>
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
@@ -164,6 +169,12 @@ const styles = StyleSheet.create({
         right: 0,
         width: 30,
         left:10,
+    },
+    containerFavoris:{
+        position: 'absolute',
+        top: 50,
+        right: 10,
+        width: 30,
     },
     containerUpdatePhoto:{
         position: 'absolute',
