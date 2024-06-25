@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {addFavorites} from "@/helpers/functions/addFavorites";
 
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
