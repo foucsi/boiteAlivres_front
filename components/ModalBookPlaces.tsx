@@ -54,12 +54,12 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
         });
     };
 
-    if(loading){
-        return <Text>Loading...</Text>
-    }
-    if(error){
-        return <Text>{error}</Text>
-    }
+    // if(loading){
+    //     return <Text>Loading...</Text>
+    // }
+    // if(error){
+    //     return <Text>{error}</Text>
+    // }
 
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
