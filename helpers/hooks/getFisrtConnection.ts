@@ -6,7 +6,7 @@ export const getFirstConnection =  () => {
     useEffect(()=>{
         const getIsFirstConnection = async()=>{
             const result = await firstConnection()
-            console.log("result", result)
+            // console.log("result", result)
             if(result.success){
                 // @ts-ignore
                 setFirstLogin(true)

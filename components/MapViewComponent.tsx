@@ -67,6 +67,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                     <ModalBookPlaces modalVisible={modalVisible} setModalVisible={setModalVisible} selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                 </View>
                 <View>
+                    {/*@ts-ignore*/}
                     {firstLogin && <ModalFirstConnection setFirstLogin={setFirstLogin}/>}
                 </View>
             </MapView>
