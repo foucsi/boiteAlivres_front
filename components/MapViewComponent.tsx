@@ -26,9 +26,9 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const user = useSelector((state: any) => state.user.value);
     let premium = user.premium
 
-    useEffect(() => {
-        console.log('firstConnection', firstLogin)
-    }, []);
+    // useEffect(() => {
+    //     console.log('firstConnection', firstLogin)
+    // }, []);
 
 
     const allBookSpaces = useMemo(() => bookSpaces.map((bookSpace: any) => (
