@@ -14,6 +14,9 @@ export default function Notification() {
 
     const {features,isLoading, error} = useGetAllFeatures()
 
+    if(isLoading){return <Text>Chargement...</Text>}
+    if(error){return <Text>Erreur: {error}</Text>}
+
     return (
         <View style={styles.container}>
             <ScrollView>
