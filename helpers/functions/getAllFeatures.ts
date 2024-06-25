@@ -10,7 +10,7 @@ export const getAllFeatures = async() => {
         }
         const data = await response.json();
         if(data.result){
-            log.info("getAllFeatures", data.features)
+            log.info("getAllFeatures succefful", data.features)
             return {success: true, data: data.features}
         }else {
             log.error("getAllFeatures", data.error || "Error")
