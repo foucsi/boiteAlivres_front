@@ -37,6 +37,7 @@ import ModalComment from "@/components/ModalComment";
 
 import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
 import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
+import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
@@ -48,6 +49,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     //HOOKS
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
     const {addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
+    const {isFavorite} = useGetFavorite(user.uniqueId, selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
     const dispatch = useDispatch()
@@ -84,7 +86,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             </View>
                             <View style={styles.containerFavoris}>
                                 <TouchableOpacity onPress={addFavorite}>
-                                    <AntDesign name="heart" size={28} color="#F7F9F9" />
+                                    <AntDesign name="heart" size={28} color={isFavorite ? "orange" : "#F7F9F9" } />
                                 </TouchableOpacity>
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
