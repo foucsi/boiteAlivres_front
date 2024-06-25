@@ -36,15 +36,22 @@ import {useEffect, useState} from "react";
 import ModalComment from "@/components/ModalComment";
 
 import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
+import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
+    const user = useSelector((state: any) => state.user.value)
+
+
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
+
+    //HOOKS
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
+    const {favorites, setFavorites, addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
 
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
     const dispatch = useDispatch()
-    const user = useSelector((state: any) => state.user.value)
+
 
     const handleUploadPhoto = async () => {
         const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
