@@ -14,8 +14,8 @@ export default function Notification() {
 
     const {features,isLoading, error} = useGetAllFeatures()
 
-    if(isLoading){return <Text>Chargement...</Text>}
-    if(error){return <Text>Erreur: {error}</Text>}
+    if(isLoading){return <View style={styles.containerIsLoadingOrError}><Text>Chargement...</Text></View>}
+    if(error){return <View style={styles.containerIsLoadingOrError}><Text>Erreur: {error}</Text></View>}
 
     return (
         <View style={styles.container}>
@@ -47,5 +47,10 @@ const styles = StyleSheet.create({
         width:"100%",
         height: 2000,
         padding: 20,
+    },
+    containerIsLoadingOrError:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
