@@ -26,3 +26,6 @@ export const URL_UPLOAD_PHOTO =(bookPlaceId:string):string=>`${baseUrl}/photos/u
 
 // GET ALL Features
 export const URL_GET_ALL_FEATURES:string = `${baseUrl}/features/features`
+
+//FAVORITES
+export const URL_GET_FAVORITES_USER = (uniqueId:string):string=>`${baseUrl}/favorites/favoritesByUser/${uniqueId}`
