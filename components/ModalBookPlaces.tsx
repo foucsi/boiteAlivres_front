@@ -32,10 +32,10 @@ import {useDispatch, useSelector} from "react-redux";
 //import constants
 import {iconsMaterial} from "@/constants/icons";
 import ContainerDescription from "@/components/ContainerDescription";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import ModalComment from "@/components/ModalComment";
 
-import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
+//IMPORTS HOOKS
 import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
 import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
@@ -125,7 +125,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     </View>
                                     {comments.length > 0 ? comments.map((com: any) => {
                                         return (
-                                            <ContainerComments key={com._id} id={com._id} comment={com.comment} user={com.added_by}/>
+                                            <ContainerComments loading={loading} error={error} key={com._id} id={com._id} comment={com.comment} user={com.added_by}/>
                                         )
                                     }):<View style={{padding:10}}>
                                         <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>
