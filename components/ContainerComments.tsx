@@ -7,11 +7,14 @@ import {deleteComment} from "@/helpers/functions/deleteComment";
 
 
 // @ts-ignore
-export default function ContainerComments({comment, user, id}) {
+export default function ContainerComments({comment, user, id, loading, error}) {
     const date = moment(comment.date).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
 
     const dispatch = useDispatch()
+
+    if(loading){return <Text>Loading...</Text>}
+    if(error){return <Text>Error : {error}</Text>}
 
     return (
         <View style={styles.container}>
