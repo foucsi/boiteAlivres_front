@@ -15,6 +15,13 @@ export const getFavoritesUser = async(uniqueId: string) => {
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
         }
         const data = await response.json()
+        if(data.result){
+            log.info(`getFavoritesUser: Successfully retrieved favorites`)
+            return {success: true, data: data.favorites}
+        }else {
+            log.warn(`getFavoritesUser: Error`, data.error || "Error")
+            return {success: false, error: data.error}
+        }
     }catch(err){
         console.log(err)
     }
