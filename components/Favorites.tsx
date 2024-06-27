@@ -1,12 +1,17 @@
-import {View, Text} from 'react-native'
+import {View, Text, ScrollView, SafeAreaView} from 'react-native'
 import React from 'react'
 import {useGetFavoritesUser} from "@/helpers/hooks/useGetFavoritesUser";
 import {useSelector} from "react-redux";
 import FavoritesUser from "@/components/FavoritesUser";
 
+interface Favorites{
+    _id: string
+}
+
 export default function Favorites() {
 
-    const uniqueId = useSelector((state: any) => state.user.value.uniqueId)
+    // @ts-ignore
+    const uniqueId = useSelector((state: Favorites) => state.user.value.uniqueId)
 
     const {favorites, loading, error} = useGetFavoritesUser(uniqueId)
 
@@ -15,10 +20,12 @@ export default function Favorites() {
 
 
     return (
-        <View>
-            {favorites.map((favorite:any)=>{
-                return <FavoritesUser key={favorite._id}/>
-            })}
-        </View>
+        <SafeAreaView>
+            <ScrollView>
+                {favorites.map((favorite:any)=>{
+                    return <FavoritesUser key={favorite._id} {...favorite}/>
+                })}
+            </ScrollView>
+        </SafeAreaView>
     )
 }
