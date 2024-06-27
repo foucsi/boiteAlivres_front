@@ -10,12 +10,16 @@ interface FavoritesUser{
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
     return (
         <View style={styles.containerFavorite}>
-            <TouchableOpacity>
-                <AntDesign name="closecircleo" size={24} color="#294C60" />
-            </TouchableOpacity>
-            <View style={{backgroundColor:"blue", display:"flex", flexDirection:"row"}}>
-                <Image source={{uri: bookPlace.photo}} style={{width: 80, height: 80}}/>
-                <Text>{bookPlace.description}</Text>
+            <View style={styles.containerClose}>
+                <TouchableOpacity>
+                    <AntDesign name="closecircleo" size={24} color="#294C60" />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.containerDescription}>
+                <Image source={{uri: bookPlace.photo}} style={{width: 60, height: 60, borderRadius:10}}/>
+                <View style={{ width:"80%"}}>
+                    <Text>{bookPlace.description}</Text>
+                </View>
             </View>
         </View>
     )
@@ -23,8 +27,29 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
 
 const styles = StyleSheet.create({
     containerFavorite:{
-        flexDirection:"column",
-        backgroundColor:"red",
+        backgroundColor:"white",
         marginTop:10,
+        padding:10,
+        width:"100%",
+        height:130,
+        borderRadius:10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+
+        elevation: 2,
     },
+    containerDescription:{
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-around",
+        padding:5
+    },
+    containerClose:{
+        alignItems:"flex-end"
+    }
 })
