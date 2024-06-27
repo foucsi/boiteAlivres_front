@@ -1,22 +1,14 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native'
 import React from 'react'
-import { FontAwesome } from '@expo/vector-icons';
-
-import {INFOS_TEXT} from "@/constants/infoText";
 import Favorites from "@/components/Favorites";
 
 export default function Favoris() {
 
-    const infosText = INFOS_TEXT('favoris')
+
     return (
         <View style={styles.container}>
             <Favorites/>
-            {/*<View style={styles.containerCenter}>*/}
-            {/*    <FontAwesome name="heart" size={44} color="#294C60" />*/}
-            {/*    <Text style={styles.text}>*/}
-            {/*        {infosText}*/}
-            {/*    </Text>*/}
-            {/*</View>*/}
+
         </View>
     )
 }
