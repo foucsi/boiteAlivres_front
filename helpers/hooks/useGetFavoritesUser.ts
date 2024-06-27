@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getFavoritesUser} from "@/helpers/functions/getFavoritesUser";
+import {useSelector} from "react-redux";
 
 type Favorite = any
 
@@ -14,7 +15,11 @@ export const useGetFavoritesUser = (uniqueId:string) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
+    // @ts-ignore
+    const favo = useSelector((state)=> state.favorite.value)
+
     const getFavorites = async()=>{
+        console.log("favo:", favo)
         setLoading(true)
         // @ts-ignore
         const result :FavoritesUser = await getFavoritesUser(uniqueId)
@@ -29,7 +34,7 @@ export const useGetFavoritesUser = (uniqueId:string) => {
 
     useEffect(() => {
         getFavorites()
-    }, [uniqueId])
+    }, [uniqueId, favo])
 
     return {favorites, loading, error}
 }

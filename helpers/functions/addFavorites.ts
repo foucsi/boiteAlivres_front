@@ -9,7 +9,7 @@ export const addFavorites = async (uniqueId:string, bookPlaceId:string)=>{
         });
         const data = await response.json();
         if(data.result){
-            return {success:true}
+            return {success:true, favorite:data.favorite}
         }else {
             return {success:false, error:data.error}
         }
