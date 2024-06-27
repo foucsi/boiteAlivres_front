@@ -8,7 +8,6 @@ export default function Favoris() {
     return (
         <View style={styles.container}>
             <Favorites/>
-
         </View>
     )
 }
