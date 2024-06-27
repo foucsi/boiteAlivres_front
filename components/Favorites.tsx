@@ -22,11 +22,9 @@ export default function Favorites() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                <View>
                     {favorites.map((favorite:any)=>{
                         return <FavoritesUser key={favorite._id} {...favorite}/>
                     })}
-                </View>
             </ScrollView>
         </SafeAreaView>
     )
@@ -36,9 +34,4 @@ const styles = StyleSheet.create({
     container:{
         flex:1
     },
-    scrollViewContent: {
-        flexGrow: 1,
-        width: '100%',
-        alignItems: 'center',
-    }
 })
