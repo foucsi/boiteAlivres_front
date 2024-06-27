@@ -10,14 +10,12 @@ interface FavoritesUser{
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
     return (
         <View style={styles.containerFavorite}>
-            <View style={styles.containerClose}>
-                <TouchableOpacity>
-                    <AntDesign name="closecircleo" size={24} color="#294C60" />
-                </TouchableOpacity>
-            </View>
-            <View style={styles.containerDescription}>
-                <Text>Description: {bookPlace.description}</Text>
+            <TouchableOpacity>
+                <AntDesign name="closecircleo" size={24} color="#294C60" />
+            </TouchableOpacity>
+            <View style={{backgroundColor:"blue", display:"flex", flexDirection:"row"}}>
                 <Image source={{uri: bookPlace.photo}} style={{width: 80, height: 80}}/>
+                <Text>{bookPlace.description}</Text>
             </View>
         </View>
     )
@@ -25,23 +23,8 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
 
 const styles = StyleSheet.create({
     containerFavorite:{
-        display: "flex",
-        flexDirection: "column",
-        marginTop: 10,
-        width: "100%",
-        padding: 10,
-        backgroundColor: "white",
-        borderRadius: 10,
-        height: 150,
-    },
-    containerClose:{
-        alignItems: "flex-end",
-    },
-    containerDescription:{
-        display: "flex",
-        flexDirection: "row",
+        flexDirection:"column",
         backgroundColor:"red",
-        alignItems:"center",
-        justifyContent:"space-between"
-    }
+        marginTop:10,
+    },
 })
