@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import FavoritesUser from "@/components/FavoritesUser";
 
 interface Favorites{
-    _id: string
+    _id: string,
 }
 
 export default function Favorites() {
