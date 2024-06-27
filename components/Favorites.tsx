@@ -2,6 +2,7 @@ import {View, Text} from 'react-native'
 import React from 'react'
 import {useGetFavoritesUser} from "@/helpers/hooks/useGetFavoritesUser";
 import {useSelector} from "react-redux";
+import FavoritesUser from "@/components/FavoritesUser";
 
 export default function Favorites() {
 
@@ -15,7 +16,9 @@ export default function Favorites() {
 
     return (
         <View>
-            <Text>Favorites</Text>
+            {favorites.map((favorite:any)=>{
+                return <FavoritesUser key={favorite._id}/>
+            })}
         </View>
     )
 }

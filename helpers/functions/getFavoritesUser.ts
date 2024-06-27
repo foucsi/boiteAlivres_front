@@ -5,7 +5,7 @@ export const getFavoritesUser = async(uniqueId: string) => {
     try{
         log.info(`fetching favorites user with uniqueId: ${uniqueId} and route: ${URL_GET_FAVORITES_USER}`)
         // @ts-ignore
-        const response = await fetch(URL_GET_FAVORITES_USER, {
+        const response = await fetch(URL_GET_FAVORITES_USER(uniqueId), {
             method: 'GET',
             headers: {
                 "Accept": "application/json"
