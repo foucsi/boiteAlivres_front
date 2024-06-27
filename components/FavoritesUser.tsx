@@ -18,11 +18,12 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
 const styles = StyleSheet.create({
     containerFavorite:{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         marginTop: 10,
         width: "100%",
         padding: 10,
         backgroundColor: "white",
         borderRadius: 10,
+        height: 150,
     },
 })
