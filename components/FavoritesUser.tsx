@@ -10,13 +10,19 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
     return (
         <View style={styles.containerFavorite}>
             <Text>Description: {bookPlace.description}</Text>
-            <Image source={{uri: bookPlace.photo}} style={{width: 100, height: 100}}/>
+            <Image source={{uri: bookPlace.photo}} style={{width: 80, height: 80}}/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     containerFavorite:{
+        display: "flex",
+        flexDirection: "row",
+        marginTop: 10,
         width: "100%",
-    }
+        padding: 10,
+        backgroundColor: "white",
+        borderRadius: 10,
+    },
 })

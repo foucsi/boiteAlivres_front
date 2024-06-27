@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, SafeAreaView} from 'react-native'
+import {View, Text, ScrollView, SafeAreaView, StyleSheet} from 'react-native'
 import React from 'react'
 import {useGetFavoritesUser} from "@/helpers/hooks/useGetFavoritesUser";
 import {useSelector} from "react-redux";
@@ -20,12 +20,25 @@ export default function Favorites() {
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
-                {favorites.map((favorite:any)=>{
-                    return <FavoritesUser key={favorite._id} {...favorite}/>
-                })}
+                <View>
+                    {favorites.map((favorite:any)=>{
+                        return <FavoritesUser key={favorite._id} {...favorite}/>
+                    })}
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1
+    },
+    scrollViewContent: {
+        flexGrow: 1,
+        width: '100%',
+        alignItems: 'center',
+    }
+})
