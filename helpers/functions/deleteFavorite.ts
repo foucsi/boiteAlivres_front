@@ -1,8 +1,13 @@
 import {log} from "@/utils/logger";
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
 
+interface DeleteFavoriteResponse {
+    result: boolean;
+    message?: string;
+}
+
 export const deleteFavorite = async(favoriteId:string)=>{
-    log.info(`Fetch route ${URL_DELETE_FAVORITE} width favoriteId : ${favoriteId}`)
+    log.info(`Attempting to delete favorite with ID: ${favoriteId}`)
         try{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
                 method: "DELETE",
@@ -12,14 +17,14 @@ export const deleteFavorite = async(favoriteId:string)=>{
             if(!response.ok){
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const data = await response.json()
+            const data : DeleteFavoriteResponse = await response.json()
             log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
             if(data.result){
                 log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
             }else {
-                log.error(`Fetch route ${URL_DELETE_FAVORITE} failed`)
+                log.warn(`Fetch route ${URL_DELETE_FAVORITE} failed`)
             }
         }catch(err){
-            console.log(err)
+            log.error(err)
     }
 }
