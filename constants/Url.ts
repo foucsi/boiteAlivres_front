@@ -29,3 +29,4 @@ export const URL_GET_ALL_FEATURES:string = `${baseUrl}/features/features`
 
 //FAVORITES
 export const URL_GET_FAVORITES_USER = (uniqueId:string):string=>`${baseUrl}/favorites/favoritesByUser/${uniqueId}`
+export const URL_DELETE_FAVORITE = (favoriteId:string):string=>`${baseUrl}/favorites/deleteFavorite/${favoriteId}`
