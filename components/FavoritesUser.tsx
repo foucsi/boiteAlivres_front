@@ -1,6 +1,7 @@
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
+import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
 
 interface FavoritesUser{
     _id: string
@@ -8,10 +9,15 @@ interface FavoritesUser{
 }
 
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
+
+    const handleDeleteFavorite = ()=>{
+        deleteFavorite(_id)
+    }
+
     return (
         <View style={styles.containerFavorite}>
             <View style={styles.containerClose}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleDeleteFavorite}>
                     <AntDesign name="closecircleo" size={24} color="#294C60" />
                 </TouchableOpacity>
             </View>
