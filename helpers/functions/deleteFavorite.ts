@@ -18,7 +18,6 @@ export const deleteFavorite = async(favoriteId:string)=>{
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data : DeleteFavoriteResponse = await response.json()
-            log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
             if(data.result){
                 log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
             }else {
