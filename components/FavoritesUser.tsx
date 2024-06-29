@@ -2,6 +2,7 @@ import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
+import {useDispatch} from "react-redux";
 
 interface FavoritesUser{
     _id: string
@@ -9,9 +10,10 @@ interface FavoritesUser{
 }
 
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
+    const dispatch = useDispatch()
 
     const handleDeleteFavorite = ()=>{
-        deleteFavorite(_id)
+        deleteFavorite(_id, dispatch)
     }
 
     return (
