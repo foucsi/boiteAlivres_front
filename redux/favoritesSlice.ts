@@ -13,7 +13,8 @@ export const favoritesSlice = createSlice({
             state.value.push(action.payload)
         },
         removeFavorite: (state, action) => {
-            state.value = state.value.filter((item) => item !== action.payload)
+            // @ts-ignore
+            state.value = state.value.filter((item) => item._id !== action.payload)
         }
     }
 })
