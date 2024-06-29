@@ -1,12 +1,13 @@
 import {log} from "@/utils/logger";
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
+import {removeFavorite} from "@/redux/favoritesSlice";
 
 interface DeleteFavoriteResponse {
     result: boolean;
     message?: string;
 }
 
-export const deleteFavorite = async(favoriteId:string)=>{
+export const deleteFavorite = async(favoriteId:string, dispatch)=>{
     log.info(`Attempting to delete favorite with ID: ${favoriteId}`)
         try{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
