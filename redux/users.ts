@@ -9,7 +9,8 @@ const initialState = {
         token: null,
         photo:
             "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?b=1&s=170667a&w=0&k=20&c=HEO2nP4_uEAn0_JzVTU6_Y5hyn-qHxyCrWWTirBvScs=",
-        premium:null
+        premium:null,
+        status:null,
     },
 };
 
@@ -24,6 +25,7 @@ export const userSlice = createSlice({
             state.value.token = action.payload.token;
             state.value.created_at = action.payload.created_at;
             state.value.premium = action.payload.premium;
+            state.value.status = action.payload.status;
         },
         logout: (state) => {
             state.value.username = null;
