@@ -34,7 +34,7 @@ export const useGetFavoritesUser = (uniqueId:string) => {
 
     useEffect(() => {
         getFavorites()
-    }, [uniqueId, favo])
+    }, [favo])
 
     return {favorites, loading, error}
 }
