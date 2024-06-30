@@ -4,7 +4,8 @@ const initialState = {
     value:{
         bookSpaces:[],
         description:null,
-        photo:null
+        photo:null,
+        status:null
     }
 }
 
