@@ -17,8 +17,10 @@ export default function ModalAddMarker({modalVisible, setModalVisible}) {
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
                     <Text style={styles.modalText}>Merci Beaucoup {user.username} !
-                        Votre contribution a été soumise avec succès et est en attente de modération.La couleur de l'icone orange signifie que celle-ci et en attente de validation.
-                        Un modérateur validera votre ajout sous 24 heures.Vous pouvez deja personnalisé votre boita à livre en ajoutant une description et une photo.
+                        Votre contribution a été soumise avec succès et est en attente de modération.
+                        L'icône orange indique que votre ajout est en cours de validation.
+                        Un modérateur examinera votre contribution dans les 24 heures.
+                        En attendant, vous pouvez personnaliser votre boîte à livres en ajoutant une description et une photo.
                         </Text>
                     <Pressable
                         style={[styles.button, styles.buttonClose]}
