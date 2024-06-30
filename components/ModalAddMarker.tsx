@@ -20,7 +20,10 @@ export default function ModalAddMarker({modalVisible, setModalVisible}) {
                         Votre contribution a été soumise avec succès et est en attente de modération.
                         L'icône orange indique que votre ajout est en cours de validation.
                         Un modérateur examinera votre contribution dans les 24 heures.
-                        En attendant, vous pouvez personnaliser votre boîte à livres en ajoutant une description et une photo.
+                        En attendant, vous pouvez personnaliser votre boîte à livres :
+
+                        Ajoutez ou modifiez la description en cliquant sur son icône.
+                        Ajoutez ou changez la photo en cliquant sur son icône.
                         </Text>
                     <Pressable
                         style={[styles.button, styles.buttonClose]}
