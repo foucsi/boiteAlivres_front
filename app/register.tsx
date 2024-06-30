@@ -24,7 +24,7 @@ export default function Register() {
                 </TouchableWithoutFeedback>
             <View style={styles.containerBottom}>
                 <Text style={styles.textWhite} >Vous avez déja un compte ?</Text>
-                <Link href="/tabs/login" style={styles.textWhite}>Se connecter</Link>
+                <Link href="/login" style={styles.textWhite}>Se connecter</Link>
             </View>
         </KeyboardAvoidingView>
     )
