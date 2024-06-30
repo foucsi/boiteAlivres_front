@@ -18,7 +18,7 @@ export const useRegister = ()=>{
         if (result.success) {
             // @ts-ignore
             await AsyncStorage.setItem('token', result.token)
-            const {username, email, uniqueId, token, created_at, premium, status} = result.user
+            const {username, email, uniqueId, token, created_at, premium} = result.user
             dispatch(loginReducer({
                 username,
                 email,
@@ -26,7 +26,6 @@ export const useRegister = ()=>{
                 token,
                 created_at,
                 premium,
-                status
             }))
             setError('')
             setEmail('')
