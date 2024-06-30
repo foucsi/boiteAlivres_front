@@ -5,11 +5,11 @@ import { FontAwesome } from '@expo/vector-icons';
 import {View, StyleSheet} from "react-native";
 
 // @ts-ignore
-export default function MarkerBookPlaces({lat,long, description,img, setModalVisible, setSelectedMarker, photo, date, username, photoUser, uniqueId, id}) {
+export default function MarkerBookPlaces({lat,long, description,img, setModalVisible, setSelectedMarker, photo, date, username, photoUser, uniqueId, id, status}) {
     return (
         <Marker description="Boite à livres" coordinate={{latitude:lat, longitude:long}} >
             <View style={styles.containerIcon}>
-                <FontAwesome name={img} size={24} color="#294C60" onPress={()=>{
+                <FontAwesome name={img} size={24} color={status === "pending" ? "orange" : "#294C60"}  onPress={()=>{
                     setModalVisible(true)
                     setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId, id:id})
                 }}/>

@@ -45,6 +45,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
                           uniqueId={bookSpace.addedBy.uniqueId}
                           id={bookSpace._id}
                           setSelectedMarker={setSelectedMarker}
+                          status={bookSpace.status}
         />
     )), [bookSpaces, setModalVisible, setSelectedMarker]);
 
