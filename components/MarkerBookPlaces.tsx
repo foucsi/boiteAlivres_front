@@ -18,7 +18,7 @@ export default function MarkerBookPlaces({lat,long, description,img, setModalVis
     )
 }
 
-const styles = (status) => StyleSheet.create({
+const styles = (status:any) => StyleSheet.create({
     containerIcon:{
         padding:5,
         backgroundColor: 'white',
