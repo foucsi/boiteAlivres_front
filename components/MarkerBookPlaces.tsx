@@ -10,7 +10,7 @@ export default function MarkerBookPlaces({lat,long, description,img, setModalVis
             <View style={styles(status).containerIcon}>
                 <FontAwesome name={img} size={24} color={status === "pending" ? "orange" : "#294C60"}  onPress={()=>{
                     setModalVisible(true)
-                    setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId, id:id})
+                    setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId, id:id, status:status})
                 }}/>
             </View>
         </Marker>
