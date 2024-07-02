@@ -9,7 +9,7 @@ export default function MarkerBookPlaces({lat,long, description,img, setModalVis
     return (
         <Marker description="Boite à livres" coordinate={{latitude:lat, longitude:long}} >
             <View style={styles(status).containerIcon}>
-                <MaterialCommunityIcons name={img} size={24} color={status === "pending" ? "orange" : "#294C60"}  onPress={()=>{
+                <MaterialCommunityIcons name={img} size={24} color={status === "pending" ? "#FFA500" : "#294C60"}  onPress={()=>{
                     setModalVisible(true)
                     setSelectedMarker({lat:lat, long:long, photo:photo, description:description , date:date, username:username, photoUser:photoUser, uniqueId:uniqueId, id:id, status:status})
                 }}/>
@@ -24,7 +24,7 @@ const styles = (status:any) => StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 50,
         borderStyle: 'solid',
-        borderColor: status === "pending"? "orange":'#294C60',
+        borderColor: status === "pending"? "#FFA500":'#294C60',
         borderWidth: 1,
     }
 })
