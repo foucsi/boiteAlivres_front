@@ -40,8 +40,6 @@ export default function ContainerDescription({selectedMarker, setSelectedMarker}
                 {selectedMarker.status ==="pending" && <View>
                     <Text style={styles.pendingText}>
                         Cette publication est actuellement en attente de validation par notre équipe.
-                        Nous examinons chaque contribution avec soin pour assurer la qualité et la
-                        pertinence du contenu. Merci de votre patience et de votre compréhension.
                     </Text>
                 </View>}
                 {textInputVisible && <View style={styles.containerInput}>
