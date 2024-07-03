@@ -23,7 +23,7 @@ export default function Favorites() {
         <SafeAreaView >
             <View style={styles.container}>
                 <ScrollView>
-                    {favorites?.length> 0 ? favorites.map((favorite:any)=>{
+                    {favorites.length> 0 ? favorites?.map((favorite:any)=>{
                         return <FavoritesUser key={favorite._id} {...favorite}/>
                     }): <Text>Vous n'avez pas encore de favoris</Text>}
                 </ScrollView>
