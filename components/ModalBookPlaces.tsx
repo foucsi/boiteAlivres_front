@@ -87,6 +87,11 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     <FontAwesome name="photo" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>}
+                            {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
+                                <TouchableOpacity>
+                                    <Text>Supprimer</Text>
+                                </TouchableOpacity>
+                            </View>}
                         </View>
                         <View style={styles.secondView}>
                             <View>
@@ -240,5 +245,16 @@ const styles = StyleSheet.create({
         width: "100%",
         padding: 10,
         alignItems: 'flex-end',
+    },
+    containerDeleteBookPlace:{
+        position: 'absolute',
+        bottom: 10,
+        right: 160,
+        width: 100,
+        backgroundColor:"#BA274A",
+        padding: 10,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 });
