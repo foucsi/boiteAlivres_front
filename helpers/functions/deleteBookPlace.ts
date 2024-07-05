@@ -3,6 +3,7 @@ import {log} from "@/utils/logger";
 
 export const deleteBookPlace = async (id: string) => {
     try{
+        log.info(`Fetching DELETE ${URL_DELETE_BOOK_PLACE(id)} with id: ${id}`)
         const response = await fetch(URL_DELETE_BOOK_PLACE(id), {
             method: 'DELETE',
             headers: {
@@ -11,9 +12,11 @@ export const deleteBookPlace = async (id: string) => {
         })
         const data = await response.json()
         if(data.result){
-            console.log('Place deleted')
+            log.info(`Deleted place with id success: ${id}`)
+        }else {
+            log.error(`Error while deleting place with id: ${id}`)
         }
     }catch(err){
-        console.log(err)
+        log.error('Error while')
     }
 }
