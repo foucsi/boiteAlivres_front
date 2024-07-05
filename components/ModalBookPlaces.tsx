@@ -70,7 +70,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
                     {/* below modal visible or not comment*/}
                     {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
-                    {modalDeleteBookPlaceVisible && <ModalDeleteConfirmBookPlace setModalDeleteBookPlaceVisible={setModalDeleteBookPlaceVisible} bookPlaceId={selectedMarker.id}/>}
+                    {modalDeleteBookPlaceVisible && <ModalDeleteConfirmBookPlace setModalVisible={setModalVisible} setModalDeleteBookPlaceVisible={setModalDeleteBookPlaceVisible} bookPlaceId={selectedMarker.id}/>}
                     <View style={styles.centeredView}>
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>

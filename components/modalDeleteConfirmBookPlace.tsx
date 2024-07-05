@@ -3,18 +3,26 @@ import React from 'react'
 import {deleteBookPlace} from "@/helpers/functions/deleteBookPlace";
 
 // @ts-ignore
-export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisible, bookPlaceId}) {
+export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisible, bookPlaceId, setModalVisible}) {
     return (
         <Modal transparent={true} animationType="slide">
             <View style={styles.modal}>
+                <View style={styles.containerCenter}>
                 <Text>Tu es sur de vouloir supprimer ta boites à livres ?</Text>
-                <View>
-                    <TouchableOpacity onPress={()=>deleteBookPlace(bookPlaceId)}>
-                        <Text>Oui</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={(prev)=>setModalDeleteBookPlaceVisible(!prev)}>
-                        <Text>Non</Text>
-                    </TouchableOpacity>
+                    <View style={styles.containerBtn}>
+                        <TouchableOpacity
+                            style={styles.btn}
+                            onPress={() => {
+                                deleteBookPlace(bookPlaceId);
+                                setModalVisible(false);
+                            }}
+                        >
+                            <Text style={styles.textBtn}>Oui</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.btn} onPress={(prev)=>setModalDeleteBookPlaceVisible(!prev)}>
+                            <Text style={styles.textBtn}>Non</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </Modal>
@@ -27,5 +35,31 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    containerCenter:{
+        padding:10,
+        backgroundColor:"white",
+        justifyContent:"center",
+        alignItems:"center",
+        borderRadius:10,
+    },
+    containerBtn:{
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-between",
+        width:"30%",
+        height:70,
+    },
+    btn:{
+        alignItems:"center",
+        padding:10,
+        backgroundColor:"#BA274A",
+        borderRadius:5,
+        height:40,
+        width:50,
+        textAlign:"center",
+    },
+    textBtn:{
+        color:"white",
     }
 })

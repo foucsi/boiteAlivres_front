@@ -1,7 +1,8 @@
 import {URL_DELETE_BOOK_PLACE} from "@/constants/Url";
 import {log} from "@/utils/logger";
+import {removeBookSpace} from "@/redux/bookSpaces";
 
-export const deleteBookPlace = async (id: string) => {
+export const deleteBookPlace = async (id: string, dispatch:any) => {
     try{
         log.info(`Fetching DELETE ${URL_DELETE_BOOK_PLACE(id)} with id: ${id}`)
         const response = await fetch(URL_DELETE_BOOK_PLACE(id), {
