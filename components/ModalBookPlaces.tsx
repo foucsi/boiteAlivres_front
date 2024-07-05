@@ -91,7 +91,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                             </View>}
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
                                 <TouchableOpacity onPress={()=> setModalDeleteBookPlaceVisible(true)}>
-                                    <Text>Supprimer</Text>
+                                    <Text style={{color:"white"}}>Supprimer</Text>
                                 </TouchableOpacity>
                             </View>}
                         </View>
