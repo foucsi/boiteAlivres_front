@@ -17,6 +17,7 @@ export const deleteBookPlace = async (id: string, dispatch:any) => {
         const data = await response.json()
         if(data.result){
             log.info(`Deleted place with id success: ${id}`)
+            dispatch(removeBookSpace())
         }else {
             log.warn(`Error while deleting place with id: ${id}`)
         }

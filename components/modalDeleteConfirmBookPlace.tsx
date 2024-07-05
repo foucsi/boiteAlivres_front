@@ -1,9 +1,11 @@
 import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {deleteBookPlace} from "@/helpers/functions/deleteBookPlace";
+import {useDispatch} from "react-redux";
 
 // @ts-ignore
 export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisible, bookPlaceId, setModalVisible}) {
+    const dispatch = useDispatch()
     return (
         <Modal transparent={true} animationType="slide">
             <View style={styles.modal}>
@@ -13,7 +15,7 @@ export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisi
                         <TouchableOpacity
                             style={styles.btn}
                             onPress={() => {
-                                deleteBookPlace(bookPlaceId);
+                                deleteBookPlace(bookPlaceId, dispatch);
                                 setModalVisible(false);
                             }}
                         >
