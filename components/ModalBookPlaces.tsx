@@ -38,10 +38,12 @@ import ModalComment from "@/components/ModalComment";
 //IMPORTS HOOKS
 import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
 import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
+import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlace";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const user = useSelector((state: any) => state.user.value)
+    const [modalDeleteBookPlaceVisible, setModalDeleteBookPlaceVisible] = useState(false)
 
 
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
@@ -68,7 +70,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
                     {/* below modal visible or not comment*/}
                     {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
-
+                    {modalDeleteBookPlaceVisible && <ModalDeleteConfirmBookPlace setModalDeleteBookPlaceVisible={setModalDeleteBookPlaceVisible} bookPlaceId={selectedMarker.id}/>}
                     <View style={styles.centeredView}>
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
@@ -88,7 +90,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 </TouchableOpacity>
                             </View>}
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=> setModalDeleteBookPlaceVisible(true)}>
                                     <Text>Supprimer</Text>
                                 </TouchableOpacity>
                             </View>}

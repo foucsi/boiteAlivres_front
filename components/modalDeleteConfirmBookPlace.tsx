@@ -1,16 +1,18 @@
 import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
+import {deleteBookPlace} from "@/helpers/functions/deleteBookPlace";
 
-export default function ModalDeleteConfirmBookPlace() {
+// @ts-ignore
+export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisible, bookPlaceId}) {
     return (
         <Modal transparent={true} animationType="slide">
             <View style={styles.modal}>
                 <Text>Tu es sur de vouloir supprimer ta boites à livres ?</Text>
                 <View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>deleteBookPlace(bookPlaceId)}>
                         <Text>Oui</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={(prev)=>setModalDeleteBookPlaceVisible(!prev)}>
                         <Text>Non</Text>
                     </TouchableOpacity>
                 </View>
