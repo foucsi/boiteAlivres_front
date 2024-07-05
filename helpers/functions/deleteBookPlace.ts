@@ -1,0 +1,1 @@
+export const deleteBookPlace = async (id: string) => {}

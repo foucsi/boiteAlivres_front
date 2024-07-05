@@ -7,7 +7,7 @@ const baseUrl = serverConfig()
 export const URL_LOGIN :string = `${baseUrl}/users/login`
 export const URL_REGISTER:string = `${baseUrl}/users/register`
 
-// URL for get AllBookPlaces
+// URL BookPlaces
 export const URL_GET_ALL_BOOK_PLACES:string = `${baseUrl}/bookPlaces/getAllBookPlaces`
 
 //URL add Comment and delete
