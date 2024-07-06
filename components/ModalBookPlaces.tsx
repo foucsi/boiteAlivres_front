@@ -42,17 +42,22 @@ import {iconsMaterial} from "@/constants/icons";
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
-    const user = useSelector((state: any) => state.user.value)
+
+    //State
     const [modalDeleteBookPlaceVisible, setModalDeleteBookPlaceVisible] = useState(false)
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
-    const dispatch = useDispatch()
-    const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
 
-    //HOOKS
+    //Redux
+    const user = useSelector((state: any) => state.user.value)
+    const dispatch = useDispatch()
+
+    //Customs hooks
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
     const {addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
     const {isFavorite} = useGetFavorite(user.uniqueId, selectedMarker.id)
 
+    //Formated date
+    const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
 
     //Functions
     const handleUploadPhoto = async () => {
