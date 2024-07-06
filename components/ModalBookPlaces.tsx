@@ -7,6 +7,7 @@ import {
     Image,
     ScrollView,
 } from 'react-native'
+import {useState} from "react";
 
 //LIBRARY
 import moment from "moment";
@@ -18,6 +19,8 @@ import { AntDesign } from '@expo/vector-icons';
 
 //COMPONENTS
 import ContainerComments from "@/components/ContainerComments";
+import ContainerDescription from "@/components/ContainerDescription";
+import ModalComment from "@/components/ModalComment";
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
@@ -30,9 +33,6 @@ import {useDispatch, useSelector} from "react-redux";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
-import ContainerDescription from "@/components/ContainerDescription";
-import {useState} from "react";
-import ModalComment from "@/components/ModalComment";
 
 //IMPORTS HOOKS
 import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
