@@ -11,9 +11,6 @@ import {
 //LIBRARY
 import moment from "moment";
 
-import {handleLinking} from "@/helpers/functions/navigationMap";
-import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
-
 //ICONS
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -24,6 +21,8 @@ import ContainerComments from "@/components/ContainerComments";
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
+import {handleLinking} from "@/helpers/functions/navigationMap";
+import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
 
 //HOOKS
 import {useGetAllCommentsByBookPlace} from "@/helpers/hooks/useGetAllCommentsByBookPlace";
