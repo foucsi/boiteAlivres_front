@@ -107,22 +107,6 @@ const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
     },
-    thirdView:{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        width: '100%',
-        height: '10%',
-        backgroundColor: '#F7F9F9',
-        borderBottomWidth: 1,
-        borderColor: '#294C60',
-    },
-    containerIcon:{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
     moyenne:{
         margin: 10,
         padding: 10,
