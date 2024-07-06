@@ -21,6 +21,7 @@ import ContainerComments from "@/components/ContainerComments";
 import ContainerDescription from "@/components/ContainerDescription";
 import ModalComment from "@/components/ModalComment";
 import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlace";
+import Touchable from "@/components/touchableOpacity/Touchable";
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
@@ -36,6 +37,7 @@ import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
+
 
 
 
@@ -83,9 +85,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
                             <View style={styles.containerClosed}>
-                                <TouchableOpacity onPress={handleCloseModal}>
-                                    <AntDesign name="closecircle" size={28} color="#F7F9F9" />
-                                </TouchableOpacity>
+                                <Touchable onPress={handleCloseModal} nameIcon="closecircle"/>
                             </View>
                             <View style={styles.containerFavoris}>
                                 <TouchableOpacity onPress={addFavorite}>
