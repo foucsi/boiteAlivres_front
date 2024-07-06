@@ -88,14 +88,10 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 <Touchable onPress={handleCloseModal} nameIcon="closecircle" size={28} color="#F7F9F9"/>
                             </View>
                             <View style={styles.containerFavoris}>
-                                <TouchableOpacity onPress={addFavorite}>
-                                    <AntDesign name="heart" size={28} color={isFavorite ? "orange" : "#F7F9F9" } />
-                                </TouchableOpacity>
+                                <Touchable onPress={addFavorite} nameIcon="heart" size={28} color={isFavorite ? "orange" : "#F7F9F9" }/>
                             </View>
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
-                                <TouchableOpacity onPress={handleUploadPhoto}>
-                                    <FontAwesome name="photo" size={28} color="#F7F9F9" />
-                                </TouchableOpacity>
+                                <Touchable onPress={handleUploadPhoto} nameIcon="camera" size={28} color="#F7F9F9"/>
                             </View>}
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
                                 <TouchableOpacity onPress={()=> setModalDeleteBookPlaceVisible(true)}>
