@@ -43,7 +43,7 @@ import {iconsMaterial} from "@/constants/icons";
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
 
-    //State
+    //Local State
     const [modalDeleteBookPlaceVisible, setModalDeleteBookPlaceVisible] = useState(false)
     const [modalCommentVisible, setModalCommentVisible] = useState(false)
 
