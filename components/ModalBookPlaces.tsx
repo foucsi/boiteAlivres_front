@@ -68,6 +68,12 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
         });
     };
 
+    //Event handlers
+
+    const handleCloseModal = ()=>{
+        setModalVisible(false)
+    }
+
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
                     {/* below modal visible or not comment*/}
