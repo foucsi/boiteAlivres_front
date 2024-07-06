@@ -85,7 +85,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
                             <View style={styles.containerClosed}>
-                                <Touchable onPress={handleCloseModal} nameIcon="closecircle" size={28}/>
+                                <Touchable onPress={handleCloseModal} nameIcon="closecircle" size={28} color="#F7F9F9"/>
                             </View>
                             <View style={styles.containerFavoris}>
                                 <TouchableOpacity onPress={addFavorite}>
