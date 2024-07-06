@@ -83,7 +83,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                         <View style={styles.firstView}>
                             <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
                             <View style={styles.containerClosed}>
-                                <TouchableOpacity onPress={()=>setModalVisible(false)}>
+                                <TouchableOpacity onPress={handleCloseModal}>
                                     <AntDesign name="closecircle" size={28} color="#F7F9F9" />
                                 </TouchableOpacity>
                             </View>
