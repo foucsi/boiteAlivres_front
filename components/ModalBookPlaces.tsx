@@ -44,8 +44,8 @@ import {iconsMaterial} from "@/constants/icons";
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
     const user = useSelector((state: any) => state.user.value)
     const [modalDeleteBookPlaceVisible, setModalDeleteBookPlaceVisible] = useState(false)
-
-
+    const [modalCommentVisible, setModalCommentVisible] = useState(false)
+    const dispatch = useDispatch()
     const momentDate = moment(selectedMarker.date).format('DD/MM/YYYY')
 
     //HOOKS
@@ -53,10 +53,8 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const {addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
     const {isFavorite} = useGetFavorite(user.uniqueId, selectedMarker.id)
 
-    const [modalCommentVisible, setModalCommentVisible] = useState(false)
-    const dispatch = useDispatch()
 
-
+    //Functions
     const handleUploadPhoto = async () => {
         const newPhotoUrl = await uploadPhoto(selectedMarker.id, dispatch);
         // @ts-ignore
