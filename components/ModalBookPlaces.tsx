@@ -71,9 +71,12 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     };
 
     //Event handlers
-
     const handleCloseModal = ()=>{
         setModalVisible(false)
+    }
+
+    const handleModalDeleteBookPlace = ()=>{
+        setModalDeleteBookPlaceVisible(true)
     }
 
     return (
@@ -94,7 +97,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                 <Touchable onPress={handleUploadPhoto} nameIcon="camera" size={28} color="#F7F9F9"/>
                             </View>}
                             {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
-                                <TouchableOpacity onPress={()=> setModalDeleteBookPlaceVisible(true)}>
+                                <TouchableOpacity onPress={handleModalDeleteBookPlace}>
                                     <Text style={{color:"white"}}>Supprimer</Text>
                                 </TouchableOpacity>
                             </View>}
