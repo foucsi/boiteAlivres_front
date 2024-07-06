@@ -37,9 +37,8 @@ import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
-
-
-
+import FirstView from "@/components/FirstView";
+import SecondView from "@/components/SecondView";
 
 
 // @ts-ignore
@@ -80,33 +79,8 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
                     {modalDeleteBookPlaceVisible && <ModalDeleteConfirmBookPlace setModalVisible={setModalVisible} setModalDeleteBookPlaceVisible={setModalDeleteBookPlaceVisible} bookPlaceId={selectedMarker.id}/>}
                     <View style={styles.centeredView}>
-                        <View style={styles.firstView}>
-                            <Image source={{uri: selectedMarker.photo}} style={styles.photo}/>
-                            <View style={styles.containerClosed}>
-                                <Touchable onPress={handleCloseModal} nameIcon="closecircle" size={28} color="#F7F9F9"/>
-                            </View>
-                            <View style={styles.containerFavoris}>
-                                <Touchable onPress={addFavorite} nameIcon="heart" size={28} color={isFavorite ? "orange" : "#F7F9F9" }/>
-                            </View>
-                            {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerUpdatePhoto}>
-                                <Touchable onPress={handleUploadPhoto} nameIcon="camera" size={28} color="#F7F9F9"/>
-                            </View>}
-                            {user.uniqueId === selectedMarker.uniqueId && <View style={styles.containerDeleteBookPlace}>
-                                <TouchableOpacity onPress={handleModalDeleteBookPlace}>
-                                    <Text style={{color:"white"}}>Supprimer</Text>
-                                </TouchableOpacity>
-                            </View>}
-                        </View>
-                        <View style={styles.secondView}>
-                            <View>
-                                <Text>Posté le {momentDate} </Text>
-                            </View>
-                            <View style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
-                                <Image source={{uri: selectedMarker.photoUser}} style={{width: 30, height: 30, borderRadius: 50}}/>
-                                <Text>{selectedMarker.username}</Text>
-                            </View>
-
-                        </View>
+                        <FirstView selectedMarker={selectedMarker} handleCloseModal={handleCloseModal} addFavorite={addFavorite} isFavorite={isFavorite} handleUploadPhoto={handleUploadPhoto} handleModalDeleteBookPlace={handleModalDeleteBookPlace}/>
+                        <SecondView selectedMarker={selectedMarker} momentDate={momentDate}/>
                         <View style={styles.thirdView}>
                             {iconsMaterial.map((icon: any) => {
                                 return (
@@ -149,49 +123,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
-    },
-    firstView: {
-        position: 'relative',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '30%',
-        backgroundColor: 'white',
-    },
-    secondView:{
-        flexDirection: 'row',
-        alignItems: "center",
-        justifyContent: 'space-between',
-        width: '100%',
-        height: '5%',
-        backgroundColor: "#F7F9F9",
-        padding: 10,
-        borderBottomWidth: 1,
-        borderColor: '#294C60',
-        opacity: 0.9,
-    },
-    photo:{
-        width: "100%",
-        height: "100%",
-    },
-    containerClosed:{
-        position: 'absolute',
-        top: 50,
-        right: 0,
-        width: 30,
-        left:10,
-    },
-    containerFavoris:{
-        position: 'absolute',
-        top: 50,
-        right: 10,
-        width: 30,
-    },
-    containerUpdatePhoto:{
-        position: 'absolute',
-        bottom:10,
-        right: 10,
-        width: 30,
     },
     thirdView:{
         display: 'flex',
@@ -249,16 +180,5 @@ const styles = StyleSheet.create({
         width: "100%",
         padding: 10,
         alignItems: 'flex-end',
-    },
-    containerDeleteBookPlace:{
-        position: 'absolute',
-        bottom: 10,
-        right: 160,
-        width: 100,
-        backgroundColor:"#BA274A",
-        padding: 10,
-        borderRadius: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
     }
 });
