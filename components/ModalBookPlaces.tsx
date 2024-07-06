@@ -7,7 +7,6 @@ import {
     Image,
     ScrollView,
 } from 'react-native'
-import {useState} from "react";
 
 //LIBRARY
 import moment from "moment";
@@ -21,6 +20,7 @@ import { AntDesign } from '@expo/vector-icons';
 import ContainerComments from "@/components/ContainerComments";
 import ContainerDescription from "@/components/ContainerDescription";
 import ModalComment from "@/components/ModalComment";
+import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlace";
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
@@ -28,16 +28,17 @@ import {handleLinking} from "@/helpers/functions/navigationMap";
 import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
 
 //HOOKS
+import {useState} from "react";
 import {useGetAllCommentsByBookPlace} from "@/helpers/hooks/useGetAllCommentsByBookPlace";
 import {useDispatch, useSelector} from "react-redux";
+import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
+import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
 //import constants
 import {iconsMaterial} from "@/constants/icons";
 
-//IMPORTS HOOKS
-import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
-import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
-import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlace";
+
+
 
 // @ts-ignore
 export default function ModalBookPlaces({modalVisible, setModalVisible, selectedMarker, setSelectedMarker}) {
