@@ -39,6 +39,7 @@ import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 import {iconsMaterial} from "@/constants/icons";
 import FirstView from "@/components/FirstView";
 import SecondView from "@/components/SecondView";
+import ThirdView from "@/components/ThirdView";
 
 
 // @ts-ignore
@@ -81,25 +82,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                     <View style={styles.centeredView}>
                         <FirstView selectedMarker={selectedMarker} handleCloseModal={handleCloseModal} addFavorite={addFavorite} isFavorite={isFavorite} handleUploadPhoto={handleUploadPhoto} handleModalDeleteBookPlace={handleModalDeleteBookPlace}/>
                         <SecondView selectedMarker={selectedMarker} momentDate={momentDate}/>
-                        <View style={styles.thirdView}>
-                            {iconsMaterial.map((icon: any) => {
-                                return (
-                                    <View style={styles.containerIcon} key={icon.name}>
-                                        <TouchableOpacity onPress={()=> {
-                                            if (icon.text === "Commenter"){setModalCommentVisible(icon.onPress)}
-                                            else if(icon.text === "Direction"){
-                                                handleLinking(selectedMarker.lat, selectedMarker.long)
-                                            }else if(icon.text === "Partager"){
-                                                shareBookPlace()
-                                            }
-                                        }}>
-                                            <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
-                                        </TouchableOpacity>
-                                        <Text>{icon.text}</Text>
-                                    </View>
-                                )
-                            })}
-                        </View>
+                        <ThirdView selectedMarker={selectedMarker} setModalCommentVisible={setModalCommentVisible}/>
                             <ScrollView>
                                 <ContainerDescription selectedMarker={selectedMarker} setSelectedMarker={setSelectedMarker}/>
                                 <View style={styles.containerComments}>
