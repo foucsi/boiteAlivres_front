@@ -7,28 +7,28 @@ import Modal from "react-native-modal"
 
 
 export default function Favoris() {
-    const [isModalVisible, setModalVisible] = useState(false);
-
-    const toggleModal = () => {
-        setModalVisible(!isModalVisible);
-    };
+    // const [isModalVisible, setModalVisible] = useState(false);
+    //
+    // const toggleModal = () => {
+    //     setModalVisible(!isModalVisible);
+    // };
 
     return (
         <View style={styles.container}>
             <Favorites/>
-            <Button title="Show modal" onPress={toggleModal} />
-            <View style={{ flex: 1 }}>
-                <Button title="Show modal" onPress={toggleModal} />
+            {/*<Button title="Show modal" onPress={toggleModal} />*/}
+            {/*<View style={{ flex: 1 }}>*/}
+            {/*    <Button title="Show modal" onPress={toggleModal} />*/}
 
-                <Modal isVisible={isModalVisible}>
-                    <View style={styles.newModal}>
-                        <View style={styles.contentModal}>
+            {/*    <Modal isVisible={isModalVisible}>*/}
+            {/*        <View style={styles.newModal}>*/}
+            {/*            <View style={styles.contentModal}>*/}
 
-                            <Button title="Hide modal" onPress={toggleModal} />
-                        </View>
-                    </View>
-                </Modal>
-            </View>
+            {/*                <Button title="Hide modal" onPress={toggleModal} />*/}
+            {/*            </View>*/}
+            {/*        </View>*/}
+            {/*    </Modal>*/}
+            {/*</View>*/}
         </View>
     )
 }
