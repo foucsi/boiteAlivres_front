@@ -23,7 +23,7 @@ export default function Favoris() {
                 <Modal isVisible={isModalVisible}>
                     <View style={styles.newModal}>
                         <View style={styles.contentModal}>
-                            <Text>Hello!</Text>
+
                             <Button title="Hide modal" onPress={toggleModal} />
                         </View>
                     </View>
@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     contentModal:{
         borderRadius: 10,
         backgroundColor:"white",
-        height: 200,
+        height: 100,
     }
 })
