@@ -2,6 +2,10 @@ import {View, StyleSheet} from 'react-native'
 import React from 'react'
 import Favorites from "@/components/Favorites";
 
+//TEST MODAL
+import Modal from "react-native-modal"
+
+
 export default function Favoris() {
 
 
