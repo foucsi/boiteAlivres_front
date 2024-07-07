@@ -16,7 +16,6 @@ import ContainerComments from "@/components/ContainerComments";
 import ContainerDescription from "@/components/ContainerDescription";
 import ModalComment from "@/components/ModalComment";
 import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlace";
-import Touchable from "@/components/touchableOpacity/Touchable";
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
@@ -31,7 +30,6 @@ import {useAddFavorites} from "@/helpers/hooks/useAddFavorites";
 import {useGetFavorite} from "@/helpers/hooks/useGetFavorite";
 
 //import constants
-import {iconsMaterial} from "@/constants/icons";
 import FirstView from "@/components/FirstView";
 import SecondView from "@/components/SecondView";
 import ThirdView from "@/components/ThirdView";
