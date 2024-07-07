@@ -19,8 +19,6 @@ import ModalDeleteConfirmBookPlace from "@/components/modalDeleteConfirmBookPlac
 
 //FUNCTIONS
 import {uploadPhoto} from "@/helpers/functions/uploadPhoto";
-import {handleLinking} from "@/helpers/functions/navigationMap";
-import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
 
 //HOOKS
 import {useState} from "react";
