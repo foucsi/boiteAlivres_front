@@ -76,7 +76,6 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
     return (
                 <Modal animationType="slide" transparent={true} visible={modalVisible}>
-                    {/* below modal visible or not comment*/}
                     {modalCommentVisible && <ModalComment setModalCommentVisible={setModalCommentVisible} bookPlaceId={selectedMarker.id}/>}
                     {modalDeleteBookPlaceVisible && <ModalDeleteConfirmBookPlace setModalVisible={setModalVisible} setModalDeleteBookPlaceVisible={setModalDeleteBookPlaceVisible} bookPlaceId={selectedMarker.id}/>}
                     <View style={styles.centeredView}>
