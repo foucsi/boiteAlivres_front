@@ -3,8 +3,6 @@ import {
     Text,
     Modal,
     StyleSheet,
-    TouchableOpacity,
-    Image,
     ScrollView,
 } from 'react-native'
 
@@ -12,9 +10,6 @@ import {
 import moment from "moment";
 
 //ICONS
-import { FontAwesome } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 
 //COMPONENTS
 import ContainerComments from "@/components/ContainerComments";
