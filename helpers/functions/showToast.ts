@@ -3,7 +3,12 @@ import Toast from 'react-native-toast-message'
 export const showModal = ()=>{
     Toast.show({
         type: 'success',
-        text1: 'Hello',
-        text2: 'This is some something 👋'
+        text1: 'Suppression réussie',
+        text2: 'La boîte à livres a été retirée de vos favoris',
+        position: 'bottom',
+        visibilityTime: 2000,
+        autoHide: true,
+        bottomOffset: 50,
+        topOffset: 0,
     });
 }

@@ -4,6 +4,8 @@ import { AntDesign } from '@expo/vector-icons';
 import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
 import {useDispatch} from "react-redux";
 
+import {showModal} from "@/helpers/functions/showToast";
+
 interface FavoritesUser{
     _id: string
     bookPlace: any,
@@ -14,6 +16,7 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
 
     const handleDeleteFavorite = ()=>{
         deleteFavorite(_id, dispatch)
+        showModal()
     }
 
     return (
