@@ -19,11 +19,9 @@ export default function Favoris() {
             <Button title="Show modal" onPress={toggleModal} />
             <View style={{ flex: 1 }}>
                 <Button title="Show modal" onPress={toggleModal} />
-
                 <Modal isVisible={isModalVisible}>
                     <View style={styles.newModal}>
                         <View style={styles.contentModal}>
-
                             <Button title="Hide modal" onPress={toggleModal} />
                         </View>
                     </View>
