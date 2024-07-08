@@ -18,7 +18,6 @@ export default function Favoris() {
             <Favorites setModalVisible={setModalVisible}/>
             <Button title="Show modal" onPress={toggleModal} />
             <View style={{ flex: 1 }}>
-                <Button title="Show modal" onPress={toggleModal} />
                 <Modal isVisible={isModalVisible}>
                     <View style={styles.newModal}>
                         <View style={styles.contentModal}>
