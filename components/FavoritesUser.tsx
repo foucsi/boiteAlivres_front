@@ -6,14 +6,16 @@ import {useDispatch} from "react-redux";
 
 interface FavoritesUser{
     _id: string
-    bookPlace: any
+    bookPlace: any,
+    setModalVisible: any
 }
 
-export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
+export default function FavoritesUser({_id,bookPlace, setModalVisible}:FavoritesUser) {
     const dispatch = useDispatch()
 
     const handleDeleteFavorite = ()=>{
         deleteFavorite(_id, dispatch)
+        setModalVisible(true)
     }
 
     return (
