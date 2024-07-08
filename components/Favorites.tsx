@@ -9,7 +9,7 @@ interface Favorites{
 }
 
 // @ts-ignore
-export default function Favorites({setModalVisible}) {
+export default function Favorites() {
 
     // @ts-ignore
     const uniqueId = useSelector((state: Favorites) => state.user.value.uniqueId)
@@ -25,7 +25,7 @@ export default function Favorites({setModalVisible}) {
             <View style={styles.container}>
                 <ScrollView>
                     {favorites.length> 0 ? favorites?.map((favorite:any)=>{
-                        return <FavoritesUser key={favorite._id} {...favorite} setModalVisible={setModalVisible}/>
+                        return <FavoritesUser key={favorite._id} {...favorite}/>
                     }): <Text>Vous n'avez pas encore de favoris</Text>}
                 </ScrollView>
             </View>
