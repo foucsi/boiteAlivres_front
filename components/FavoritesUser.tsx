@@ -16,7 +16,7 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
 
     const handleDeleteFavorite = ()=>{
         deleteFavorite(_id, dispatch)
-        showModal()
+        showModal('Suppression réussie','La boîte à livres a été retirée de vos favoris')
     }
 
     return (
