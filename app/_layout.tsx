@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack } from 'expo-router/stack';
+import Toast from 'react-native-toast-message';
 
 //PROVIDER
 import { Provider } from "react-redux";
@@ -40,6 +41,7 @@ export default function RootLayout() {
                     <Stack.Screen name="register" options={{ headerShown: false }} />
                     <Stack.Screen name="index" options={{ headerShown: false }} />
                 </Stack>
+                <Toast/>
             </PersistGate>
         </Provider>
     );
