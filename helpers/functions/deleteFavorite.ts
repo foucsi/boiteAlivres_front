@@ -2,6 +2,8 @@ import {log} from "@/utils/logger";
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
 import {removeFavorite} from "@/redux/favoritesSlice";
 import {Dispatch} from "react";
+import {showModal} from "@/helpers/functions/showToast";
+
 
 interface DeleteFavoriteResponse {
     result: boolean;
