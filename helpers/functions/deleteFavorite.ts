@@ -25,6 +25,7 @@ export const deleteFavorite = async(favoriteId:string, dispatch:Dispatch<any>)=>
             if(data.result){
                 log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
                 dispatch(removeFavorite(favoriteId))
+                showModal('Suppression réussie','La boîte à livres a été retirée de vos favoris', 'bottom')
                 return true
             }else {
                 log.warn(`Fetch route ${URL_DELETE_FAVORITE} failed`)
