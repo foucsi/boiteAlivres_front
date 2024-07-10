@@ -11,7 +11,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
         if(result.success){
             console.log(result.success)
             dispatch(addFavoriteReducer(result.favorite))
-            showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom')
+            showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 6000)
         }else {
             console.log(result.error)
         }
