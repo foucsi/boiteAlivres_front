@@ -1,6 +1,7 @@
 import {URL_DELETE_BOOK_PLACE} from "@/constants/Url";
 import {log} from "@/utils/logger";
 import {removeBookSpace} from "@/redux/bookSpaces";
+import {showModal} from "@/helpers/functions/showToast";
 
 export const deleteBookPlace = async (id: string, dispatch:any) => {
     try{
@@ -18,6 +19,7 @@ export const deleteBookPlace = async (id: string, dispatch:any) => {
         if(data.result){
             log.info(`Deleted place with id success: ${id}`)
             dispatch(removeBookSpace())
+            showModal('success', 'Boite à livres supprimé!', 'bottom',2000)
         }else {
             log.warn(`Error while deleting place with id: ${id}`)
         }
