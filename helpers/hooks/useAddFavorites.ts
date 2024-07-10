@@ -1,6 +1,7 @@
 import {addFavorites} from "@/helpers/functions/addFavorites";
 import {addFavoriteReducer} from "@/redux/favoritesSlice";
 import {useDispatch, useSelector} from "react-redux";
+import {showModal} from "@/helpers/functions/showToast";
 
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
@@ -10,6 +11,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
         if(result.success){
             console.log(result.success)
             dispatch(addFavoriteReducer(result.favorite))
+            showModal('Success', 'Added to favorites', 'bottom')
         }else {
             console.log(result.error)
         }
