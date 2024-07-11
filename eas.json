@@ -9,7 +9,7 @@
     },
     "preview": {
       "distribution": "internal",
-      "node": "18.15.0"
+      "node": "18.17.0"
     },
     "production": {}
   },

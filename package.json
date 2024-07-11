@@ -66,6 +66,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-persist-react-native-fs": "^1.0.1",
+    "undici": "^6.19.2",
     "uniqid": "^5.4.0"
   },
   "devDependencies": {
