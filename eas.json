@@ -8,7 +8,8 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "node": "18.15.0"
     },
     "production": {}
   },
