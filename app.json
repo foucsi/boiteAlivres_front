@@ -33,6 +33,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c8ed0809-0248-4b88-a342-9baa669501dd"
+      }
+    },
+    "owner": "foucsi"
   }
 }
