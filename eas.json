@@ -1,6 +1,6 @@
 {
   "cli": {
-    "version": ">= 7.0.0"
+    "version": ">= 10.1.1"
   },
   "build": {
     "development": {
@@ -9,7 +9,7 @@
     },
     "preview": {
       "distribution": "internal",
-      "node": "21.0.0"
+      "node": "21.1.0"
     },
     "production": {}
   },
