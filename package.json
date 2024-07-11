@@ -74,7 +74,6 @@
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.45",
     "@types/react-test-renderer": "^18.0.7",
-    "eas-cli": "^10.1.1",
     "jest": "^29.7.0",
     "jest-expo": "~51.0.1",
     "jest-fetch-mock": "^3.0.3",
