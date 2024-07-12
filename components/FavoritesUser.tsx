@@ -26,9 +26,9 @@ export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
                 </TouchableOpacity>
             </View>
             <View style={styles.containerDescription}>
-                <Image source={{uri: bookPlace.photo}} style={{width: 60, height: 60, borderRadius:10}}/>
+                <Image source={{uri: bookPlace?.photo}} style={{width: 60, height: 60, borderRadius:10}}/>
                 <View style={{ width:"80%"}}>
-                    <Text>{bookPlace.description}</Text>
+                    <Text>{bookPlace?.description}</Text>
                 </View>
             </View>
         </View>
