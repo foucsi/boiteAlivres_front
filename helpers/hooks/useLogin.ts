@@ -8,7 +8,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 interface formState{
     email: string,
     password: string
-
 }
 
 export const useLogin = ()=>{
