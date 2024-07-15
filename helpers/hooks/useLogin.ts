@@ -16,10 +16,11 @@ export const useLogin = ()=>{
     const [password,setPassword] = useState<string>('')
     const [error,setError] = useState<string>('')
 
-    const [form, setForm] = useState<formState>({
-        email: '',
-        password: ''
-    })
+    //below test form state
+    // const [form, setForm] = useState<formState>({
+    // //     email: '',
+    // //     password: ''
+    // // })
 
     const dispatch = useDispatch()
 
