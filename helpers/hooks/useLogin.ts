@@ -10,6 +10,11 @@ export const useLogin = ()=>{
     const [password,setPassword] = useState<string>('')
     const [error,setError] = useState<string>('')
 
+    const [form, setForm] = useState({
+        email: '',
+        password: ''
+    })
+
     const dispatch = useDispatch()
 
     const handleLogin = async()=>{
