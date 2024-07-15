@@ -5,12 +5,18 @@ import {useDispatch} from "react-redux";
 import {loginReducer} from "@/redux/users";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+interface formState{
+    email: string,
+    password: string
+
+}
+
 export const useLogin = ()=>{
     const [email,setEmail] = useState<string>('')
     const [password,setPassword] = useState<string>('')
     const [error,setError] = useState<string>('')
 
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<formState>({
         email: '',
         password: ''
     })
