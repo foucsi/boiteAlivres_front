@@ -20,9 +20,7 @@ export const useGetFavorite = (uniqueId:string, bookPlaceId:string) => {
 
 
     useEffect(()=>{
-        if (bookPlaceId && bookPlaceId !== null) {
             fetchIsFavorite()
-        }
     }, [fetchIsFavorite, favo])
 
     return {isFavorite}
