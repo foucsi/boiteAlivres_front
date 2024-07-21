@@ -1,10 +1,10 @@
 import {log} from "@/utils/logger"
+import {URL_GET_FAVORITE} from "@/constants/Url";
 
 export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
-    const url = `http://localhost:3000/favorites/allFavoritesByUser/${uniqueId}/${bookPlaceId}`
     try{
         log.info(`getFavorite: Fetching data for user ${uniqueId} and bookPlace ${bookPlaceId}`);
-        const response = await fetch(url, {
+        const response = await fetch(URL_GET_FAVORITE(uniqueId, bookPlaceId), {
             method:"GET",
             headers: {
                 "Accept":"application/json"

@@ -34,3 +34,4 @@ export const URL_DELETE_FAVORITE = (favoriteId:string):string=>`${baseUrl}/favor
 export const URL_ADD_FAVORITE = (uniqueId:string, bookPlaceId:string):string=>`${baseUrl}/favorites/addFavorite/${uniqueId}/${bookPlaceId}`
 
 //GET FAVORITE
+export const URL_GET_FAVORITE = (uniqueId:string, bookPlaceId:string):string=>`${baseUrl}/favorites/allFavoritesByUser/${uniqueId}/${bookPlaceId}`
