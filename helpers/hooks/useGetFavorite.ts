@@ -2,8 +2,6 @@ import {useEffect, useState, useCallback} from "react";
 import {getFavorite} from "@/helpers/functions/getFavorite";
 import {useSelector} from "react-redux";
 
-//get favorite error
-
 export const useGetFavorite = (uniqueId:string, bookPlaceId:string) => {
     const [isFavorite, setIsFavorite] = useState<boolean>(false)
     // @ts-ignore
