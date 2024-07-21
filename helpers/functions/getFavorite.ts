@@ -3,7 +3,7 @@ import {URL_GET_FAVORITE} from "@/constants/Url";
 
 export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
     try{
-        log.info(`getFavorite: Fetching data for user ${uniqueId} and bookPlace ${bookPlaceId}`);
+        log.info(`getFavorite: Fetching data for user ${uniqueId} and bookPlace ${bookPlaceId} on url${URL_GET_FAVORITE(uniqueId, bookPlaceId)}`);
         const response = await fetch(URL_GET_FAVORITE(uniqueId, bookPlaceId), {
             method:"GET",
             headers: {
