@@ -13,9 +13,7 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
         console.log("Response", response)
 
         if (!response.ok) {
-            // throw new Error(`HTTP error! status: ${response.status}`);
-            log.warn(`getFavorite: HTTP error! status: ${response.status} ${response.statusText}`);
-            return {success: false, error: `HTTP error! status: ${response.status}`};
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json()
         if(data.result){
