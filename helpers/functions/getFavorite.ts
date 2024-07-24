@@ -10,7 +10,6 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
                 "Accept":"application/json"
             }
         })
-        console.log("Response", response)
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
