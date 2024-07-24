@@ -10,15 +10,15 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
                 "Accept":"application/json"
             }
         })
-        if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
-        }
+        // if(!response.ok){
+        //     throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
+        // }
         const data = await response.json()
         if(data.result){
             log.info(`getFavorite: Successfully retrieved favorite`);
             return {success: true, data: data.result}
         }else {
-            log.warn(`getFavorite: Error`, data.error || "Error")
+            log.warn(`getFavorite:`, data.message || "Error")
             return {success: false, error: data.error}
         }
     }catch(err){
