@@ -22,7 +22,7 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
             return {success: false, error: data.error}
         }
     }catch(err){
-        log.error(`getFavorite: Error`, err)
+        log.error(`getFavorite: `, err)
         return {success: false, error: err}
     }
 }
