@@ -19,7 +19,7 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
             log.info(`getFavorite: Successfully retrieved favorite`);
             return {success: true, data: data.result}
         }else {
-            log.warn(`getFavorite:`, data.message || "Error")
+            log.warn(`getFavorite:`, data.error || "Error")
             return {success: false, error: data.error}
         }
     }catch(err){
