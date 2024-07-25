@@ -10,7 +10,6 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
                 "Accept":"application/json"
             }
         })
-        // si la requete n'est pas ok
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
