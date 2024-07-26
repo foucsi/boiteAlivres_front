@@ -3,7 +3,13 @@ import {URL_GET_BOOKPLACE_BY_USER_ID} from "@/constants/Url";
 
 export const getAllBookPlaceByUser = async (uniqueId: string) => {
     try{
-        const response = await fetch(URL_GET_BOOKPLACE_BY_USER_ID(uniqueId))
+        const response = await fetch(URL_GET_BOOKPLACE_BY_USER_ID(uniqueId), {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        })
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
         }
