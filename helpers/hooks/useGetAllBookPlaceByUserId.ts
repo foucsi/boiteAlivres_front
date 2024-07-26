@@ -7,7 +7,7 @@ export const useGetAllBookPlaceByUserId = (uniqueId: string) => {
     const fetchAllBookPlacesByUserId = async()=>{
         const result = await getAllBookPlaceByUser(uniqueId)
         if(result.success) {
-            setBookPlacesLength(result.data.length)
+            setBookPlacesLength(result.data)
         }else {
             console.log(result.error)
         }

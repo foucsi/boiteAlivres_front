@@ -18,7 +18,7 @@ export const getAllBookPlaceByUser = async (uniqueId: string) => {
 
         if(data.result){
             log.info("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", "Successfully fetched all book places by user.")
-            return {success: true, data: data.bookPlaces}
+            return {success: true, data: data.bookPlaces.length}
         }else{
             log.warn("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", data.error)
             return {success: false, error: data.error}
