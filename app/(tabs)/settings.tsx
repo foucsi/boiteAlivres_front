@@ -32,6 +32,7 @@ export default function Settings() {
                 <Text style={styles.text}>Utilisateur: {users?.username}</Text>
                 <Text style={styles.text}>Email: {users?.email}</Text>
                 <Text style={styles.text}>Premium: <Entypo name={users?.premium ? "check" : "cross"} size={24} color="green" /></Text>
+                <Text>Boite à livres partagées : {bookPlacesLength}</Text>
             </View>
             <View style={styles.containerLogout}>
                 <TouchableOpacity style={styles.btnLogout} onPress={()=>handleLogout(dispatch, router, "/login")}>
