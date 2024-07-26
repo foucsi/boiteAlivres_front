@@ -10,6 +10,7 @@ export const URL_REGISTER:string = `${baseUrl}/users/register`
 // URL BookPlaces
 export const URL_GET_ALL_BOOK_PLACES:string = `${baseUrl}/bookPlaces/getAllBookPlaces`
 export const URL_DELETE_BOOK_PLACE =(bookPlaceId:string):string=>`${baseUrl}/bookPlaces/removeBookPlace/${bookPlaceId}`
+export const URL_GET_BOOKPLACE_BY_USER_ID =(uniqueId:string):string=>`${baseUrl}/bookPlaces/getAllBookPlaceByUserId/${uniqueId}`
 
 //URL add Comment and delete
 export const URL_ADD_COMMENT =(uniqueId:string):string=>`${baseUrl}/comments/addComment/${uniqueId}`
