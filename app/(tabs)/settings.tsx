@@ -13,11 +13,14 @@ import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import {ABOUT_DEV} from "@/constants/aboutDev";
+import {useGetAllBookPlaceByUserId} from "@/helpers/hooks/useGetAllBookPlaceByUserId";
 
 export default function Settings() {
     const dispatch = useDispatch()
     // @ts-ignore
     const users = useSelector(state => state.user.value)
+
+    const {bookPlacesLength} = useGetAllBookPlaceByUserId(users?.uniqueId)
 
     const memoizedAboutDev = ABOUT_DEV()
 
