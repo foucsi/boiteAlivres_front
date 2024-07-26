@@ -32,7 +32,7 @@ export default function Settings() {
                 <Text style={styles.text}>Utilisateur: {users?.username}</Text>
                 <Text style={styles.text}>Email: {users?.email}</Text>
                 <Text style={styles.text}>Premium: <Entypo name={users?.premium ? "check" : "cross"} size={24} color="green" /></Text>
-                <Text>Boite à livres partagées : {bookPlacesLength}</Text>
+                <Text style={styles.textShare}>Boite à livres partagées : {bookPlacesLength > 0 ? bookPlacesLength : <Text>0, En attente de votre première pépite !</Text>}</Text>
             </View>
             <View style={styles.containerLogout}>
                 <TouchableOpacity style={styles.btnLogout} onPress={()=>handleLogout(dispatch, router, "/login")}>
@@ -79,6 +79,11 @@ const styles = StyleSheet.create({
         fontSize: 38,
         textAlign: 'center',
         marginTop: 20,
+    },
+    textShare:{
+        fontSize: 16,
+        marginTop: 20,
+        color: '#294C60',
     },
     text:{
         fontSize: 20,
