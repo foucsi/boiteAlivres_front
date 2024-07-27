@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
-import React, {useMemo} from 'react'
+import React from 'react'
 import {router} from 'expo-router'
 import {Linking} from 'react-native'
 
