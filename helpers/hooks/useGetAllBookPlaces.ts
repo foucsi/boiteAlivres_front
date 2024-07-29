@@ -27,8 +27,6 @@ export const useGetAllBookPlaces = () => {
             onError: (error: Error) => {
                 console.log(error.message);
             },
-            // Cette option permet de désactiver les re-fetchs automatiques
-            // si vous préférez contrôler manuellement quand les données sont rechargées
             refetchOnWindowFocus: false,
         }
     );
