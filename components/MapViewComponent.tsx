@@ -1,4 +1,4 @@
-import {ScrollView, StyleSheet, View} from 'react-native'
+import {ScrollView, StyleSheet, View, Text} from 'react-native'
 import React, {useEffect, useMemo, useState} from 'react'
 import MapView, {Marker} from "react-native-maps";
 import {useGetLocationUser} from "@/helpers/hooks/useGetLocationUser";
@@ -17,7 +17,8 @@ import ModalFirstConnection from "@/components/ModalFirstConnection";
 export default function MapViewComponent({setModalVisible, modalVisible}) {
     const {location} = useGetLocationUser();
     const {addMarker, modalIsVisible, setModalIsVisible,modalPremiumIsVisible, setModalPremiumIsVisible} = useAddMarkerInDb();
-    const {bookSpaces} = useGetAllBookPlaces();
+    // const {bookSpaces} = useGetAllBookPlaces();
+    const { data: bookSpaces, isLoading, error } = useGetAllBookPlaces();
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
 
@@ -26,28 +27,40 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
     const user = useSelector((state: any) => state.user.value);
     let premium = user.premium
 
-    // useEffect(() => {
-    //     console.log('firstConnection', firstLogin)
-    // }, []);
 
 
-    const allBookSpaces = useMemo(() => bookSpaces.map((bookSpace: any) => (
-        <MarkerBookPlaces key={bookSpace._id}
-                          lat={bookSpace.latitude}
-                          long={bookSpace.longitude}
-                          description={bookSpace.description}
-                          img={bookSpace.icon}
-                          photo={bookSpace.photo}
-                          photoUser={bookSpace.addedBy.photo}
-                          date={bookSpace.date_added}
-                          username={bookSpace.addedBy.username}
-                          setModalVisible={setModalVisible}
-                          uniqueId={bookSpace.addedBy.uniqueId}
-                          id={bookSpace._id}
-                          setSelectedMarker={setSelectedMarker}
-                          status={bookSpace.status}
-        />
-    )), [bookSpaces, setModalVisible, setSelectedMarker]);
+
+    const allBookSpaces = useMemo(() => {
+        if (bookSpaces) {
+            // @ts-ignore
+            return bookSpaces.map((bookSpace: any) => (
+                <MarkerBookPlaces key={bookSpace._id}
+                                  lat={bookSpace.latitude}
+                                  long={bookSpace.longitude}
+                                  description={bookSpace.description}
+                                  img={bookSpace.icon}
+                                  photo={bookSpace.photo}
+                                  photoUser={bookSpace.addedBy.photo}
+                                  date={bookSpace.date_added}
+                                  username={bookSpace.addedBy.username}
+                                  setModalVisible={setModalVisible}
+                                  uniqueId={bookSpace.addedBy.uniqueId}
+                                  id={bookSpace._id}
+                                  setSelectedMarker={setSelectedMarker}
+                                  status={bookSpace.status}
+                />
+            ));
+        }
+        return null;
+    }, [bookSpaces, setModalVisible, setSelectedMarker]);
+
+    if (isLoading) {
+        return <View><Text>Chargement...</Text></View>;
+    }
+
+    if (error) {
+        return <View><Text>Erreur : {(error as Error).message}</Text></View>;
+    }
 
 
     return (
