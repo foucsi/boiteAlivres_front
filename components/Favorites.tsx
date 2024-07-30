@@ -14,9 +14,9 @@ export default function Favorites() {
     // @ts-ignore
     const uniqueId = useSelector((state: Favorites) => state.user.value.uniqueId)
 
-    const {favorites, loading, error} = useGetFavoritesUser(uniqueId)
+    const {favorites, isLoading, error} = useGetFavoritesUser(uniqueId)
 
-    if(loading) return <Text>Loading...</Text>
+    if(isLoading) return <Text>Loading...</Text>
     if(error) return <Text>Erreur: {error}</Text>
 
 
