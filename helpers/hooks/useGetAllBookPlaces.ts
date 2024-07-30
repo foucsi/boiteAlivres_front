@@ -36,5 +36,4 @@ export const useGetAllBookPlaces = () => {
         // @ts-ignore
         error : error?.message || "error"
     }
-
 }
