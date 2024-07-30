@@ -21,7 +21,7 @@ export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisi
                         >
                             <Text style={styles.textBtn}>Oui</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.btn} onPress={(prev)=>setModalDeleteBookPlaceVisible(!prev)}>
+                        <TouchableOpacity style={styles.btn} onPress={(prev)=>setModalDeleteBookPlaceVisible(false)}>
                             <Text style={styles.textBtn}>Non</Text>
                         </TouchableOpacity>
                     </View>
