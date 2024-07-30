@@ -14,7 +14,6 @@ interface LoginResponse {
 }
 
 export const login = async(user:User):Promise<LoginResponse>=>{
-    // const url = "http://192.168.1.38:3000/users/login"
     try{
         const response = await fetch(URL_LOGIN, {
             method: 'POST',
