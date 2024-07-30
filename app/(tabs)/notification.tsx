@@ -6,7 +6,8 @@ import Features from "@/components/Features";
 interface FeaturesUser{
     _id: string,
     feature: string
-    feat: any
+    feat: any,
+    error:string
 }
 
 
