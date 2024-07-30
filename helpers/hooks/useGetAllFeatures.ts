@@ -6,6 +6,7 @@ export const useGetAllFeatures = () => {
     return {
         features: data?.data || [],
         isLoading,
-        error
+        // @ts-ignore
+        error : error?.message || error
     }
 }
