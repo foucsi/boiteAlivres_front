@@ -3,18 +3,22 @@ import {getFavoritesUser} from "@/helpers/functions/getFavoritesUser";
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
 
-type Favorite = any
+interface Favorite {
+    _id: string,
+    bookPlace: string,
+    user:string,
+    date_added: string,
+}
 
 interface FavoritesUser{
     success: boolean,
-    data?: any,
+    data?: Favorite[],
     error?: string
 }
 
 export const useGetFavoritesUser = (uniqueId:string) => {
-    // // @ts-ignore
     const favo = useSelector((state:any)=> state.favorite.value)
-    const {data, isLoading, error, refetch}=useQuery(['favorites', uniqueId], ()=>getFavoritesUser(uniqueId), {
+    const {data, isLoading, error, refetch}=useQuery<FavoritesUser, Error>(['favorites', uniqueId], ()=>getFavoritesUser(uniqueId), {
         enabled: !!uniqueId
 
     })
@@ -28,7 +32,6 @@ export const useGetFavoritesUser = (uniqueId:string) => {
     return {
         favorites: data?.data || [],
         isLoading,
-        // @ts-ignore
         error: error?.message || error
     }
 }
