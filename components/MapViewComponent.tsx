@@ -17,7 +17,7 @@ import ModalFirstConnection from "@/components/ModalFirstConnection";
 export default function MapViewComponent({setModalVisible, modalVisible}) {
     const {location} = useGetLocationUser();
     const {addMarker, modalIsVisible, setModalIsVisible,modalPremiumIsVisible, setModalPremiumIsVisible} = useAddMarkerInDb();
-    const {bookSpaces} = useGetAllBookPlaces();
+    const {bookSpaces, isLoading, error} = useGetAllBookPlaces();
 
     const [selectedMarker, setSelectedMarker] =
         useState({lat: null,long:null,description:null, date:null, username:null, photo:null, uniqueId:null, id:null});
