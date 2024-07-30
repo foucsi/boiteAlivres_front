@@ -15,12 +15,6 @@ export const useLogin = ()=>{
     const [password,setPassword] = useState<string>('')
     const [error,setError] = useState<string>('')
 
-    //below test form state
-    // const [form, setForm] = useState<formState>({
-    // //     email: '',
-    // //     password: ''
-    // // })
-
     const dispatch = useDispatch()
 
     const handleLogin = async()=>{
