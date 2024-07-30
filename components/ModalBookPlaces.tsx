@@ -81,7 +81,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     </View>
                                     {comments.length > 0 ? comments.map((com: any) => {
                                         return (
-                                            <ContainerComments loading={loading} error={error} key={com._id} id={com._id} comment={com.comment} user={com.added_by}/>
+                                            <ContainerComments loading={loading} error={error} key={com._id} id={com._id} comment={com.comment} user={com.added_by} dateComment={com.createdAt}/>
                                         )
                                     }):<View style={{padding:10}}>
                                         <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>
