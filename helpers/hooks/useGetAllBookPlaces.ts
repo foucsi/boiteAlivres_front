@@ -24,9 +24,7 @@ export const useGetAllBookPlaces = () => {
     const {data, isLoading, error, refetch} = useQuery("bookPlaces", getAllBookPlaces)
 
     useEffect(() => {
-        if(isLoading){
-            refetch()
-        }
+        refetch()
     }, [bookPlace.bookSpaces, bookPlace.description, bookPlace.photo]);
 
 
