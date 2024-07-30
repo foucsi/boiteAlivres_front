@@ -29,7 +29,6 @@ export default function Favorites() {
                     }): <Text>Vous n'avez pas encore de favoris</Text>}
                 </ScrollView>
             </View>
-
         </SafeAreaView>
     )
 }

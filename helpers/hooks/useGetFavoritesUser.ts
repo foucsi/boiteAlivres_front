@@ -1,6 +1,7 @@
 import {useQuery} from "react-query";
 import {getFavoritesUser} from "@/helpers/functions/getFavoritesUser";
 import {useSelector} from "react-redux";
+import {useEffect} from "react";
 
 type Favorite = any
 
@@ -11,10 +12,18 @@ interface FavoritesUser{
 }
 
 export const useGetFavoritesUser = (uniqueId:string) => {
-    const {data, isLoading, error}=useQuery(['favorites', uniqueId], ()=>getFavoritesUser(uniqueId), {
+    // // @ts-ignore
+    const favo = useSelector((state:any)=> state.favorite.value)
+    const {data, isLoading, error, refetch}=useQuery(['favorites', uniqueId], ()=>getFavoritesUser(uniqueId), {
         enabled: !!uniqueId
-        //enable sert a verifier si le param uniqueId est bien present
+
     })
+
+    useEffect(() => {
+        if(uniqueId){
+            refetch()
+        }
+    }, [favo])
 
     return {
         favorites: data?.data || [],
