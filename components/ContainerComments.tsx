@@ -3,13 +3,13 @@ import React from 'react'
 import moment from "moment";
 import {useDispatch, useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
-import {deleteCommentMutation} from "@/helpers/functions/deleteComment";
+import {useDeleteCommentMutation} from "@/helpers/hooks/useDeleteCommentMutation";
 
 
 // @ts-ignore
 export default function ContainerComments({comment, user, id, loading, dateComment}) {
 
-    const {delComment, isLoading, error} = deleteCommentMutation()
+    const {delComment, isLoading, error} = useDeleteCommentMutation()
     const date = moment(dateComment).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
 
