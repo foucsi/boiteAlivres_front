@@ -15,5 +15,5 @@ export const deleteComment = async ({ uniqueId, commentId }: { uniqueId: string;
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
     }
-    return await response.json();
+    return response.json();
 };
