@@ -15,7 +15,7 @@ export default function ContainerComments({comment, user, id, loading, error, da
 
     const dispatch = useDispatch()
 
-    if(loading){return <Text>Loading...</Text>}
+    if(isLoading){return <Text>Loading...</Text>}
     if(error){return <Text>Error : {error}</Text>}
 
     return (
