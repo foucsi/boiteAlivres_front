@@ -7,9 +7,9 @@ import {deleteCommentMutation} from "@/helpers/functions/deleteComment";
 
 
 // @ts-ignore
-export default function ContainerComments({comment, user, id, loading, error, dateComment}) {
+export default function ContainerComments({comment, user, id, loading, dateComment}) {
 
-    const {delComment, isLoading} = deleteCommentMutation()
+    const {delComment, isLoading, error} = deleteCommentMutation()
     const date = moment(dateComment).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
 

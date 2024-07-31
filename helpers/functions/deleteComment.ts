@@ -3,7 +3,7 @@ import {URL_DELETE_COMMENT} from "@/constants/Url";
 import {useMutation} from "react-query";
 import {useDispatch} from "react-redux";
 
-export const deleteComment = async (uniqueId: string, commentId: string) => {
+export const deleteComment = async ({ uniqueId, commentId }: { uniqueId: string; commentId: string }) => {
     const url = URL_DELETE_COMMENT(uniqueId);
     const response = await fetch(url, {
         method: "DELETE",
@@ -20,8 +20,7 @@ export const deleteComment = async (uniqueId: string, commentId: string) => {
 
 export const deleteCommentMutation = () => {
     const dispatch = useDispatch();
-    const { mutate: delComment, isLoading, error } = useMutation(({ uniqueId, commentId }: { uniqueId: string; commentId: string }) =>
-        deleteComment(uniqueId, commentId), {
+    const { mutate: delComment, isLoading, error } = useMutation(deleteComment, {
         onSuccess: () => {
             console.log("Comment deleted");
             dispatch(removeCommentReducer());
@@ -31,5 +30,6 @@ export const deleteCommentMutation = () => {
         }
     });
 
-    return { delComment, isLoading, error };
+    // @ts-ignore
+    return { delComment, isLoading, error : error?.message || "error" };
 };
