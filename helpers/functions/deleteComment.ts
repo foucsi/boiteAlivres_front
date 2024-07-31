@@ -2,7 +2,6 @@ import {removeCommentReducer} from "@/redux/comments";
 import {URL_DELETE_COMMENT} from "@/constants/Url";
 
 export const deleteComment = async(uniqueId:string,commentId:string, dispatch:any)=>{
-    // const url = `http://localhost:3000/comments/removeComment/${uniqueId}`
     const url = URL_DELETE_COMMENT(uniqueId)
     try{
         const response = await fetch(url,{
