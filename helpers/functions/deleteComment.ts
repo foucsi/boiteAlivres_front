@@ -18,24 +18,17 @@ export const deleteComment = async (uniqueId: string, commentId: string) => {
     return await response.json();
 };
 
-export const deleteCommentMutation = ()=>{
+export const deleteCommentMutation = () => {
     const dispatch = useDispatch();
-    const { mutate: delComment, isLoading, error } = useMutation(
-        ({ uniqueId, commentId }: { uniqueId: string; commentId: string }) =>
-            deleteComment(uniqueId, commentId),
-        {
-            onSuccess: (data) => {
-                console.log("Comment deleted");
-                if (data.result) {
-                    dispatch(removeCommentReducer());
-                } else {
-                    console.log(data.error);
-                }
-            },
-            onError: (err) => {
-                console.log(err);
-            }
+    const { mutate: delComment, isLoading, error } = useMutation(deleteComment, {
+        onSuccess: () => {
+            console.log("Comment deleted");
+            dispatch(removeCommentReducer());
+        },
+        onError: (err) => {
+            console.log("Error deleting comment:", err);
         }
-    );
-    return { delComment, isLoading };
-}
+    });
+
+    return { delComment, isLoading, error };
+};
