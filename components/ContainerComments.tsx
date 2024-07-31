@@ -3,11 +3,13 @@ import React from 'react'
 import moment from "moment";
 import {useDispatch, useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
-import {deleteComment} from "@/helpers/functions/deleteComment";
+import {deleteCommentMutation} from "@/helpers/functions/deleteComment";
 
 
 // @ts-ignore
 export default function ContainerComments({comment, user, id, loading, error, dateComment}) {
+
+    const {delComment, isLoading} = deleteCommentMutation()
     const date = moment(dateComment).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
 
@@ -30,7 +32,7 @@ export default function ContainerComments({comment, user, id, loading, error, da
                 </View>
                 <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
                     {userReducer.uniqueId === user.uniqueId &&
-                        <TouchableOpacity onPress={()=>deleteComment(userReducer.uniqueId, id)}>
+                        <TouchableOpacity onPress={()=>delComment(userReducer.uniqueId, id)}>
                             <AntDesign name="closecircleo" size={22} color="#294C60" />
                         </TouchableOpacity> }
                 </View>
