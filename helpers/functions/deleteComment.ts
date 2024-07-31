@@ -4,7 +4,6 @@ import {useMutation} from "react-query";
 
 export const deleteComment = async(uniqueId:string,commentId:string, dispatch:any)=>{
     const url = URL_DELETE_COMMENT(uniqueId)
-    try{
         const response = await fetch(url,{
             method:"DELETE",
             headers:{
@@ -15,13 +14,25 @@ export const deleteComment = async(uniqueId:string,commentId:string, dispatch:an
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
         }
-        const data = await response.json()
-        if(data.result){
+        // const data = await response.json()
+        // if(data.result){
+        //     dispatch(removeCommentReducer())
+        // }else {
+        //     console.log(data.error)
+        // }
+    return await response.json()
+}
+
+export const deleteCommentMutation = async()=>{
+    const {mutate : delComment, isLoading, error} = useMutation(deleteComment, {
+        onSuccess:()=>{
+            console.log("Comment deleted")
             dispatch(removeCommentReducer())
-        }else {
-            console.log(data.error)
+        },
+        onError:(err)=>{
+            console.log(err)
         }
-    }catch (err){
-        console.log(err)
-    }
+    })
+
+    return {delComment, isLoading, error}
 }
