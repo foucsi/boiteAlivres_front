@@ -16,7 +16,8 @@ export default function ContainerComments({comment, user, id, loading, dateComme
     const dispatch = useDispatch()
 
     if(isLoading){return <Text>Loading...</Text>}
-    if(error){return <Text>Error : {error}</Text>}
+    if(error){ // @ts-ignore
+        return <Text>Error : {error.message}</Text>}
 
     const handleDelete = () => {
         delComment({uniqueId: userReducer.uniqueId, commentId:id});

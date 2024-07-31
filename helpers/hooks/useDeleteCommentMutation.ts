@@ -16,5 +16,5 @@ export const useDeleteCommentMutation = () => {
     });
 
     // @ts-ignore
-    return { delComment, isLoading, error : error?.message || "error" };
+    return { delComment, isLoading, error};
 };
