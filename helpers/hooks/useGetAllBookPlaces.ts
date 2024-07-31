@@ -12,7 +12,6 @@ export const useGetAllBookPlaces = () => {
         refetch()
     }, [bookPlace.bookSpaces, bookPlace.description, bookPlace.photo]);
 
-
     return {
         bookSpaces: data?.bookPlaces || [],
         isLoading,
