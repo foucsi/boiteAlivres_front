@@ -20,7 +20,8 @@ export const deleteComment = async (uniqueId: string, commentId: string) => {
 
 export const deleteCommentMutation = () => {
     const dispatch = useDispatch();
-    const { mutate: delComment, isLoading, error } = useMutation(deleteComment, {
+    const { mutate: delComment, isLoading, error } = useMutation(({ uniqueId, commentId }: { uniqueId: string; commentId: string }) =>
+        deleteComment(uniqueId, commentId), {
         onSuccess: () => {
             console.log("Comment deleted");
             dispatch(removeCommentReducer());

@@ -19,7 +19,7 @@ export default function ContainerComments({comment, user, id, loading, error, da
     if(error){return <Text>Error : {error}</Text>}
 
     const handleDelete = () => {
-        delComment(userReducer.uniqueId, id);
+        delComment({uniqueId: userReducer.uniqueId, commentId:id});
     };
 
     return (
