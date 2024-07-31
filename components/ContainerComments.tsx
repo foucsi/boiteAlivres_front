@@ -18,6 +18,10 @@ export default function ContainerComments({comment, user, id, loading, error, da
     if(isLoading){return <Text>Loading...</Text>}
     if(error){return <Text>Error : {error}</Text>}
 
+    const handleDelete = () => {
+        delComment(userReducer.uniqueId, id);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.firstComponent}>
@@ -32,7 +36,7 @@ export default function ContainerComments({comment, user, id, loading, error, da
                 </View>
                 <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
                     {userReducer.uniqueId === user.uniqueId &&
-                        <TouchableOpacity onPress={()=>delComment({ uniqueId: userReducer.uniqueId, commentId: id })}>
+                        <TouchableOpacity onPress={handleDelete}>
                             <AntDesign name="closecircleo" size={22} color="#294C60" />
                         </TouchableOpacity> }
                 </View>
