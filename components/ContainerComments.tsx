@@ -9,15 +9,15 @@ import {useDeleteCommentMutation} from "@/helpers/hooks/useDeleteCommentMutation
 // @ts-ignore
 export default function ContainerComments({comment, user, id, loading, dateComment}) {
 
-    const {delComment, isLoading, error} = useDeleteCommentMutation()
+    const {delComment} = useDeleteCommentMutation()
     const date = moment(dateComment).format('DD/MM/YYYY')
     const userReducer = useSelector((state: any) => state.user.value)
 
     const dispatch = useDispatch()
 
-    if(isLoading){return <Text>Loading...</Text>}
-    if(error){ // @ts-ignore
-        return <Text>Error : {error.message}</Text>}
+    // if(isLoading){return <Text>Loading...</Text>}
+    // if(error){ // @ts-ignore
+    //     return <Text>Error : {error.message}</Text>}
 
     const handleDelete = () => {
         delComment({uniqueId: userReducer.uniqueId, commentId:id});

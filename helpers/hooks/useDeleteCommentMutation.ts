@@ -5,7 +5,7 @@ import {deleteComment} from "@/helpers/functions/deleteComment";
 
 export const useDeleteCommentMutation = () => {
     const dispatch = useDispatch();
-    const { mutate: delComment, isLoading, error } = useMutation(deleteComment, {
+    const { mutate: delComment} = useMutation(deleteComment, {
         onSuccess: () => {
             console.log("Comment deleted");
             dispatch(removeCommentReducer());
@@ -16,5 +16,5 @@ export const useDeleteCommentMutation = () => {
     });
 
     // @ts-ignore
-    return { delComment, isLoading, error};
+    return { delComment};
 };
