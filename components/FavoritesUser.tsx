@@ -5,6 +5,7 @@ import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
 import {useDispatch} from "react-redux";
 
 import {showModal} from "@/helpers/functions/showToast";
+import {useDeleteFavorite} from "@/helpers/hooks/useDeleteFavorite";
 
 interface FavoritesUser{
     _id: string
@@ -12,10 +13,9 @@ interface FavoritesUser{
 }
 
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
-    const dispatch = useDispatch()
-
+    const {delFavorite} = useDeleteFavorite()
     const handleDeleteFavorite = ()=>{
-        deleteFavorite(_id, dispatch)
+        delFavorite({favoriteId: _id})
     }
 
     return (
