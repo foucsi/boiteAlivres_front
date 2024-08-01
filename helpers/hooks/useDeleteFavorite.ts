@@ -9,8 +9,14 @@ export const useDeleteFavorite = ()=>{
     const {mutate: delFavorite} = useMutation(deleteFavorite, {
         onSuccess:()=>{
             console.log("Favorite deleted");
+            // @ts-ignore
             dispatch(removeFavorite());
             showModal('Suppression réussie','La boîte à livres a été retirée de vos favoris', 'bottom', 2000)
+        },
+        onError:(err)=>{
+            console.log("Error deleting favorite:", err);
         }
     });
+
+    return {delFavorite}
 }
