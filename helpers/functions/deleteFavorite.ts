@@ -8,7 +8,8 @@ export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
                     "Content-Type": "application/json",}
             })
             if(!response.ok){
-                throw new Error(`HTTP error! status: ${response.status} => url ${response.url}`);
+                const errorResponse = `HHH error! status: ${response.status} => url ${response.url}`
+                throw new Error(errorResponse);
             }
             log.info("Favorite deleted")
             return response.json()
