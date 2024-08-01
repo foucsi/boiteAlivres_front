@@ -1,14 +1,5 @@
 import {log} from "@/utils/logger";
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
-import {removeFavorite} from "@/redux/favoritesSlice";
-import {Dispatch} from "react";
-import {showModal} from "@/helpers/functions/showToast";
-
-
-interface DeleteFavoriteResponse {
-    result: boolean;
-    message?: string;
-}
 
 export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
@@ -19,15 +10,6 @@ export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
             if(!response.ok){
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            log.info("Favorite deleted")
             return response.json()
-            // const data : DeleteFavoriteResponse = await response.json()
-            // if(data.result){
-            //     log.info(`Fetch route ${URL_DELETE_FAVORITE} success`)
-            //     dispatch(removeFavorite(favoriteId))
-            //     showModal('Suppression réussie','La boîte à livres a été retirée de vos favoris', 'bottom', 2000)
-            //     return true
-            // }else {
-            //     log.warn(`Fetch route ${URL_DELETE_FAVORITE} failed`)
-            //     return false
-            // }
 }
