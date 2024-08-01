@@ -10,7 +10,7 @@ interface DeleteFavoriteResponse {
     message?: string;
 }
 
-export const deleteFavorite = async(favoriteId:string, dispatch:Dispatch<any>)=>{
+export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
                 method: "DELETE",
                 headers: {
