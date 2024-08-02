@@ -11,7 +11,7 @@ export const useAddComment = (bookPlaceId) => {
     const dispatch = useDispatch();
 
     const { mutate: newComment } = useMutation(
-        async () => await addComment({ uniqueId: user.uniqueId, bookPlaceId, comment }),
+        async () => await addComment({ uniqueId:user.uniqueId, bookPlaceId, comment }),
         {
             onSuccess: (data) => {
                 dispatch(addCommentReducer(data.comment));
