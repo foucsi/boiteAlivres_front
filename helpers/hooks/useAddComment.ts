@@ -6,7 +6,6 @@ import {addCommentReducer} from "@/redux/comments";
 // @ts-ignore
 export const useAddComment = (bookPlaceId)=>{
     const [comment, setComment] = useState('')
-    const [success, setSuccess] = useState(false)
     const user = useSelector((state: any) => state.user.value)
     const dispatch = useDispatch()
     // @ts-ignore
@@ -21,5 +20,5 @@ export const useAddComment = (bookPlaceId)=>{
         }
     }
 
-    return {comment, setComment, newComment, success}
+    return {comment, setComment, newComment}
 }

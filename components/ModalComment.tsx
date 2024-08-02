@@ -8,7 +8,7 @@ export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
 
 
     // @ts-ignore
-    const {comment, setComment, newComment, success} = useAddComment(bookPlaceId)
+    const {comment, setComment, newComment} = useAddComment(bookPlaceId)
 
     const closeModal = ()=>{
         setModalCommentVisible((prev: any) => !prev)
