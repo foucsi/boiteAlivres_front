@@ -46,7 +46,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
 
     //Customs hooks
     const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
-    const {addFavorite} = useAddFavorites(user.uniqueId, selectedMarker.id)
+    const {addFavorite} = useAddFavorites(user.uniqueId,selectedMarker.id)
     const {isFavorite} = useGetFavorite(user.uniqueId, selectedMarker.id)
 
     //Formated date
