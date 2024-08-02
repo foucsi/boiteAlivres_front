@@ -6,8 +6,6 @@ import {useSelector} from "react-redux";
 
 // @ts-ignore
 export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
-    const user = useSelector((state: any) => state.user.value);
-
 
     // @ts-ignore
     const {comment, setComment, newComment} = useAddComment(bookPlaceId)
