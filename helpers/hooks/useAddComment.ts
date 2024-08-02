@@ -22,7 +22,7 @@ export const useAddComment = (bookPlaceId)=>{
     //
     // return {comment, setComment, newComment}
 
-    const {mutate : newComment} = useMutation(()=> addComment(user.uniqueId, bookPlaceId, comment), {
+    const {mutate : newComment} = useMutation(()=> addComment(user.uniqueId,bookPlaceId, comment), {
         onSuccess:(data)=>{
             dispatch(addCommentReducer(data.comment))
             setComment('')
