@@ -2,9 +2,11 @@ import {View, Text, Modal, TouchableOpacity, StyleSheet, TextInput} from 'react-
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import {useAddComment} from "@/helpers/hooks/useAddComment";
+import {useSelector} from "react-redux";
 
 // @ts-ignore
 export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
+    const user = useSelector((state: any) => state.user.value);
 
 
     // @ts-ignore
@@ -13,6 +15,7 @@ export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
     const closeModal = ()=>{
         setModalCommentVisible((prev: any) => !prev)
     }
+
 
 
     return (
