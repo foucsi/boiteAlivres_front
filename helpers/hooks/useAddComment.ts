@@ -14,7 +14,6 @@ export const useAddComment = (bookPlaceId)=>{
         if(result.success){
             setComment('')
             dispatch(addCommentReducer(result.comment))
-            setSuccess(true)
         }else {
             console.log("error add comment: ", result.error)
         }
