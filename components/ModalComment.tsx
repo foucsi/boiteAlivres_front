@@ -14,6 +14,7 @@ export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
         setModalCommentVisible((prev: any) => !prev)
     }
 
+
     return (
         <Modal animationType="slide" transparent={true} >
             <View style={styles.modal}>
@@ -29,6 +30,7 @@ export default function ModalComment({setModalCommentVisible, bookPlaceId}) {
                     <View>
                         <TouchableOpacity
                             style={styles.button}
+                            // @ts-ignore
                             onPress={newComment}
                         >
                             <Text style={styles.buttonText}>Envoyer</Text>
