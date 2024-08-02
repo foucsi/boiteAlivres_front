@@ -10,7 +10,8 @@ export const addComment = async(uniqueId:string, bookPlaceId:string, comment:str
             body: JSON.stringify({ bookPlaceId : bookPlaceId,comment: comment}),
         })
         if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+            const errorResponse = `HTTP error! status: ${response.status} ${response.statusText}`
+            throw new Error(errorResponse);
         }
         return await response.json()
         // const data = await response.json()
