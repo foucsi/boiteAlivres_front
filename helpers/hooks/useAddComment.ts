@@ -10,7 +10,7 @@ export const useAddComment = (bookPlaceId) => {
     const user = useSelector((state: any) => state.user.value);
     const dispatch = useDispatch();
 
-    const mutation = useMutation(
+    const { mutate: newComment } = useMutation(
         async () => await addComment({ uniqueId: user.uniqueId, bookPlaceId, comment }),
         {
             onSuccess: (data) => {
@@ -22,10 +22,6 @@ export const useAddComment = (bookPlaceId) => {
             }
         }
     );
-
-    const newComment = () => {
-        mutation.mutate();
-    };
 
     return { comment, setComment, newComment };
 };
