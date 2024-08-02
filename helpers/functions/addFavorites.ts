@@ -7,10 +7,9 @@ export const addFavorites = async (uniqueId:string, bookPlaceId:string)=>{
                 'Content-Type': 'application/json',
             },
         });
-        const data = await response.json();
-        if(data.result){
-            return {success:true, favorite:data.favorite}
-        }else {
-            return {success:false, error:data.error}
+        if(!response.ok){
+            const errorResponse = `HTTP error! status: ${response.status} ${response.statusText}`
+            throw new Error(errorResponse);
         }
+        return await response.json()
 }
