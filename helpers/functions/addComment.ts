@@ -2,7 +2,6 @@ import {URL_ADD_COMMENT} from "@/constants/Url";
 
 export const addComment = async(uniqueId:string, bookPlaceId:string, comment:string)=>{
     const url = URL_ADD_COMMENT(uniqueId)
-    try {
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -19,7 +18,4 @@ export const addComment = async(uniqueId:string, bookPlaceId:string, comment:str
         }else {
             return {success:false, error:data.error}
         }
-    }
-    catch(err){
-    return {success:false, error:err}
-}}
+ }
