@@ -16,6 +16,7 @@ export default function ContainerComments({comment, user, id, loading, dateComme
 
 
 
+    // @ts-ignore
     return (
         <View style={styles.container}>
             <View style={styles.firstComponent}>
@@ -30,6 +31,7 @@ export default function ContainerComments({comment, user, id, loading, dateComme
                 </View>
                 <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
                     {userReducer.uniqueId === user.uniqueId &&
+                        // @ts-ignore
                         <TouchableOpacity onPress={delComment}>
                             <AntDesign name="closecircleo" size={22} color="#294C60" />
                         </TouchableOpacity> }

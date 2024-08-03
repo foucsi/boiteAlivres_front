@@ -4,16 +4,21 @@ import {useGetAllFeatures} from "@/helpers/hooks/useGetAllFeatures";
 import Features from "@/components/Features";
 
 interface FeaturesUser{
-    _id: string,
-    feature: string
-    feat: any,
-    error:string
+    _id: string;
+    feature: string;
+    description: string;
+    status: string;
+    created_at: string;
+    updated_at: string;
+    __v: number;
 }
 
 
 export default function Notification() {
 
     const {features,isLoading, error} = useGetAllFeatures()
+
+    console.log("features:", features);
 
     if(isLoading){return <View style={styles.containerIsLoadingOrError}><Text>Chargement...</Text></View>}
     if(error){return <View style={styles.containerIsLoadingOrError}><Text>Erreur: {error}</Text></View>}
