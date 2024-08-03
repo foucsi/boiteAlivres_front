@@ -5,7 +5,8 @@ export const getAllFeatures = async() => {
         log.info("fetch getAllFeatures")
         const response = await fetch(URL_GET_ALL_FEATURES)
         if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+            const errorResponse = `HTTP error! status: ${response.status} ${response.statusText}`
+            throw new Error(errorResponse);
         }
         return response.json()
 }
