@@ -1,4 +1,5 @@
 import {URL_ADD_FAVORITE} from "@/constants/Url";
+import {errorResponse} from "@/constants/errors";
 
 export const addFavorites = async ({uniqueId, bookPlaceId} : {uniqueId:string, bookPlaceId:string})=>{
         const response = await fetch(URL_ADD_FAVORITE(uniqueId, bookPlaceId), {
@@ -8,8 +9,7 @@ export const addFavorites = async ({uniqueId, bookPlaceId} : {uniqueId:string, b
             },
         });
         if(!response.ok){
-            const errorResponse = `HTTP error! status: ${response.status} ${response.statusText}`
-            throw new Error(errorResponse);
+            throw new Error(errorResponse(response.status, response.url));
         }
         return await response.json()
 }
