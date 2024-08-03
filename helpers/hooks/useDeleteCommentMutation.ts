@@ -3,9 +3,9 @@ import {useMutation} from "react-query";
 import {removeCommentReducer} from "@/redux/comments";
 import {deleteComment} from "@/helpers/functions/deleteComment";
 
-export const useDeleteCommentMutation = () => {
+export const useDeleteCommentMutation = (uniqueId:string, commentId:string) => {
     const dispatch = useDispatch();
-    const { mutate: delComment} = useMutation(deleteComment, {
+    const { mutate: delComment} = useMutation(()=>deleteComment({uniqueId, commentId}), {
         onSuccess: () => {
             console.log("Comment deleted");
             dispatch(removeCommentReducer());
