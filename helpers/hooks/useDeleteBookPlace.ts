@@ -11,6 +11,7 @@ export const useDeleteBookPlace = () => {
             console.log(error)
         },
         onSuccess: () => {
+            console.log("Deleted place with id success")
             dispatch(removeBookSpace())
             showModal('success', 'Boite à livres supprimé!', 'bottom',200)
         }
