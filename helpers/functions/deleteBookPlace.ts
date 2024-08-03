@@ -3,7 +3,12 @@ import {log} from "@/utils/logger";
 import {removeBookSpace} from "@/redux/bookSpaces";
 import {showModal} from "@/helpers/functions/showToast";
 
-export const deleteBookPlace = async (id: string, dispatch:any) => {
+interface DeleteBookSpaceParams {
+    id: string;
+    dispatch: any;
+}
+
+export const deleteBookPlace = async ({id, dispatch} :DeleteBookSpaceParams ) => {
     try{
         log.info(`Fetching DELETE ${URL_DELETE_BOOK_PLACE(id)} with id: ${id}`)
         const response = await fetch(URL_DELETE_BOOK_PLACE(id), {
