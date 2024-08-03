@@ -18,12 +18,4 @@ export const deleteBookPlace = async ({id} :DeleteBookSpaceParams ) => {
             throw new Error(`HTTP error! status: ${response.status}`)
         }
         return response.json()
-        // const data = await response.json()
-        // if(data.result){
-        //     log.info(`Deleted place with id success: ${id}`)
-        //     dispatch(removeBookSpace())
-        //     showModal('success', 'Boite à livres supprimé!', 'bottom',2000)
-        // }else {
-        //     log.warn(`Error while deleting place with id: ${id}`)
-        //
 }

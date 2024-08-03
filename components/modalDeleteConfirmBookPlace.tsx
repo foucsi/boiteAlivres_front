@@ -9,7 +9,7 @@ export default function ModalDeleteConfirmBookPlace({setModalDeleteBookPlaceVisi
     const {deleteBook} = useDeleteBookPlace()
 
     const handleDelete = ()=>{
-        deleteBook(bookPlaceId)
+        deleteBook({id:bookPlaceId})
         setModalVisible(false)
     }
     return (
