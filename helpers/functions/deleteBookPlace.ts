@@ -3,7 +3,6 @@ import {log} from "@/utils/logger";
 
 interface DeleteBookSpaceParams {
     id: string;
-    dispatch: any;
 }
 
 export const deleteBookPlace = async ({id} :DeleteBookSpaceParams ) => {
