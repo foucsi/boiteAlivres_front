@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import moment from "moment";
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import { AntDesign } from '@expo/vector-icons';
 import {useDeleteCommentMutation} from "@/helpers/hooks/useDeleteCommentMutation";
 
@@ -13,12 +13,8 @@ export default function ContainerComments({comment, user, id, loading, dateComme
     const date = moment(dateComment).format('DD/MM/YYYY')
 
 
-    const dispatch = useDispatch()
 
 
-    const handleDelete = () => {
-        delComment();
-    };
 
     return (
         <View style={styles.container}>
@@ -34,7 +30,7 @@ export default function ContainerComments({comment, user, id, loading, dateComme
                 </View>
                 <View style={{ width:"50%", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
                     {userReducer.uniqueId === user.uniqueId &&
-                        <TouchableOpacity onPress={handleDelete}>
+                        <TouchableOpacity onPress={delComment}>
                             <AntDesign name="closecircleo" size={22} color="#294C60" />
                         </TouchableOpacity> }
                 </View>
