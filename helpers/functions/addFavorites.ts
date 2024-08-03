@@ -1,7 +1,12 @@
 import {URL_ADD_FAVORITE} from "@/constants/Url";
 import {errorResponse} from "@/constants/errors";
 
-export const addFavorites = async ({uniqueId, bookPlaceId} : {uniqueId:string, bookPlaceId:string})=>{
+interface AddFavoritesParams {
+    uniqueId: string;
+    bookPlaceId: string;
+}
+
+export const addFavorites = async ({uniqueId, bookPlaceId} : AddFavoritesParams)=>{
         const response = await fetch(URL_ADD_FAVORITE(uniqueId, bookPlaceId), {
             method: 'POST',
             headers: {
