@@ -12,7 +12,8 @@ export const useDeleteBookPlace = () => {
         },
         onSuccess: () => {
             dispatch(removeBookSpace())
-            showModal('success', 'Boite à livres supprimé!', 'bottom',200
+            showModal('success', 'Boite à livres supprimé!', 'bottom',200)
+        }
     });
     return {deleteBook}
 }
