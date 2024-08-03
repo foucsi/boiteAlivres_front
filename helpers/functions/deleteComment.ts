@@ -1,7 +1,5 @@
-import {removeCommentReducer} from "@/redux/comments";
 import {URL_DELETE_COMMENT} from "@/constants/Url";
-import {useMutation} from "react-query";
-import {useDispatch} from "react-redux";
+import {errorResponse} from "@/constants/errors";
 
 export const deleteComment = async ({ uniqueId, commentId }: { uniqueId: string; commentId: string }) => {
     const url = URL_DELETE_COMMENT(uniqueId);
@@ -13,7 +11,7 @@ export const deleteComment = async ({ uniqueId, commentId }: { uniqueId: string;
         body: JSON.stringify({ commentId })
     });
     if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+        throw new Error(errorResponse(response.status, response.url));
     }
     return response.json();
 };
