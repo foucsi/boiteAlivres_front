@@ -18,8 +18,6 @@ export default function Notification() {
 
     const {features,isLoading, error} = useGetAllFeatures()
 
-    console.log("features:", features);
-
     if(isLoading){return <View style={styles.containerIsLoadingOrError}><Text>Chargement...</Text></View>}
     if(error){return <View style={styles.containerIsLoadingOrError}><Text>Erreur: {error}</Text></View>}
 
