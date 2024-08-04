@@ -7,5 +7,5 @@ export const getAllBookPlaces = async () => {
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
         }
         log.info("getAllBookPlaces", "Successfully fetched all book places.");
-        return response.json();
+        return await response.json();
 }
