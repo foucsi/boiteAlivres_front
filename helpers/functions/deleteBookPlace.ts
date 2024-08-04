@@ -16,5 +16,5 @@ export const deleteBookPlace = async ({id} :DeleteBookSpaceParams ) => {
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status}`)
         }
-        return response.json()
+        return await response.json()
 }
