@@ -7,5 +7,5 @@ export const getAllFeatures = async() => {
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
         }
-        return response.json()
+        return await response.json()
 }
