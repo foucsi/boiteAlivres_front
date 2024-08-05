@@ -11,6 +11,5 @@ export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
                 const errorResponse = `HHH error! status: ${response.status} => url ${response.url}`
                 throw new Error(errorResponse);
             }
-            log.info("Favorite deleted")
             return await response.json()
 }
