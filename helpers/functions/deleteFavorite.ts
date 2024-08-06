@@ -1,4 +1,5 @@
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
+import {errorResponse} from "@/constants/errors";
 
 export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
@@ -7,8 +8,7 @@ export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
                     "Content-Type": "application/json",}
             })
             if(!response.ok){
-                const errorResponse = `HHH error! status: ${response.status} => url ${response.url}`
-                throw new Error(errorResponse);
+                throw new Error(errorResponse(response.status, response.url));
             }
             return await response.json()
 }
