@@ -8,6 +8,7 @@ export const useGetAllCommentsByBookPlace = (bookPlaceId: string) => {
     const commentReducer = useSelector((state: RootState) => state.comment.value);
 
     const { data, isLoading, error } = useQuery(
+        //commentReducer.comments replace useEffect key
         ["comments", bookPlaceId, commentReducer.comments],
         () => getAllCommentsByBookPlace({ bookPlaceId }),
         { enabled: !!bookPlaceId }
