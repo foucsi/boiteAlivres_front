@@ -45,7 +45,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
     const dispatch = useDispatch()
 
     //Customs hooks
-    const {comments, error, loading} = useGetAllCommentsByBookPlace(selectedMarker.id)
+    const {comments, error, isLoading} = useGetAllCommentsByBookPlace(selectedMarker.id)
     const {addFavorite} = useAddFavorites(user.uniqueId,selectedMarker.id)
     const {isFavorite} = useGetFavorite(user.uniqueId, selectedMarker.id)
 
@@ -82,7 +82,7 @@ export default function ModalBookPlaces({modalVisible, setModalVisible, selected
                                     {comments.length > 0 ? comments.map((com: any) => {
                                         return (
                                             // @ts-ignore
-                                            <ContainerComments loading={loading} error={error} key={com._id} id={com._id} comment={com.comment} user={com.added_by} dateComment={com.createdAt}/>
+                                            <ContainerComments isLoading={isLoading} error={error} key={com._id} id={com._id} comment={com.comment} user={com.added_by} dateComment={com.createdAt}/>
                                         )
                                     }):<View style={{padding:10}}>
                                         <Text>Pas encore de commentaire.Soyez le premier à écrire un avis.</Text>
