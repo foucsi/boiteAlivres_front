@@ -1,19 +1,11 @@
 import {URL_GET_ALL_COMMENTS_BY_BOOK_PLACE} from "@/constants/Url";
+import {errorResponse} from "@/constants/errors";
 
 export const getAllCommentsByBookPlace = async(bookPlaceId:string)=>{
     const url = URL_GET_ALL_COMMENTS_BY_BOOK_PLACE(bookPlaceId)
-    try{
         const response = await fetch(url)
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+            throw new Error(errorResponse(response.status, response.url));
         }
-        const data = await response.json()
-        if(data.result){
-            return {success:true, comments:data.comments}
-        }else {
-            return {success:false, error:data.error}
-        }
-    }catch(err){
-        return {success:false, error:err}
-    }
+        return await response.json();
 }
