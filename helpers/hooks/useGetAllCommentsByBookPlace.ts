@@ -1,40 +1,21 @@
 import { getAllCommentsByBookPlace } from "@/helpers/functions/getAllCommentsByBookPlace";
-import {useQuery} from "react-query";
-import {useSelector} from "react-redux";
-import {useEffect} from "react";
+import { useQuery } from "react-query";
+import { useSelector } from "react-redux";
+import {RootState} from "@reduxjs/toolkit/query";
 
-export const useGetAllCommentsByBookPlace = (bookPlaceId:string) => {
-    // const [comments, setComments] = useState([]);
-    // const [error, setError] = useState(null);
-    // const [loading, setLoading] = useState(true);
-    //
+export const useGetAllCommentsByBookPlace = (bookPlaceId: string) => {
     // @ts-ignore
-    const commentReducer = useSelector((state) => state.comment.value);
-    //
-    // useEffect(() => {
-    //     const fetchAllComments = async () => {
-    //         setLoading(true);
-    //         if (!bookPlaceId) return;
-    //             const result = await getAllCommentsByBookPlace(bookPlaceId);
-    //             if (result.success) {
-    //                 setComments(result.comments);
-    //                 setLoading(false);
-    //             } else {
-    //                 // @ts-ignore
-    //                 setError("Impossible de charger les commentaires");
-    //             }
-    //     };
-    //
-    //     fetchAllComments();
-    // }, [bookPlaceId, commentReducer.comments]);
-    //
-    // return { comments, error, loading };
+    const commentReducer = useSelector((state: RootState) => state.comment.value);
 
-    const {data, isLoading, error, refetch} = useQuery("comments", ()=>getAllCommentsByBookPlace(bookPlaceId))
-    useEffect(() => {
-        refetch()
-    }, [commentReducer.comments]);
+    const { data, isLoading, error } = useQuery(
+        ["comments", bookPlaceId, commentReducer.comments],
+        () => getAllCommentsByBookPlace({ bookPlaceId }),
+        { enabled: !!bookPlaceId }
+    );
 
-
-    return {comments: data?.comments || [], error, isLoading};
+    return {
+        comments: data?.comments || [],
+        error: error ? "Impossible de charger les commentaires" : null,
+        isLoading
+    };
 };
