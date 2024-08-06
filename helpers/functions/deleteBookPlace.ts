@@ -1,5 +1,6 @@
 import {URL_DELETE_BOOK_PLACE} from "@/constants/Url";
 import {log} from "@/utils/logger";
+import {errorResponse} from "@/constants/errors";
 
 interface DeleteBookSpaceParams {
     id: string;
@@ -14,7 +15,7 @@ export const deleteBookPlace = async ({id} :DeleteBookSpaceParams ) => {
             }
         })
         if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status}`)
+            throw new Error(errorResponse(response.status, response.url));
         }
         return await response.json()
 }
