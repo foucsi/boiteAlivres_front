@@ -1,4 +1,3 @@
-import {log} from "@/utils/logger";
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
 
 export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
