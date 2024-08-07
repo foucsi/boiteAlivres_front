@@ -19,16 +19,16 @@ interface FavoritesUser{
 export const useGetFavoritesUser = (uniqueId:string) => {
     const favo = useSelector((state:any)=> state.favorite.value)
     // @ts-ignore
-    const {data, isLoading, error, refetch}=useQuery<FavoritesUser>(['favorites', uniqueId], ()=>getFavoritesUser(uniqueId), {
+    const {data, isLoading, error, refetch}=useQuery<FavoritesUser>(['favorites', uniqueId, favo], ()=>getFavoritesUser(uniqueId), {
         enabled: !!uniqueId
         // enabled means that the query will not run until the uniqueId is not null
     })
 
-    useEffect(() => {
-        if(uniqueId){
-            refetch()
-        }
-    }, [favo])
+    // useEffect(() => {
+    //     if(uniqueId){
+    //         refetch()
+    //     }
+    // }, [favo])
     return {
         // @ts-ignore
         favorites: data?.data || [],
