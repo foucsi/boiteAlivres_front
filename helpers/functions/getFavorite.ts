@@ -1,8 +1,8 @@
 import {log} from "@/utils/logger"
 import {URL_GET_FAVORITE} from "@/constants/Url";
+const {errorResponse} = require("@/utils/responses")
 
 export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
-    try{
         log.info(`getFavorite: Fetching data for user ${uniqueId} and bookPlace ${bookPlaceId} on url${URL_GET_FAVORITE(uniqueId, bookPlaceId)}`);
         const response = await fetch(URL_GET_FAVORITE(uniqueId, bookPlaceId), {
             method:"GET",
@@ -11,18 +11,15 @@ export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
             }
         })
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(errorResponse(response.status, response.url));
         }
-        const data = await response.json()
-        if(data.result){
-            log.info(`getFavorite: Successfully retrieved favorite`);
-            return {success: true, data: data.result}
-        }else {
-            log.warn(`getFavorite:`, data.error, response.status)
-            return {success: false, error: data.error}
-        }
-    }catch(err){
-        log.error(`getFavorite: `, err)
-        return {success: false, error: err}
-    }
+        return await response.json()
+        // const data = await response.json()
+        // if(data.result){
+        //     log.info(`getFavorite: Successfully retrieved favorite`);
+        //     return {success: true, data: data.result}
+        // }else {
+        //     log.warn(`getFavorite:`, data.error, response.status)
+        //     return {success: false, error: data.error}
+        // }
 }
