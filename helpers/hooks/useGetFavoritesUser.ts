@@ -1,7 +1,6 @@
 import {useQuery} from "react-query";
 import {getFavoritesUser} from "@/helpers/functions/getFavoritesUser";
 import {useSelector} from "react-redux";
-import {useEffect} from "react";
 
 interface Favorite {
     _id: string,
