@@ -23,12 +23,6 @@ export const useGetFavoritesUser = (uniqueId:string) => {
         enabled: !!uniqueId
         // enabled means that the query will not run until the uniqueId is not null
     })
-
-    // useEffect(() => {
-    //     if(uniqueId){
-    //         refetch()
-    //     }
-    // }, [favo])
     return {
         // @ts-ignore
         favorites: data?.data || [],
