@@ -9,7 +9,7 @@ interface FavoritesUser{
 }
 
 export default function FavoritesUser({_id,bookPlace}:FavoritesUser) {
-    const {delFavorite} = useDeleteFavorite()
+    const {delFavorite} = useDeleteFavorite(_id)
     const handleDeleteFavorite = ()=>{
         delFavorite({favoriteId: _id})
     }

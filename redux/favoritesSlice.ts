@@ -14,7 +14,7 @@ export const favoritesSlice = createSlice({
         },
         removeFavorite: (state, action) => {
             // @ts-ignore
-            state.value = state.value.filter((item) => item._id !== action.payload)
+            state.value = state.value.filter((item) => item._id !== action.payload._id)
         }
     }
 })

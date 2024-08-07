@@ -4,13 +4,12 @@ import {useMutation} from "react-query";
 import {removeFavorite} from "@/redux/favoritesSlice";
 import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
 
-export const useDeleteFavorite = ()=>{
+export const useDeleteFavorite = (favoriteId:string)=>{
     const dispatch = useDispatch()
     const {mutate: delFavorite} = useMutation(deleteFavorite, {
         onSuccess:()=>{
-            console.log("Favorite deleted");
-            // @ts-ignore
-            dispatch(removeFavorite());
+            dispatch(removeFavorite(favoriteId));
+            console.log("favoriteId", favoriteId);
             showModal('Suppression réussie','La boîte à livres a été retirée de vos favoris', 'bottom', 2000)
         },
         onError:(err)=>{
