@@ -10,7 +10,6 @@ export const getAllBookPlaceByUser = async (uniqueId: string) => {
                 'Content-Type': 'application/json'
             }
         })
-        //On releve une erreur
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
         }
