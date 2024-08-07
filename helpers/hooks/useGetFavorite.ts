@@ -4,7 +4,7 @@ import {useQuery} from "react-query";
 
 export const useGetFavorite = (uniqueId:string, bookPlaceId:string) => {
     // const [isFavorite, setIsFavorite] = useState<boolean>(false)
-    // // @ts-ignore
+    // @ts-ignore
     const favo = useSelector((state: RootState) => state.favorite.value)
     // const fetchIsFavorite = useCallback(async() => {
     //     if(!bookPlaceId || bookPlaceId === null){
@@ -25,13 +25,11 @@ export const useGetFavorite = (uniqueId:string, bookPlaceId:string) => {
     //
     // return {isFavorite}
 
-    const {data, isLoading, error} = useQuery(["getFavorite", favo], () => getFavorite({uniqueId, bookPlaceId}), {
+    const {data} = useQuery(["getFavorite", favo], () => getFavorite({uniqueId, bookPlaceId}), {
         enabled: !!uniqueId && !!bookPlaceId
     })
 
     return {
         isFavorite : data.result,
-        isLoading,
-        error
     }
 }
