@@ -3,7 +3,11 @@ import {URL_GET_BOOKPLACE_BY_USER_ID} from "@/constants/Url";
 
 import {errorResponse} from "@/constants/errors";
 
-export const getAllBookPlaceByUser = async (uniqueId: string) => {
+interface uniqueIdParams{
+    uniqueId: string
+}
+
+export const getAllBookPlaceByUser = async ({uniqueId} : uniqueIdParams) => {
         log.info(`fetch all bookPlaceByUser Id with uniqueId: ${uniqueId} and route ${URL_GET_BOOKPLACE_BY_USER_ID}`)
         const response = await fetch(URL_GET_BOOKPLACE_BY_USER_ID(uniqueId), {
             method: "GET",

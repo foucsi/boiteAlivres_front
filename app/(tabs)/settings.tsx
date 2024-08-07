@@ -20,9 +20,14 @@ export default function Settings() {
     // @ts-ignore
     const users = useSelector(state => state.user.value)
 
-    const {bookPlacesLength} = useGetAllBookPlaceByUserId(users?.uniqueId)
+    const {bookPlacesLength, isLoading, error} = useGetAllBookPlaceByUserId(users?.uniqueId)
 
     const memoizedAboutDev = ABOUT_DEV()
+
+    if(isLoading){return <Text>Loading...</Text>}
+    // @ts-ignore
+    if(error){return <Text>Error: {error.message}</Text>}
+
 
     return (
         <View style={styles.container}>
