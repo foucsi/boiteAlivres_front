@@ -20,7 +20,6 @@ export const useGetFavoritesUser = (uniqueId:string) => {
     // @ts-ignore
     const {data, isLoading, error, refetch}=useQuery<FavoritesUser>(['favorites', uniqueId, favo], ()=>getFavoritesUser(uniqueId), {
         enabled: !!uniqueId
-        // enabled means that the query will not run until the uniqueId is not null
     })
     return {
         // @ts-ignore
