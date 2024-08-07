@@ -2,7 +2,12 @@ import {log} from "@/utils/logger"
 import {URL_GET_FAVORITE} from "@/constants/Url";
 const {errorResponse} = require("@/utils/responses")
 
-export const getFavorite = async(uniqueId:string, bookPlaceId:string) => {
+interface FavoriteParams {
+    uniqueId:string,
+    bookPlaceId:string
+}
+
+export const getFavorite = async({uniqueId,bookPlaceId} : FavoriteParams) => {
         const response = await fetch(URL_GET_FAVORITE(uniqueId, bookPlaceId), {
             method:"GET",
             headers: {
