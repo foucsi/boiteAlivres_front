@@ -1,8 +1,9 @@
 import {log} from "@/utils/logger";
 import {URL_GET_BOOKPLACE_BY_USER_ID} from "@/constants/Url";
 
+import {errorResponse} from "@/constants/errors";
+
 export const getAllBookPlaceByUser = async (uniqueId: string) => {
-    try{
         log.info(`fetch all bookPlaceByUser Id with uniqueId: ${uniqueId} and route ${URL_GET_BOOKPLACE_BY_USER_ID}`)
         const response = await fetch(URL_GET_BOOKPLACE_BY_USER_ID(uniqueId), {
             method: "GET",
@@ -11,7 +12,7 @@ export const getAllBookPlaceByUser = async (uniqueId: string) => {
             }
         })
         if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
+            throw new Error(errorResponse(response.status, response.url))
         }
         const data = await response.json()
 
@@ -23,8 +24,4 @@ export const getAllBookPlaceByUser = async (uniqueId: string) => {
             log.warn("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", data.error)
             return {success: false, error: data.error}
         }
-    }catch(err){
-        log.warn("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", err)
-        return {success: false, error:err}
-    }
 }
