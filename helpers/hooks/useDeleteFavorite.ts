@@ -6,7 +6,7 @@ import {deleteFavorite} from "@/helpers/functions/deleteFavorite";
 
 export const useDeleteFavorite = (favoriteId:string)=>{
     const dispatch = useDispatch()
-    const {mutate: delFavorite} = useMutation(deleteFavorite, {
+    const {mutate: delFavorite} = useMutation(()=>deleteFavorite({favoriteId}), {
         onSuccess:()=>{
             dispatch(removeFavorite(favoriteId));
             console.log("favoriteId", favoriteId);
