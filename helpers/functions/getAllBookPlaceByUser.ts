@@ -14,14 +14,5 @@ export const getAllBookPlaceByUser = async (uniqueId: string) => {
         if(!response.ok){
             throw new Error(errorResponse(response.status, response.url))
         }
-        const data = await response.json()
-
-
-        if(data.result){
-            log.info("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", "Successfully fetched all book places by user.")
-            return {success: true, data: data.bookPlaces.length}
-        }else{
-            log.warn("getAllBookPlaceByUser.ts", "getAllBookPlaceByUser", data.error)
-            return {success: false, error: data.error}
-        }
+        return await response.json()
 }
