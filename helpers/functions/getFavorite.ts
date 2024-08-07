@@ -1,6 +1,6 @@
 import {log} from "@/utils/logger"
 import {URL_GET_FAVORITE} from "@/constants/Url";
-const {errorResponse} = require("@/utils/responses")
+import {errorResponse} from "@/constants/errors";
 
 interface FavoriteParams {
     uniqueId:string,
@@ -18,12 +18,4 @@ export const getFavorite = async({uniqueId,bookPlaceId} : FavoriteParams) => {
             throw new Error(errorResponse(response.status, response.url));
         }
         return await response.json()
-        // const data = await response.json()
-        // if(data.result){
-        //     log.info(`getFavorite: Successfully retrieved favorite`);
-        //     return {success: true, data: data.result}
-        // }else {
-        //     log.warn(`getFavorite:`, data.error, response.status)
-        //     return {success: false, error: data.error}
-        // }
 }

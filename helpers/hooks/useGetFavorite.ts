@@ -30,6 +30,6 @@ export const useGetFavorite = (uniqueId:string, bookPlaceId:string) => {
     })
 
     return {
-        isFavorite : data.result,
+        isFavorite : data?.result,
     }
 }
