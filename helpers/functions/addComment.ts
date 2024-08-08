@@ -1,7 +1,13 @@
 import {URL_ADD_COMMENT} from "@/constants/Url";
 import {errorResponse} from "@/constants/errors";
 
-export const addComment = async({uniqueId, bookPlaceId, comment} : {uniqueId:string, bookPlaceId:string, comment:string})=>{
+interface addCommentParams {
+    uniqueId: string;
+    bookPlaceId: string;
+    comment: string;
+}
+
+export const addComment = async({uniqueId, bookPlaceId, comment} : addCommentParams)=>{
     const url = URL_ADD_COMMENT(uniqueId)
         const response = await fetch(url, {
             method: 'POST',
