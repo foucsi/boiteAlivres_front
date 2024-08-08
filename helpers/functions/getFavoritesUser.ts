@@ -2,7 +2,11 @@ import {URL_GET_FAVORITES_USER} from "@/constants/Url";
 import {log} from "@/utils/logger";
 import {errorResponse} from "@/constants/errors";
 
-export const getFavoritesUser = async(uniqueId: string) => {
+interface getFavoritesUserProps {
+    uniqueId: string
+}
+
+export const getFavoritesUser = async({uniqueId} : getFavoritesUserProps) => {
         log.info(`fetching favorites user with uniqueId: ${uniqueId} and route: ${URL_GET_FAVORITES_USER}`)
         // @ts-ignore
         const response = await fetch(URL_GET_FAVORITES_USER(uniqueId), {
