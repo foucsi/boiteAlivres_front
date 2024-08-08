@@ -23,7 +23,7 @@ export const useGetFavoritesUser = (uniqueId:string) => {
     })
     return {
         // @ts-ignore
-        favorites: data?.data || [],
+        favorites: data?.favorites|| [],
         isLoading,
         // @ts-ignore
         error: error?.message || error
