@@ -17,8 +17,7 @@ interface FavoritesUser{
 
 export const useGetFavoritesUser = (uniqueId:string) => {
     const favo = useSelector((state:any)=> state.favorite.value)
-    // @ts-ignore
-    const {data, isLoading, error, refetch}=useQuery<FavoritesUser>(['favorites', uniqueId, favo], ()=>getFavoritesUser({uniqueId}), {
+    const {data, isLoading, error}=useQuery<FavoritesUser>(['favorites', uniqueId, favo], ()=>getFavoritesUser({uniqueId}), {
         enabled: !!uniqueId
     })
     return {
