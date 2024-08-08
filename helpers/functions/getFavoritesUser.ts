@@ -16,7 +16,7 @@ export const getFavoritesUser = async({uniqueId} : getFavoritesUserProps) => {
             }
         })
         if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`)
+            throw new Error(errorResponse(response.status, response.url))
         }
        return await response.json()
 }
