@@ -13,9 +13,9 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 //IMPORT REDUCERSLICES
-import user from "../redux/users";
-import bookSpace from "../redux/bookSpaces";
-import comment from "../redux/comments";
+import user from "../redux/usersSlice";
+import bookSpace from "../redux/bookSpacesSlice";
+import comment from "../redux/commentsSlice";
 import favorite from "../redux/favoritesSlice";
 
 

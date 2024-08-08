@@ -1,5 +1,5 @@
 import * as ImagePicker from "expo-image-picker";
-import {addPhotoReducer} from "@/redux/bookSpaces";
+import {addPhotoReducer} from "@/redux/bookSpacesSlice";
 import {URL_UPLOAD_PHOTO} from "@/constants/Url";
 
 export const uploadPhoto = async (bookPlaceId: string, dispatch: any) => {

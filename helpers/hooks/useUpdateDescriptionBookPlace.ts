@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {updateDescriptionBookPlace} from "@/helpers/functions/updateDescriptionBookPlace";
 import {useDispatch} from "react-redux";
-import {updateDescriptionReducer} from "@/redux/bookSpaces";
+import {updateDescriptionReducer} from "@/redux/bookSpacesSlice";
 
 // @ts-ignore
 export const useUpdateDescriptionBookPlace = (bookPlaceId) => {

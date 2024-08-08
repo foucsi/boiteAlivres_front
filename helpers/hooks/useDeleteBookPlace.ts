@@ -2,7 +2,7 @@ import {useMutation} from "react-query";
 import {deleteBookPlace} from "@/helpers/functions/deleteBookPlace";
 import {useDispatch} from "react-redux";
 import {showModal} from "@/helpers/functions/showToast";
-import {removeBookSpace} from "@/redux/bookSpaces";
+import {removeBookSpace} from "@/redux/bookSpacesSlice";
 
 export const useDeleteBookPlace = () => {
     const dispatch = useDispatch()

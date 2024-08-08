@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addComment } from "@/helpers/functions/addComment";
 import { useDispatch, useSelector } from "react-redux";
-import { addCommentReducer } from "@/redux/comments";
+import { addCommentReducer } from "@/redux/commentsSlice";
 import { useMutation } from "react-query";
 
 // @ts-ignore

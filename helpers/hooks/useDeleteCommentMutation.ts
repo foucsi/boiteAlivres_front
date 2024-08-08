@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 import {useMutation} from "react-query";
-import {removeCommentReducer} from "@/redux/comments";
+import {removeCommentReducer} from "@/redux/commentsSlice";
 import {deleteComment} from "@/helpers/functions/deleteComment";
 
 export const useDeleteCommentMutation = (uniqueId:string, commentId:string) => {

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {addMarkerInDb} from "@/helpers/functions/addMarkerInDb";
 import {useDispatch, useSelector} from "react-redux";
-import {addBookSpace} from "@/redux/bookSpaces"
+import {addBookSpace} from "@/redux/bookSpacesSlice"
 
 export const useAddMarkerInDb = () => {
     const [modalIsVisible, setModalIsVisible] = useState(false)

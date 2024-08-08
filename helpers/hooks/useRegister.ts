@@ -2,7 +2,7 @@ import {useState} from "react";
 import {register} from "@/helpers/functions/register";
 import {router} from "expo-router"
 import {useDispatch} from "react-redux";
-import {loginReducer} from "@/redux/users";
+import {loginReducer} from "@/redux/usersSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const useRegister = ()=>{
