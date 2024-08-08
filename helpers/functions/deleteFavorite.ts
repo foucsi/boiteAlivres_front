@@ -1,7 +1,11 @@
 import {URL_DELETE_FAVORITE} from "@/constants/Url";
 import {errorResponse} from "@/constants/errors";
 
-export const deleteFavorite = async({favoriteId} : {favoriteId: string})=>{
+interface deleteFavoriteProps {
+    favoriteId: string
+}
+
+export const deleteFavorite = async({favoriteId} :deleteFavoriteProps)=>{
             const response = await fetch(URL_DELETE_FAVORITE(favoriteId),{
                 method: "DELETE",
                 headers: {
