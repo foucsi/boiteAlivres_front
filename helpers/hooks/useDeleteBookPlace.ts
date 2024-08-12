@@ -10,13 +10,15 @@ export const useDeleteBookPlace = () => {
     const handleError = (error : unknown) => {
         console.log(error)
     }
+
+    const handleSuccess = () => {
+        console.log("Deleted place with id success")
+        dispatch(removeBookSpace())
+        showModal('success', 'Boite à livres supprimé!', 'bottom',200)
+    }
     const {mutate: deleteBook} = useMutation(deleteBookPlace, {
         onError: handleError,
-        onSuccess: () => {
-            console.log("Deleted place with id success")
-            dispatch(removeBookSpace())
-            showModal('success', 'Boite à livres supprimé!', 'bottom',200)
-        }
+        onSuccess: handleSuccess
     });
     return {deleteBook}
 }
