@@ -10,16 +10,20 @@ export const useAddComment = (bookPlaceId) => {
     const user = useSelector((state: any) => state.user.value);
     const dispatch = useDispatch();
 
+    const handleSuccess = (data:any)=>{
+        dispatch(addCommentReducer(data.comment));
+        setComment('');
+    }
+
+    const handleError = (err:any)=>{
+        console.log("Erreur lors de l'ajout du commentaire : ", err);
+    }
+
     const { mutate: newComment } = useMutation(
         () => addComment({ uniqueId: user.uniqueId, bookPlaceId, comment }),
         {
-            onSuccess: (data) => {
-                dispatch(addCommentReducer(data.comment));
-                setComment('');
-            },
-            onError: (err) => {
-                console.log("Erreur lors de l'ajout du commentaire : ", err);
-            }
+            onSuccess: handleSuccess,
+            onError: handleError
         }
     );
 
