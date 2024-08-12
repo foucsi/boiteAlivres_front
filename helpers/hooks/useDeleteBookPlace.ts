@@ -8,7 +8,7 @@ export const useDeleteBookPlace = () => {
     const dispatch = useDispatch()
 
     const handleError = (error : unknown) => {
-        console.log(error)
+        console.log("Error deleting bookPlace :", error)
     }
 
     const handleSuccess = () => {
