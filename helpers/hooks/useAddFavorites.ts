@@ -7,7 +7,7 @@ import {useMutation} from "react-query";
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
 
-    const handleError = (error:any) => {
+    const handleError = (error:unknown) => {
         console.log("Error add favorite :", error)
     }
 
