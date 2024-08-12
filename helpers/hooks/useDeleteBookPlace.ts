@@ -6,10 +6,12 @@ import {removeBookSpace} from "@/redux/bookSpacesSlice";
 
 export const useDeleteBookPlace = () => {
     const dispatch = useDispatch()
+
+    const handleError = (error : unknown) => {
+        console.log(error)
+    }
     const {mutate: deleteBook} = useMutation(deleteBookPlace, {
-        onError: (error) => {
-            console.log(error)
-        },
+        onError: handleError,
         onSuccess: () => {
             console.log("Deleted place with id success")
             dispatch(removeBookSpace())
