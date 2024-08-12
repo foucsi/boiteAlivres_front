@@ -1,6 +1,6 @@
 import {addFavorites} from "@/helpers/functions/addFavorites";
 import {addFavoriteReducer} from "@/redux/favoritesSlice";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {showModal} from "@/helpers/functions/showToast";
 import {useMutation} from "react-query";
 
