@@ -9,11 +9,13 @@ export const useDeleteCommentMutation = (uniqueId:string, commentId:string) => {
     const handleError = (error: unknown) => {
         console.error("Error deleting comment:", error);
     }
+
+    const handleSuccess = ()=>{
+        console.log("Comment deleted");
+        dispatch(removeCommentReducer());
+    }
     const { mutate: delComment} = useMutation(()=>deleteComment({uniqueId, commentId}), {
-        onSuccess: () => {
-            console.log("Comment deleted");
-            dispatch(removeCommentReducer());
-        },
+        onSuccess: handleSuccess,
         onError: handleError
     });
 
