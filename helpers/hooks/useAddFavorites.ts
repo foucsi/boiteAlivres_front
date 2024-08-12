@@ -4,6 +4,10 @@ import {useDispatch} from "react-redux";
 import {showModal} from "@/helpers/functions/showToast";
 import {useMutation} from "react-query";
 
+// import interface Favorite
+import {FavoriteResponse} from "@/helpers/types";
+
+
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
 
@@ -11,7 +15,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
         console.error("Error add favorite :", error)
     }
 
-    const handleSuccess = (data:any) => {
+    const handleSuccess = (data:FavoriteResponse) => {
         dispatch(addFavoriteReducer(data.favorite))
         showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
     }
