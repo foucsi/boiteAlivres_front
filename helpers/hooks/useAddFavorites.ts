@@ -6,14 +6,19 @@ import {useMutation} from "react-query";
 
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
+
+    const handleError = (error:any) => {
+        console.log("Error add favorite :", error)
+    }
+
+    const handleSuccess = (data:any) => {
+        dispatch(addFavoriteReducer(data.favorite))
+        showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
+    }
+
     const {mutate : addFavorite} = useMutation(()=>addFavorites({uniqueId , bookPlaceId}), {
-        onError: (error) => {
-            console.log(error)
-        },
-        onSuccess: (data) => {
-            dispatch(addFavoriteReducer(data.favorite))
-            showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
-        }
+        onError: handleError,
+        onSuccess: handleSuccess
     })
     return {addFavorite}
 }
