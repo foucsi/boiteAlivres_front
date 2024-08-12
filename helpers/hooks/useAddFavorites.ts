@@ -8,7 +8,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
 
     const handleError = (error:unknown) => {
-        console.log("Error add favorite :", error)
+        console.error("Error add favorite :", error)
     }
 
     const handleSuccess = (data:any) => {
