@@ -70,3 +70,13 @@ Voici ce qui est en préparation pour les futures versions de **Boîte à Livres
 ## 💡 Idées de Fonctionnalités
 Avez-vous une idée géniale pour améliorer **Boîte à Livres** ? Nous serions ravis de l'entendre ! Proposez vos idées en ouvrant une [issue sur GitHub](#).
 
+## 🤔 FAQ
+**Q** : Comment puis-je supprimer une boîte à livres que j'ai ajoutée ?  
+**R** : Contactez-nous via l'application avec les détails de la boîte à livres, et nous nous en occuperons.
+
+**Q** : L'application est-elle gratuite ?  
+**R** : Oui, l'application est totalement gratuite à télécharger et à utiliser.
+
+**Q** : Comment signaler une boîte à livres endommagée ou inappropriée ?  
+**R** : Vous pouvez signaler une boîte à livres directement depuis l'application en accédant à la page de cette boîte et en cliquant sur "Signaler".
+
