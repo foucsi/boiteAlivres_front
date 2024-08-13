@@ -58,3 +58,15 @@ Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plu
 Un grand merci à toutes les personnes qui ont contribué à cette application et à la merveilleuse communauté des boîtes à livres pour l'inspiration et le soutien. Ensemble, nous partageons la magie des livres ! 📚✨
 
 ---
+
+## 🚧 Roadmap
+Voici ce qui est en préparation pour les futures versions de **Boîte à Livres** :
+
+- **🌍 Intégration de Cartes Offline** : Pouvoir accéder aux boîtes à livres même sans connexion Internet.
+- **🎨 Personnalisation du Profil** : Ajoutez une photo de profil, une biographie et personnalisez vos préférences.
+- **🌟 Système de Badges** : Gagnez des badges pour vos contributions et découvertes !
+- **🗣️ Traduction Multilingue** : Rendre l'application disponible dans plusieurs langues.
+
+## 💡 Idées de Fonctionnalités
+Avez-vous une idée géniale pour améliorer **Boîte à Livres** ? Nous serions ravis de l'entendre ! Proposez vos idées en ouvrant une [issue sur GitHub](#).
+
