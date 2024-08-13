@@ -18,6 +18,8 @@ export default function ThirdView({selectedMarker, setModalCommentVisible}) {
                                 handleLinking(selectedMarker.lat, selectedMarker.long)
                             }else if(icon.text === "Partager"){
                                 shareBookPlace()
+                            }else if(icon.text === "Signaler"){
+                                console.log("Signaler")
                             }
                         }}>
                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
