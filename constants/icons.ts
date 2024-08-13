@@ -22,5 +22,12 @@ export const iconsMaterial=[
         color: "#294C60",
         text: "Commenter",
         onPress: true
+    },
+    {
+        name: "exclamation-circle",
+        size: 48,
+        color: "#294C60",
+        text: "Signaler",
+        onPress: true
     }
 ]
