@@ -7,7 +7,8 @@ import {useSelector} from "react-redux";
 export default function ModalSendSignal({setShowModal, selectedMarker}) {
     const [message, setMessage] = useState('')
     const user = useSelector((state:any) => state.user.value)
-    const {sendSignalMsg} = useSignalMsg(message, user.email)
+    const {sendSignalMsg, error} = useSignalMsg(message, user.email)
+
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
@@ -15,6 +16,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                 <TouchableOpacity onPress={()=>setShowModal(false)}>
                     <Text>close</Text>
                 </TouchableOpacity>
+                {error ? <Text>Failed to send signal message. Please try again.</Text>: null}
             </View>
         </Modal>
     )
