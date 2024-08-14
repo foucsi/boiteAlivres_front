@@ -11,9 +11,7 @@ export const useSignalMsg = (message:string, email:string,bookPlaceId:string, se
             if(data.result){
                 // @ts-ignore
                 setShowModal(false)
-                console.log("Result: ",data?.result)
             }
-            console.log("error:", data?.error)
         }
 
     })
