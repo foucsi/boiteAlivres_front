@@ -36,3 +36,6 @@ export const URL_ADD_FAVORITE = (uniqueId:string, bookPlaceId:string):string=>`$
 
 //GET FAVORITE
 export const URL_GET_FAVORITE = (uniqueId:string, bookPlaceId:string):string=>`${baseUrl}/favorites/allFavoritesByUser/${uniqueId}/${bookPlaceId}`
+
+//SEND EMAIL SIGNAL
+export const URL_SEND_SIGNAL:string = `${baseUrl}/signal/sendMsg`
