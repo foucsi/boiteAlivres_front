@@ -3,7 +3,7 @@ import {signalMsg} from "@/helpers/functions/signalMsg";
 import {useSelector} from "react-redux";
 
 export const useSignalMsg = (message:string, email:string,bookPlaceId:string, setShowModal:void) => {
-    const {mutate: sendSignalMsg,error}=useMutation(()=>signalMsg({message, email, bookPlaceId}), {
+    const {mutate: sendSignalMsg,error, data}=useMutation(()=>signalMsg({message, email, bookPlaceId}), {
         onError: (error:unknown) => {
             console.error("Error signal message :", error)
         },
@@ -13,9 +13,9 @@ export const useSignalMsg = (message:string, email:string,bookPlaceId:string, se
                 setShowModal(false)
                 console.log("Result: ",data?.result)
             }
-            console.log("error: ",error)
+            console.log("error:", data?.error)
         }
 
     })
-    return {sendSignalMsg, error}
+    return {sendSignalMsg, data}
 }
