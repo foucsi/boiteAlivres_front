@@ -28,8 +28,8 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                     <View>
                         <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Faites votre signalement ici."/>
                     </View>
-                    <View style={{height:20}}>
-                        {data?.error && <Text>{data.error}</Text>}
+                    <View style={{height:40, padding:5}}>
+                        {data?.error && <Text style={{color:"tomato"}}>{data.error}</Text>}
                     </View>
 
                     <View>
@@ -56,7 +56,7 @@ const styles= StyleSheet.create({
     },
     modalContainer:{
         padding: 15,
-        height:220,
+        height:240,
         width:300,
         backgroundColor:"white",
         borderRadius: 10,
