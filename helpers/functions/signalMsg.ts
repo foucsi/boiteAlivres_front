@@ -1,12 +1,17 @@
 import {URL_SEND_SIGNAL} from "@/constants/Url";
 
-export const signalMsg = async(msg: string, email:string) => {
+interface SignalMsg {
+    message: string,
+    email: string
+}
+
+export const signalMsg = async({message, email}: SignalMsg) => {
     const response = await fetch(URL_SEND_SIGNAL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({msg, email})
+        body: JSON.stringify({message, email})
     })
 
     if(!response.ok){
