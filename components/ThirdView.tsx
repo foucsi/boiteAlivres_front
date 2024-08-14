@@ -1,14 +1,17 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import {iconsMaterial} from "@/constants/icons";
 import {handleLinking} from "@/helpers/functions/navigationMap";
 import {shareBookPlace} from "@/helpers/functions/shareBookPlace";
 import {FontAwesome5} from "@expo/vector-icons";
+import ModalSendSignal from "@/components/ModalSendSignal";
 
 // @ts-ignore
 export default function ThirdView({selectedMarker, setModalCommentVisible}) {
+    const [showModal, setShowModal] = useState(false)
     return (
         <View style={styles.thirdView}>
+            {showModal && <ModalSendSignal setShowModal={setShowModal}/>}
             {iconsMaterial.map((icon: any) => {
                 return (
                     <View style={styles.containerIcon} key={icon.name}>
@@ -19,7 +22,7 @@ export default function ThirdView({selectedMarker, setModalCommentVisible}) {
                             }else if(icon.text === "Partager"){
                                 shareBookPlace()
                             }else if(icon.text === "Signaler"){
-                                console.log("Signaler")
+                                setShowModal(icon.onPress)
                             }
                         }}>
                             <FontAwesome5 name={icon.name} size={icon.size} color={icon.color} />
