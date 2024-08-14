@@ -11,7 +11,7 @@ export default function ThirdView({selectedMarker, setModalCommentVisible}) {
     const [showModal, setShowModal] = useState(false)
     return (
         <View style={styles.thirdView}>
-            {showModal && <ModalSendSignal setShowModal={setShowModal}/>}
+            {showModal && <ModalSendSignal setShowModal={setShowModal} selectedMarker={selectedMarker}/>}
             {iconsMaterial.map((icon: any) => {
                 return (
                     <View style={styles.containerIcon} key={icon.name}>

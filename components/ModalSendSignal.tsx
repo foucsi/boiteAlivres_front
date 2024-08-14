@@ -2,7 +2,7 @@ import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 
 // @ts-ignore
-export default function ModalSendSignal({setShowModal}) {
+export default function ModalSendSignal({setShowModal, selectedMarker}) {
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
