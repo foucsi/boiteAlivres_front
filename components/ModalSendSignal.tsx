@@ -13,7 +13,6 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
 
     const closeModal = ()=>{
         setShowModal((prev: any) => !prev)
-        console.log("selectedMarker: ", selectedMarker.id)
     }
 
     return (
@@ -26,7 +25,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Faites votre signalement ici."/>
+                        <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Décrivez le problème rencontré avec cette boîte à livres..." />
                     </View>
                     <View style={{height:40, padding:5}}>
                         {data?.error && <Text style={{color:"tomato"}}>{data.error}</Text>}
@@ -57,7 +56,7 @@ const styles= StyleSheet.create({
     modalContainer:{
         padding: 15,
         height:240,
-        width:300,
+        width:400,
         backgroundColor:"white",
         borderRadius: 10,
         shadowColor: "#000",
