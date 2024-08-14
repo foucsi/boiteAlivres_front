@@ -12,11 +12,13 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
-                <Text>Test signal message</Text>
-                <TouchableOpacity onPress={()=>setShowModal(false)}>
-                    <Text>close</Text>
-                </TouchableOpacity>
-                {error ? <Text>Failed to send signal message. Please try again.</Text>: null}
+                <View style={styles.containerCenter}>
+                    <Text>Test signal message</Text>
+                    <TouchableOpacity onPress={()=>setShowModal(false)}>
+                        <Text>close</Text>
+                    </TouchableOpacity>
+                    {error ? <Text>Failed to send signal message. Please try again.</Text>: null}
+                </View>
             </View>
         </Modal>
     )
@@ -29,4 +31,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         backgroundColor: 'rgba(0,0,0,0.5)',
     },
+    containerCenter:{
+        backgroundColor: 'white',
+    }
 })
