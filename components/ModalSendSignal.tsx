@@ -9,7 +9,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function ModalSendSignal({setShowModal, selectedMarker}) {
     const [message, setMessage] = useState('')
     const user = useSelector((state:any) => state.user.value)
-    const {sendSignalMsg, error} = useSignalMsg(message, user.email)
+    const {sendSignalMsg, error} = useSignalMsg(message, user.email, setShowModal)
 
     const closeModal = ()=>{
         setShowModal((prev: any) => !prev)
