@@ -1,8 +1,13 @@
 import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
+import {useSignalMsg} from "@/helpers/hooks/useSignalMsg";
+import {useSelector} from "react-redux";
 
 // @ts-ignore
 export default function ModalSendSignal({setShowModal, selectedMarker}) {
+    const [message, setMessage] = useState('')
+    const user = useSelector((state:any) => state.user.value)
+    const {sendSignalMsg} = useSignalMsg(message, user.email)
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
