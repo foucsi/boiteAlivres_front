@@ -42,7 +42,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
     )
 }
 
-const styles = StyleSheet.create({
+const styles= StyleSheet.create({
     modal:{
         flex:1,
         alignItems:"center",
