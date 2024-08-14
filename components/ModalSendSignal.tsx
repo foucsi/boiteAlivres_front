@@ -24,7 +24,18 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                             <AntDesign name="closecircleo" size={24} color="#294C60" onPress={closeModal}/>
                         </TouchableOpacity>
                     </View>
-                    {error ? <Text>Failed to send signal message. Please try again.</Text>: null}
+                    <View>
+                        <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Faites votre signalement ici."/>
+                    </View>
+                    <View>
+                        <TouchableOpacity
+                            style={styles.button}
+                            // @ts-ignore
+                            onPress={sendSignalMsg}
+                        >
+                            <Text style={styles.buttonText}>Envoyer</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </Modal>
@@ -52,5 +63,34 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 4.84,
         elevation: 5,
+    },
+    input:{
+        fontSize: 12,
+        width: '100%',
+        height: 70,
+        borderStyle:"solid",
+        borderColor: '#294C60',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop: 10,
+    },
+    button: {
+        marginTop: 10,
+        backgroundColor: '#294C60',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+    },
+    buttonText: {
+        color: '#FFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 })
