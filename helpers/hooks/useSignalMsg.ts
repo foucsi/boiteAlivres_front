@@ -4,12 +4,12 @@ import {useSelector} from "react-redux";
 
 export const useSignalMsg = (message:string, email:string) => {
     const user = useSelector((state:any) => state.user.value)
-    const {mutate: sendMsg}=useMutation(()=>signalMsg({message:message, email : user.email}), {
+    const {mutate: sendSignalMsg}=useMutation(()=>signalMsg({message:message, email : user.email}), {
         onError: (error:unknown) => {
             console.error("Error signal message :", error)
         },
         onSuccess: ()=>console.log('Signal message')
 
     })
-    return {sendMsg}
+    return {sendSignalMsg}
 }
