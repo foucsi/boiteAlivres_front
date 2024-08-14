@@ -9,10 +9,11 @@ import { AntDesign } from '@expo/vector-icons';
 export default function ModalSendSignal({setShowModal, selectedMarker}) {
     const [message, setMessage] = useState('')
     const user = useSelector((state:any) => state.user.value)
-    const {sendSignalMsg, error} = useSignalMsg(message, user.email, setShowModal)
+    const {sendSignalMsg, error} = useSignalMsg(message, user.email,selectedMarker.id, setShowModal)
 
     const closeModal = ()=>{
         setShowModal((prev: any) => !prev)
+        console.log("selectedMarker: ", selectedMarker.id)
     }
 
     return (
@@ -27,6 +28,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                     <View>
                         <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Faites votre signalement ici."/>
                     </View>
+                    {/*{error ? <Text style={{color: 'red'}}>error</Text> : null}*/}
                     <View>
                         <TouchableOpacity
                             style={styles.button}
