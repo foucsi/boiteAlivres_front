@@ -9,18 +9,13 @@ import { AntDesign } from '@expo/vector-icons';
 export default function ModalSendSignal({setShowModal, selectedMarker}) {
     const [message, setMessage] = useState('')
     const user = useSelector((state:any) => state.user.value)
-    const {sendSignalMsg, data} = useSignalMsg(message, user.email,selectedMarker.id, setShowModal)
+    // @ts-ignore
+    const {sendSignalMsg, data} = useSignalMsg(message, user.email,selectedMarker.id, setShowModal, setMessage)
 
     const closeModal = ()=>{
         setShowModal((prev: any) => !prev)
     }
 
-    const sendMessage = ()=>{
-        sendSignalMsg()
-        if(data?.result){
-            setMessage("")
-        }
-    }
 
     return (
         <Modal animationType="slide" transparent={true}>
@@ -42,7 +37,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                         <TouchableOpacity
                             style={styles.button}
                             // @ts-ignore
-                            onPress={sendMessage}
+                            onPress={sendSignalMsg}
                         >
                             <Text style={styles.buttonText}>Envoyer</Text>
                         </TouchableOpacity>
