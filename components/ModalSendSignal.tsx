@@ -17,7 +17,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
 
     const sendMessage = ()=>{
         sendSignalMsg()
-        if(data.rsult){
+        if(data?.result){
             setMessage("")
         }
     }
