@@ -30,7 +30,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                         <TextInput value={message} onChangeText={setMessage} multiline={true} style={styles.input} placeholder="Décrivez le problème rencontré avec cette boîte à livres..." />
                     </View>
                     <View style={{height:40, padding:5}}>
-                        {data?.error && <Text style={{color:"tomato"}}>{data.error}</Text>}
+                        {data?.error && <Text style={{color:"tomato"}}>{data.error || "Erreur lors de l'envoi"}</Text>}
                     </View>
 
                     <View>
