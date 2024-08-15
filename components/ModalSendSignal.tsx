@@ -15,6 +15,13 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
         setShowModal((prev: any) => !prev)
     }
 
+    const sendMessage = ()=>{
+        sendSignalMsg()
+        if(data.rsult){
+            setMessage("")
+        }
+    }
+
     return (
         <Modal animationType="slide" transparent={true}>
             <View style={styles.modal}>
@@ -35,7 +42,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
                         <TouchableOpacity
                             style={styles.button}
                             // @ts-ignore
-                            onPress={sendSignalMsg}
+                            onPress={sendMessage}
                         >
                             <Text style={styles.buttonText}>Envoyer</Text>
                         </TouchableOpacity>
