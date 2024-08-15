@@ -10,7 +10,7 @@ export default function ModalSendSignal({setShowModal, selectedMarker}) {
     const [message, setMessage] = useState('')
     const user = useSelector((state:any) => state.user.value)
     // @ts-ignore
-    const {sendSignalMsg, data} = useSignalMsg(message, user.email,selectedMarker.id, setShowModal)
+    const {sendSignalMsg, data} = useSignalMsg(message, user.email,selectedMarker.id, setShowModal, setMessage)
 
     const closeModal = ()=>{
         setShowModal((prev: any) => !prev)
