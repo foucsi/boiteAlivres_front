@@ -8,14 +8,16 @@ export const useSignalMsg = (message:string, email:string,bookPlaceId:string, se
     const handleError = (error:unknown) => {
         console.error("Error signal message :", error)
     }
+
+    const handleSuccess = (data:any) => {
+        if(data?.result){
+            setMessage('')
+            setShowModal((prev)=> !prev)
+        }
+    }
     const {mutate: sendSignalMsg,error, data}=useMutation(()=>signalMsg({message, email, bookPlaceId}), {
         onError: handleError,
-        onSuccess: (data)=>{
-            if(data.result){
-                setMessage('')
-                setShowModal((prev)=> !prev)
-            }
-        }
+        onSuccess: handleSuccess
     })
     return {sendSignalMsg, data}
 }
