@@ -10,7 +10,7 @@ export const useSignalMsg = (message:string, email:string,bookPlaceId:string, se
     }
 
     const handleSuccess = (data:any) => {
-        if(data?.result){
+        if(data.result){
             console.log("Success signal message ")
             setMessage('')
             setShowModal((prev)=> !prev)
