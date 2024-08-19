@@ -6,11 +6,7 @@ import {useEffect} from "react";
 
 export const useGetAllBookPlaces = () => {
     const bookPlace = useSelector((state: any) => state.bookSpace.value)
-    const {data, isLoading, error, refetch} = useQuery("bookPlaces", getAllBookPlaces)
-
-    useEffect(() => {
-        refetch()
-    }, [bookPlace.bookSpaces, bookPlace.description, bookPlace.photo]);
+    const {data, isLoading, error} = useQuery(["bookPlaces", bookPlace.bookSpaces, bookPlace.description, bookPlace.photo], getAllBookPlaces)
 
     return {
         bookSpaces: data?.bookPlaces || [],
