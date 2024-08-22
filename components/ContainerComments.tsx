@@ -16,7 +16,7 @@ export default function ContainerComments({comment, user, id, isLoading, dateCom
         return <Text>Loading...</Text>
     }
     if(error){
-        return <Text>{error}</Text>
+        return <Text>Error, Something wrong ...</Text>
     }
 
 
