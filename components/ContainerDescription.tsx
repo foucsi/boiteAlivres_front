@@ -31,7 +31,6 @@ export default function ContainerDescription({selectedMarker, setSelectedMarker}
 
             <View style={styles.containerDescription}>
                 <Text>{selectedMarker.description}</Text>
-
                 {user.uniqueId === selectedMarker.uniqueId && <View style={{alignItems:"flex-end"}}>
                     <TouchableOpacity onPress={displayInput}>
                         <FontAwesome name="pencil-square-o" size={24} color="#294C60" />
