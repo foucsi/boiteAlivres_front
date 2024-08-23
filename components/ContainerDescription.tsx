@@ -28,7 +28,6 @@ export default function ContainerDescription({selectedMarker, setSelectedMarker}
 
     return (
         <View style={styles.container}>
-
             <View style={styles.containerDescription}>
                 <Text>{selectedMarker.description}</Text>
                 {user.uniqueId === selectedMarker.uniqueId && <View style={{alignItems:"flex-end"}}>
