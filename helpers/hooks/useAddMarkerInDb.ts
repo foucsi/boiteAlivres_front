@@ -10,7 +10,6 @@ export const useAddMarkerInDb = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.value);
 
-    // Utilisation de useMutation pour ajouter un marqueur
     const { mutate: addMarker } = useMutation(
         async ({ latitude, longitude }) => {
             return await addMarkerInDb(
