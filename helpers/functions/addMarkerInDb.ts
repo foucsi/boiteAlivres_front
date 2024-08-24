@@ -24,11 +24,4 @@ export const addMarkerInDb = async(uniqueId:string, latitude:number, longitude:n
             throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
         }
         return await response.json();
-        // const data = await response.json();
-        // if (data.result){
-        //     return {success: true, data: data.bookPlace}
-        // }else {
-        //     return {success: false, error: data.error}
-        // }
-
 }
