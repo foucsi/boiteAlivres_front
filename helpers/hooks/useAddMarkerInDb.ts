@@ -15,7 +15,7 @@ export const useAddMarkerInDb = () => {
         console.error("Erreur lors de la mutation :", error);
     }
 
-    const handleSuccess = (data) => {
+    const handleSuccess = (data:any) => {
         if (data.result) {
             setModalIsVisible(true);
             dispatch(addBookSpace(data.bookPlace));
