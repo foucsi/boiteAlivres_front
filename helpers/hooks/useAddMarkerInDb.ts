@@ -20,7 +20,7 @@ export const useAddMarkerInDb = () => {
             setModalIsVisible(true);
             dispatch(addBookSpace(data.bookPlace));
         } else {
-            console.log("Erreur lors de l'ajout du marqueur :", result);
+            console.log("Erreur lors de l'ajout du marqueur ");
         }
     }
 
