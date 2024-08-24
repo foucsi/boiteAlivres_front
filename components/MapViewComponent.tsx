@@ -16,7 +16,7 @@ import ModalFirstConnection from "@/components/ModalFirstConnection";
 // @ts-ignore
 export default function MapViewComponent({setModalVisible, modalVisible}) {
     const {location} = useGetLocationUser();
-    const {addMarker, modalIsVisible, setModalIsVisible,modalPremiumIsVisible, setModalPremiumIsVisible} = useAddMarkerInDb();
+    const {handleAddMarker, modalIsVisible, setModalIsVisible,modalPremiumIsVisible, setModalPremiumIsVisible} = useAddMarkerInDb();
     const {bookSpaces, isLoading, error} = useGetAllBookPlaces();
 
     const [selectedMarker, setSelectedMarker] =
@@ -48,7 +48,7 @@ export default function MapViewComponent({setModalVisible, modalVisible}) {
 
 
     return (
-            <MapView onLongPress={addMarker} style={styles.map}>
+            <MapView onLongPress={handleAddMarker} style={styles.map}>
                 {location &&(
                     // @ts-ignore
                     <MarkerUser lat={location.coords.latitude} long={location.coords.longitude}/>
