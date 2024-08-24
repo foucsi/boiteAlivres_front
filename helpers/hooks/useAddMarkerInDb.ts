@@ -4,6 +4,8 @@ import { addMarkerInDb } from "@/helpers/functions/addMarkerInDb";
 import { useDispatch, useSelector } from "react-redux";
 import { addBookSpace } from "@/redux/bookSpacesSlice";
 
+//ADD MUTATION
+
 export const useAddMarkerInDb = () => {
     const [modalIsVisible, setModalIsVisible] = useState(false);
     const [modalPremiumIsVisible, setModalPremiumIsVisible] = useState(false);
