@@ -11,6 +11,19 @@ export const useAddMarkerInDb = () => {
     // @ts-ignore
     const user = useSelector((state) => state.user.value);
 
+    const handleError = (error: unknown) => {
+        console.error("Erreur lors de la mutation :", error);
+    }
+
+    const handleSuccess = (data) => {
+        if (data.result) {
+            setModalIsVisible(true);
+            dispatch(addBookSpace(data.bookPlace));
+        } else {
+            console.log("Erreur lors de l'ajout du marqueur :", result);
+        }
+    }
+
     const { mutate: addMarker } = useMutation(
         // @ts-ignore
         async ({ latitude, longitude }) => {
@@ -22,19 +35,8 @@ export const useAddMarkerInDb = () => {
             );
         },
         {
-            // @ts-ignore
-            onSuccess: (data) => {
-                if (data.result) {
-                    setModalIsVisible(true);
-                    dispatch(addBookSpace(data.bookPlace));
-                } else {
-                    console.log("Erreur lors de l'ajout du marqueur :", result);
-                }
-            },
-            // @ts-ignore
-            onError: (error) => {
-                console.error("Erreur lors de la mutation :", error);
-            },
+            onSuccess: handleSuccess,
+            onError: handleError,
         }
     );
 
