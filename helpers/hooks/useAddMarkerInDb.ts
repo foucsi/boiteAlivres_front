@@ -40,7 +40,7 @@ export const useAddMarkerInDb = () => {
         }
     );
 
-    const handleAddMarker = (e) => {
+    const handleAddMarker = (e:any) => {
         const { latitude, longitude } = e.nativeEvent.coordinate;
 
         if (user.premium) {
