@@ -33,7 +33,7 @@ export const useAddMarkerInDb = () => {
                 user.uniqueId,
                 latitude,
                 longitude,
-                "Découvrez et partagez des livres gratuitement dans cette boîte à livres conviviale."
+                "Découvrez et partagez des livres gratuitement dans cette boîte à livres conviviale :)"
             );
         },
         {
