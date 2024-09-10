@@ -3,7 +3,7 @@ import { addComment } from "@/helpers/functions/addComment";
 import { useDispatch, useSelector } from "react-redux";
 import { addCommentReducer } from "@/redux/commentsSlice";
 import { useMutation } from "react-query";
-import {RootState} from "@/redux/store";
+import {RootState} from '@/redux/store';
 
 interface AddCommentProps {
     bookPlaceId: string;
