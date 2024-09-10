@@ -3,6 +3,7 @@ import { addComment } from "@/helpers/functions/addComment";
 import { useDispatch, useSelector } from "react-redux";
 import { addCommentReducer } from "@/redux/commentsSlice";
 import { useMutation } from "react-query";
+import {RootState} from "@/redux/store";
 
 interface AddCommentProps {
     bookPlaceId: string;
@@ -15,7 +16,7 @@ interface User {
 // @ts-ignore
 export const useAddComment = ({bookPlaceId}): AddCommentProps => {
     const [comment, setComment] = useState('');
-    const user = useSelector((state: any) => state.user.value);
+    const user = useSelector((state:RootState)=>state.user.value) as User;
     const dispatch = useDispatch();
 
     
