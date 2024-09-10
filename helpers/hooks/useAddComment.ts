@@ -4,6 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCommentReducer } from "@/redux/commentsSlice";
 import { useMutation } from "react-query";
 
+interface AddCommentProps {
+    bookPlaceId: string;
+}
+
+interface User {
+    uniqueId: string;
+}
+
 // @ts-ignore
 export const useAddComment = (bookPlaceId) => {
     const [comment, setComment] = useState('');
