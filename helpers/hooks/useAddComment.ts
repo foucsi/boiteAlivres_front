@@ -13,14 +13,14 @@ interface User {
 }
 
 // @ts-ignore
-export const useAddComment = (bookPlaceId) => {
+export const useAddComment = ({bookPlaceId}): AddCommentProps => {
     const [comment, setComment] = useState('');
     const user = useSelector((state: any) => state.user.value);
     const dispatch = useDispatch();
 
     
 
-    const handleSuccess = (data:any)=>{
+    const handleSuccess = (data:{comment:string})=>{
         dispatch(addCommentReducer(data.comment));
         setComment('');
     }
