@@ -15,7 +15,7 @@ interface User {
 // @ts-ignore
 export const useAddComment = ({bookPlaceId}): AddCommentProps => {
     const [comment, setComment] = useState('');
-    const user = useSelector((state:any)=>state.user.value) as User;
+    const user = useSelector((state:any)=>state.user.value)
     const dispatch = useDispatch();
 
     
