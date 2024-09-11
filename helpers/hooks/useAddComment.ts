@@ -17,13 +17,18 @@ export const useAddComment = ({bookPlaceId}): AddCommentProps => {
     const [comment, setComment] = useState('');
     const user = useSelector((state:any)=>state.user.value)
     const dispatch = useDispatch();
+    
 
     
 
-    const handleSuccess = (data:{comment:string})=>{
-        dispatch(addCommentReducer(data.comment));
-        setComment('');
-    }
+    const handleSuccess = (data: { comment: string }) => {
+        if (data && data.comment) {
+            dispatch(addCommentReducer(data.comment));
+            setComment('');
+        } else {
+            console.warn('Received invalid data in handleSuccess');
+        }
+    };
 
     const handleError = (err:any)=>{
         console.log("Erreur lors de l'ajout du commentaire : ", err);
