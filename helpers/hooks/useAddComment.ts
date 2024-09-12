@@ -12,6 +12,7 @@ interface User {
     uniqueId: string;
 }
 
+//ts-ignore
 export const useAddComment = ({bookPlaceId}): AddCommentProps => {
     const [comment, setComment] = useState('');
     const user = useSelector((state:any)=>state.user.value)
