@@ -21,24 +21,20 @@ export const useAddComment = ({bookPlaceId}): AddCommentProps => {
 
     
 
-    const handleSuccess = (data: { comment: string }) => {
-        if (data && data.comment) {
-            dispatch(addCommentReducer(data.comment));
-            setComment('');
-        } else {
-            console.warn('Received invalid data in handleSuccess');
-        }
-    };
-
-    const handleError = (err:any)=>{
-        console.log("Erreur lors de l'ajout du commentaire : ", err);
-    }
-
     const { mutate: newComment } = useMutation(
         () => addComment({ uniqueId: user.uniqueId, bookPlaceId, comment }),
         {
-            onSuccess: handleSuccess,
-            onError: handleError
+            onSuccess: (data: { comment: string }) => {
+                if (data?.comment) {
+                    dispatch(addCommentReducer(data.comment));
+                    setComment('');
+                } else {
+                    console.warn('Received invalid data in handleSuccess');
+                }
+            },
+            onError: (error: Error) => {
+                console.error("Error adding comment:", error.message);
+            }
         }
     );
 
