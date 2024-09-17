@@ -1,4 +1,3 @@
-// import {useEffect, useState} from "react";
 import {useQuery} from "react-query";
 import {getAllBookPlaces} from "@/helpers/functions/getAllBookPlaces";
 import {useSelector} from "react-redux";
