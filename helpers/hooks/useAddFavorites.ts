@@ -19,7 +19,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
 
     const handleError = (error:unknown) => {
-        console.error("Error add favorite :", error)
+        console.error(`[useAddFavorites] Failed to add favorite. UniqueID: ${uniqueId}, BookPlaceID: ${bookPlaceId}`, error)
     }
 
     const handleSuccess = (data:FavoriteResponse) => {
