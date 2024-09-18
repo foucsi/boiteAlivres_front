@@ -7,6 +7,13 @@ import {useMutation} from "react-query";
 // import interface Favorite
 import {FavoriteResponse} from "@/helpers/types";
 
+/**
+ * Custom hook to handle adding a favorite book place.
+ * @param uniqueId - The unique identifier of the user.
+ * @param bookPlaceId - The identifier of the book place.
+ * @returns A mutation function to trigger the add favorite action.
+ */
+
 
 export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
     const dispatch = useDispatch()
