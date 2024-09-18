@@ -22,6 +22,11 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
         console.error(`[useAddFavorites] Failed to add favorite. UniqueID: ${uniqueId}, BookPlaceID: ${bookPlaceId}`, error)
     }
 
+    /**
+     * Success handler for add favorite mutation.
+     * @param data - The response data from the addFavorite API call.
+     */
+
     const handleSuccess = (data:FavoriteResponse) => {
         dispatch(addFavoriteReducer(data.favorite))
         showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
