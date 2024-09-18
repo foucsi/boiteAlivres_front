@@ -34,6 +34,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
         showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
     }
 
+    // Use react-query's useMutation for handling the asynchronous API call
     const {mutate : addFavorite} = useMutation(()=>addFavorites({uniqueId , bookPlaceId}), {
         onError: handleError,
         onSuccess: handleSuccess
