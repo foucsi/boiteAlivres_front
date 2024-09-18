@@ -29,6 +29,7 @@ export const useAddFavorites = (uniqueId:string, bookPlaceId:string) => {
 
     const handleSuccess = (data:FavoriteResponse) => {
         dispatch(addFavoriteReducer(data.favorite))
+        // Show feedback modal to the user
         showModal('Success', 'Boites à livres ajoutées à vos favoris', 'bottom', 4000)
     }
 
