@@ -22,7 +22,18 @@ export interface UserPayload extends Omit<User, 'photo'> {}
 export const USER_CONSTANTS = {
   DEFAULT_PHOTO: "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?b=1&s=170667a&w=0&k=20&c=HEO2nP4_uEAn0_JzVTU6_Y5hyn-qHxyCrWWTirBvScs=",
   SLICE_NAME: "user",
+  PHOTO_URL_REGEX: /^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i,
 } as const;
+
+// Validation functions
+const isValidPhotoUrl = (url: string): boolean => {
+  return USER_CONSTANTS.PHOTO_URL_REGEX.test(url);
+};
+
+const isValidEmail = (email: string | null): boolean => {
+  if (!email) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
 // Initial state configuration
 const initialState: UserState = {
@@ -43,6 +54,10 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     loginReducer: (state, action: PayloadAction<UserPayload>) => {
+      if (!isValidEmail(action.payload.email)) {
+        console.error('Invalid email format');
+        return;
+      }
       state.value = {
         ...state.value,
         ...action.payload,
@@ -54,6 +69,10 @@ export const userSlice = createSlice({
       };
     },
     addPhoto: (state, action: PayloadAction<string>) => {
+      if (!isValidPhotoUrl(action.payload)) {
+        console.error('Invalid photo URL format');
+        return;
+      }
       state.value.photo = action.payload;
     },
     changePremium: (state, action: PayloadAction<boolean>) => {
