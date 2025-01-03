@@ -18,8 +18,12 @@ export interface UserState {
 export interface UserPayload extends Omit<User, 'photo'> {}
 
 // Constants
-const DEFAULT_PHOTO = "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?b=1&s=170667a&w=0&k=20&c=HEO2nP4_uEAn0_JzVTU6_Y5hyn-qHxyCrWWTirBvScs=";
+export const USER_CONSTANTS = {
+  DEFAULT_PHOTO: "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?b=1&s=170667a&w=0&k=20&c=HEO2nP4_uEAn0_JzVTU6_Y5hyn-qHxyCrWWTirBvScs=",
+  SLICE_NAME: "user",
+} as const;
 
+// Initial state configuration
 const initialState: UserState = {
   value: {
     username: null,
@@ -27,13 +31,14 @@ const initialState: UserState = {
     uniqueId: null,
     email: null,
     token: null,
-    photo: DEFAULT_PHOTO,
+    photo: USER_CONSTANTS.DEFAULT_PHOTO,
     premium: null,
   },
 };
 
+// Slice configuration
 export const userSlice = createSlice({
-  name: "user",
+  name: USER_CONSTANTS.SLICE_NAME,
   initialState,
   reducers: {
     loginReducer: (state, action: PayloadAction<UserPayload>) => {
@@ -56,5 +61,6 @@ export const userSlice = createSlice({
   },
 });
 
+// Exports
 export const { loginReducer, logout, addPhoto, changePremium } = userSlice.actions;
 export default userSlice.reducer;
