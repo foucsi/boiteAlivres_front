@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from './store';
 
 // User related types
 export interface User {
@@ -60,6 +61,12 @@ export const userSlice = createSlice({
     },
   },
 });
+
+// Selectors
+export const selectUser = (state: RootState) => state.user.value;
+export const selectIsAuthenticated = (state: RootState) => state.user.value.token !== null;
+export const selectIsPremium = (state: RootState) => state.user.value.premium === true;
+export const selectUserPhoto = (state: RootState) => state.user.value.photo;
 
 // Exports
 export const { loginReducer, logout, addPhoto, changePremium } = userSlice.actions;
