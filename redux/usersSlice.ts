@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// Types
-interface UserState {
+// User related types
+export interface User {
   username: string | null;
   created_at: string | null;
   uniqueId: string | null;
@@ -11,19 +11,16 @@ interface UserState {
   premium: boolean | null;
 }
 
-interface UserPayload {
-  uniqueId: string;
-  username: string;
-  email: string;
-  token: string;
-  created_at: string;
-  premium: boolean;
+export interface UserState {
+  value: User;
 }
+
+export interface UserPayload extends Omit<User, 'photo'> {}
 
 // Constants
 const DEFAULT_PHOTO = "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?b=1&s=170667a&w=0&k=20&c=HEO2nP4_uEAn0_JzVTU6_Y5hyn-qHxyCrWWTirBvScs=";
 
-const initialState: { value: UserState } = {
+const initialState: UserState = {
   value: {
     username: null,
     created_at: null,
@@ -43,13 +40,11 @@ export const userSlice = createSlice({
       state.value = {
         ...state.value,
         ...action.payload,
-        photo: state.value.photo, // Preserve existing photo
       };
     },
     logout: (state) => {
       state.value = {
         ...initialState.value,
-        photo: DEFAULT_PHOTO,
       };
     },
     addPhoto: (state, action: PayloadAction<string>) => {
